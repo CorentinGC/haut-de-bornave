@@ -643,6 +643,30 @@
   margin-top: 0;
 }
 
+/* Fil d'Ariane du héros : la règle .fr `.page-hero .breadcrumb span
+   { opacity:.5 }` s'appliquait à NOS spans wrappers → tout le fil
+   illisible (~37 % sur photo). On rétablit un contraste AA. */
+.page-hero .breadcrumb {
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 8px rgba(12, 35, 28, 0.65);
+}
+.page-hero .breadcrumb span {
+  opacity: 1;
+}
+.page-hero .breadcrumb a {
+  color: rgba(255, 255, 255, 0.82);
+}
+.page-hero .breadcrumb a:hover {
+  color: var(--color-gold);
+}
+.page-hero .breadcrumb [aria-current="page"] {
+  color: #fff;
+  font-weight: 600;
+}
+.page-hero .breadcrumb span[aria-hidden="true"] {
+  opacity: 0.5;
+}
+
 /* ---------------------------------------------------------------------------
    Pages sans héros plein cadre (mentions légales) : la nav est `fixed`.
    La 1re section doit dégager la hauteur de la nav (sinon le fil d'Ariane
@@ -695,6 +719,54 @@
   color: var(--color-emerald);
   border-color: rgba(20, 52, 43, 0.4);
   text-shadow: none;
+}
+
+/* ---------------------------------------------------------------------------
+   Exception : pages à HÉROS IMAGE PLEIN CADRE (`.page-hero`, pages
+   secondaires). En haut (non scrollé), la navbar redevient TRANSPARENTE
+   pour laisser voir l'image du héros (effet immersif voulu). Texte clair
+   + dégradé de lisibilité. Au scroll → repasse solide (règles ci-dessus).
+   L'accueil (hero-split) et les pages sans héros gardent la navbar solide.
+   --------------------------------------------------------------------------- */
+body:has(.page-hero) .nav:not(.scrolled) {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+body:has(.page-hero) .nav:not(.scrolled)::before {
+  display: block;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 35, 28, 0.6) 0%,
+    rgba(12, 35, 28, 0) 100%
+  );
+}
+body:has(.page-hero) .nav:not(.scrolled) .nav__brand,
+body:has(.page-hero) .nav:not(.scrolled) .nav .nav__links a,
+body:has(.page-hero) .nav:not(.scrolled) .nav__links a,
+body:has(.page-hero) .nav:not(.scrolled) .nav:not(.scrolled) .nav__lang,
+body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(12, 35, 28, 0.55);
+}
+body:has(.page-hero) .nav:not(.scrolled) .nav__brand small {
+  color: var(--color-gold);
+}
+body:has(.page-hero) .nav:not(.scrolled) .nav__logo {
+  background: #fff;
+  filter: drop-shadow(0 1px 4px rgba(12, 35, 28, 0.35));
+}
+body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+/* Héros image plein cadre plus immersif sur mobile (occupe + d'écran). */
+@media (max-width: 899px) {
+  .page-hero {
+    min-height: 86svh;
+  }
 }
 
 /* Citation de conclusion (page Deshaies & co.) — éditoriale, élégante */
