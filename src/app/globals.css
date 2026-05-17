@@ -997,3 +997,76 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
 .quote__author {
   margin-top: auto;
 }
+
+/* ===========================================================================
+   Polish encarts/cards (rendu pro) + héros mobile plein écran + anti-flash
+   =========================================================================== */
+
+/* `.feature__title` (h3) n'était pas stylé par la charte (qui cible
+   `.feature h4`) → titre géant et cartes « pas propres ». On aligne sur
+   l'intention charte : titre display mesuré, icône raffinée. */
+.feature__title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-emerald);
+  margin-bottom: 0.7rem;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+}
+.feature__icon {
+  box-shadow: inset 0 0 0 1px rgba(201, 166, 107, 0.4);
+}
+.feature__icon svg {
+  width: 26px;
+  height: 26px;
+  stroke-width: 1.6;
+}
+.feature p {
+  flex: 1;
+}
+@media (max-width: 860px) {
+  .feature__title {
+    font-size: 1.08rem;
+  }
+}
+
+/* Cohérence fine des autres encarts de même famille (hover homogène,
+   bord/rayon cohérents) — sans dénaturer la charte. */
+.info-card,
+.price-card,
+.mini-card {
+  transition: transform 0.3s var(--ease-fluid),
+    box-shadow 0.3s var(--ease-fluid),
+    border-color 0.3s var(--ease-fluid);
+}
+.info-card:hover,
+.price-card:hover {
+  box-shadow: var(--shadow-md, 0 12px 40px rgba(20, 52, 43, 0.1));
+  border-color: rgba(201, 123, 94, 0.4);
+}
+
+/* Héros image plein cadre : occupe TOUT le viewport en mobile (effet
+   « wahou » immersif, navbar transparente par-dessus). */
+@media (max-width: 899px) {
+  .page-hero {
+    min-height: 100svh;
+  }
+}
+
+/* Anti-flash au 1er affichage : fond émeraude sombre derrière l'image du
+   héros (≈ teinte du dégradé) → pas de flash clair pendant le chargement. */
+.page-hero,
+.page-hero__bg {
+  background-color: var(--color-emerald-deep);
+}
+.hero-split__frame,
+.cta-block__bg,
+.split__media,
+.article-card__media,
+.universe__card {
+  background-color: var(--color-emerald-deep);
+}
