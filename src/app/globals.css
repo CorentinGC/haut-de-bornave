@@ -1086,6 +1086,21 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
   background-color: var(--color-emerald-deep);
 }
 
+/* `Cover` = next/image `fill` → <img> en position:absolute (l'<img> du site
+   .fr est en flux). En mobile la charte pose `.hero-split__frame{height:auto}`
+   : sans enfant en flux le cadre s'effondre à 0 → image du héros INVISIBLE +
+   warning next/image « fill + height 0 ». On redonne au cadre une hauteur via
+   `aspect-ratio:16/10` (ratio charte .fr). Strictement borné à ≤900px (grille
+   1 colonne) : en desktop la grille est `1fr 1fr` et un `aspect-ratio` sur le
+   cadre gonflerait le minimum auto de la piste média (≈ h×16/10) → colonne
+   texte écrasée. Desktop conserve donc EXACTEMENT son rendu (height:100%
+   résolu par la grille étirée). */
+@media (max-width: 900px) {
+  .hero-split__frame {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 /* Phrase de conclusion sous la grille des 6 espaces communs (page Domaine)
    — centrée, éditoriale, filet doré décoratif au-dessus. */
 .spaces-note {

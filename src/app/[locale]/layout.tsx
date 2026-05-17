@@ -52,9 +52,17 @@ export default async function LocaleLayout({
   const content = getContent(lc);
 
   return (
+    // `suppressHydrationWarning` ciblé sur <html> uniquement : le script
+    // inline ci-dessous ajoute la classe `js` à documentElement AVANT
+    // l'hydratation (progressive enhancement reveal/no-flash), et next/font
+    // génère en dev (Turbopack) un hash de classe variable parfois différent
+    // serveur/client. Ces écarts sur le SEUL <html> sont attendus et sûrs ;
+    // React ne suppresse qu'un niveau → un vrai mismatch dans l'arbre
+    // (Header, contenu…) resterait signalé.
     <html
       lang={lc}
       className={`${fraunces.variable} ${inter.variable} h-full`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         {/* Active les animations reveal AVANT le 1er paint (comme le site .fr) :
