@@ -81,18 +81,12 @@ export default async function DomainePage({
 
       <Section alt>
         <SecHead eyebrow={d.eyebrow} title={d.viewTitle} lead={d.viewText} />
-        <FeatureGrid items={d.pillars} />
       </Section>
 
       <Section>
         <SecHead eyebrow={d.eyebrow} title={d.spacesTitle} />
         <FeatureGrid items={d.spaces} />
-        <p
-          className="lead reveal"
-          style={{ marginTop: "2.5rem", textAlign: "center" }}
-        >
-          {d.spacesNote}
-        </p>
+        <p className="spaces-note reveal">{d.spacesNote}</p>
       </Section>
 
       <Section alt>
@@ -113,17 +107,30 @@ export default async function DomainePage({
           title={c.home.deshaiesTitle}
         />
         <div className="grid grid-2">
-          {d.beaches.map((b, i) => (
-            <article key={b.name} className="info-card reveal">
-              <h3 className="h-md">{b.name}</h3>
-              <p>{b.text}</p>
-              {i === 0 && (
-                <Btn href={href(lc, "que-visiter")} variant="ghost">
-                  {c.queVisiter.title}
-                </Btn>
-              )}
-            </article>
-          ))}
+          {d.beaches.map((b, i) => {
+            const isGrandeAnse = i === 1;
+            const article = c.articles.find((a) =>
+              /plage|beach/.test(a.slug),
+            );
+            const target =
+              isGrandeAnse && article
+                ? href(lc, `que-visiter/${article.slug}`)
+                : href(lc, "que-visiter");
+            const label = isGrandeAnse
+              ? c.common.readArticle
+              : c.queVisiter.title;
+            return (
+              <article key={b.name} className="info-card reveal">
+                <h3 className="h-md">{b.name}</h3>
+                <p>{b.text}</p>
+                <div className="info-card__cta">
+                  <Btn href={target} variant="ghost">
+                    {label}
+                  </Btn>
+                </div>
+              </article>
+            );
+          })}
         </div>
       </Section>
 

@@ -25,7 +25,10 @@ tests.
 
 ## Méthode (obligatoire) — review page par page, desktop ET mobile
 
-1. `npm run build && npm run start` (réutilise si déjà lancé sur :3000).
+1. Serveur de prod sur :3000 **lancé par l'utilisateur** (règle CLAUDE.md :
+   ne jamais démarrer/couper le serveur soi-même). `npm run build` si besoin
+   de rebâtir (sans serveur) ; si le serveur n'est pas up, le demander à
+   l'utilisateur.
 2. Pour CHAQUE page (FR au minimum ; vérifier EN si impact layout) :
    accueil, domaine, gîtes (hub + 1 gîte), rayons-de-soleil, événements,
    bien-être, que-visiter (hub + 1 article), deshaies, avis, faq, contact,

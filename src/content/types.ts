@@ -151,7 +151,6 @@ export interface SiteContent {
     intro: string;
     presentationTitle: string;
     presentation: string;
-    pillars: { icon: string; title: string; text: string }[];
     viewTitle: string;
     viewText: string;
     spacesTitle: string;

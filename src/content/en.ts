@@ -164,28 +164,6 @@ export const en: SiteContent = {
     presentationTitle: "An intimate estate in Guadeloupe",
     presentation:
       "Designed like a small Creole village set in the heights, the estate brings together several independent properties harmoniously spread across a vast tropical garden. Wooded spaces, sea-facing viewpoints, an infinity pool and shaded corners extended by private terraces form a setting that is both natural and soothing.",
-    pillars: [
-      {
-        icon: "garden",
-        title: "Lush garden",
-        text: "A landscaped garden with local species and shaded spaces.",
-      },
-      {
-        icon: "pool",
-        title: "3 pools, 2 private",
-        text: "Infinity pool with panoramic view, accessible to all gîtes.",
-      },
-      {
-        icon: "gites",
-        title: "Estate of 5 gîtes",
-        text: "5 independent gîtes, which can be privatised.",
-      },
-      {
-        icon: "seaview",
-        title: "Sea view",
-        text: "Open view of the Caribbean Sea from the heights of Deshaies.",
-      },
-    ],
     viewTitle: "An exceptional view of the Caribbean Sea",
     viewText:
       "From the terraces and shared spaces, the eye plunges into infinite blue. At daybreak the light is soft and golden. In the evening the sun sets the horizon ablaze. The show is daily. And yet it never tires.",

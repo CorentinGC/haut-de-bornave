@@ -164,28 +164,6 @@ export const fr: SiteContent = {
     presentationTitle: "Un domaine intimiste en Guadeloupe",
     presentation:
       "Pensé comme un petit village créole niché dans les hauteurs, le domaine réunit plusieurs hébergements indépendants répartis harmonieusement au cœur d'un vaste jardin tropical. Espaces arborés, points de vue ouverts sur la mer, piscine à débordement et coins ombragés prolongés par des terrasses privatives composent un cadre à la fois naturel et apaisant.",
-    pillars: [
-      {
-        icon: "garden",
-        title: "Jardin luxuriant",
-        text: "Un jardin paysager aux essences locales et des espaces ombragés.",
-      },
-      {
-        icon: "pool",
-        title: "3 piscines dont 2 privatives",
-        text: "Piscine à débordement avec vue panoramique, accessible à tous les gîtes.",
-      },
-      {
-        icon: "gites",
-        title: "Domaine de 5 gîtes",
-        text: "5 gîtes indépendants, pouvant être privatisés.",
-      },
-      {
-        icon: "seaview",
-        title: "Vue mer",
-        text: "Vue dégagée sur la mer des Caraïbes depuis les hauteurs de Deshaies.",
-      },
-    ],
     viewTitle: "Une vue exceptionnelle sur la mer des Caraïbes",
     viewText:
       "Depuis les terrasses et les espaces communs, le regard plonge vers l'infini bleu. Au lever du jour, la lumière est douce et dorée. Le soir, le soleil embrase l'horizon. Le spectacle est quotidien. Et pourtant, il ne lasse jamais.",
