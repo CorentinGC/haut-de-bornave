@@ -604,7 +604,6 @@
 /* .universe__card : crée un contexte d'empilement pour contenir l'image
    de fond en z-index:-2 (sinon elle passe derrière le fond de page). */
 .universe__card,
-.beach-card,
 .cta-block {
   isolation: isolate;
 }
