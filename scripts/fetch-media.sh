@@ -1,58 +1,56 @@
 #!/usr/bin/env bash
-# Télécharge TOUS les médias d'illustration depuis les sites source
-# (leshautsdebornave.com = CDN photos, leshautsdebornave.fr = logo + galerie)
-# vers /public/media. Idempotent : ne re-télécharge pas un fichier déjà présent.
-# Voir docs/medias.md pour le pipeline complet.
+# Télécharge TOUS les médias d'illustration vers /public/media à partir du
+# manifeste unique scripts/media.json (photos .com, galerie/marque .fr, et
+# images libres de droits créditées : Wikimedia Commons / Unsplash).
+# Idempotent : ne re-télécharge pas un fichier déjà présent.
+# Voir docs/medias.md pour le pipeline complet (sourcing, licences, crédits).
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 MEDIA="$ROOT/public/media"
-COM="https://leshautsdebornave.com/wp-content/uploads/2026/02"
-COM3="https://leshautsdebornave.com/wp-content/uploads/2026/03"
-FR="https://leshautsdebornave.fr/assets"
+MANIFEST="$ROOT/scripts/media.json"
 UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
 
 mkdir -p "$MEDIA"/{gites,domaine,lieux,galerie,brand,partenaires}
+TMP="$(mktemp -d)"
+trap 'rm -rf "$TMP"' EXIT
 
-# get <url> <dest-relative-path>
+# get <url> <dest-relative-path> <optimize:0|1>
+# optimize=1 : source lourde (Wikimedia…) → WebP web-optimisé via sharp.
 get() {
-  local url="$1" dest="$MEDIA/$2"
-  if [[ -s "$dest" ]]; then echo "skip  $2"; return 0; fi
-  if curl -fsSL -A "$UA" --retry 3 --retry-delay 1 -o "$dest" "$url"; then
-    echo "ok    $2"
+  local url="$1" rel="$2" opt="$3" dest="$MEDIA/$2"
+  if [[ -s "$dest" ]]; then echo "skip  $rel"; return 0; fi
+  if [[ "$opt" == "1" ]]; then
+    local raw="$TMP/$(basename "$url")"
+    if curl -fsSL -A "$UA" --retry 3 --retry-delay 2 -o "$raw" "$url"; then
+      node "$ROOT/scripts/optimize-image.cjs" "$raw" "$dest" \
+        && rm -f "$raw" \
+        || echo "FAIL  optimize $rel" >&2
+    else
+      echo "FAIL  $url" >&2
+    fi
   else
-    echo "FAIL  $url" >&2
+    if curl -fsSL -A "$UA" --retry 3 --retry-delay 1 -o "$dest" "$url"; then
+      echo "ok    $rel"
+    else
+      echo "FAIL  $url" >&2
+    fi
   fi
 }
 
-echo "==> Photos .com (depuis scripts/media-com-urls.txt)"
-while IFS= read -r url; do
-  [[ -z "$url" ]] && continue
-  fname="$(basename "$url")"
-  low="$(echo "$fname" | tr '[:upper:]' '[:lower:]')"
-  case "$low" in
-    gran-kaz-*|kaz-an-nou-*|ti-kaz-la-*|le-rayon-*) sub="gites" ;;
-    le-domaine-*|les-hauts-de-bornave-*|les-hauts-de-bornave-deshaies-*) sub="domaine" ;;
-    plage-*|le-port-*|coucher-de-soleil-*) sub="lieux" ;;
-    *) sub="domaine" ;;
-  esac
-  get "$url" "$sub/$low"
-done < "$ROOT/scripts/media-com-urls.txt"
-
-echo "==> Galerie .fr (01..36.jpg)"
-for i in $(seq -w 1 36); do
-  get "$FR/images/galerie/${i}.jpg" "galerie/galerie-${i}.jpg"
+echo "==> Médias depuis scripts/media.json"
+# Émet "url<TAB>dir/file<TAB>optimize(0|1)" par entrée (URL en premier).
+node -e '
+const m = require(process.argv[1]);
+for (const e of m) {
+  if (!e.url || !e.dir || !e.file) continue;
+  process.stdout.write(e.url + "\t" + e.dir + "/" + e.file + "\t" + (e.optimize ? "1" : "0") + "\n");
+}' "$MANIFEST" | while IFS=$'\t' read -r url dest opt; do
+  [[ -z "$url" || -z "$dest" ]] && continue
+  get "$url" "$dest" "$opt"
 done
 
-echo "==> Marque & divers .fr"
-get "$FR/logo.svg"                              "brand/logo-les-hauts-de-bornave.svg"
-get "$FR/images/vue-aerienne-deshaies.png"      "domaine/vue-aerienne-deshaies.png"
-get "$FR/partenaires/ecoute-toi-logo.png"       "partenaires/ecoute-toi-logo.png"
-
-echo "==> Logo .com (fallback raster)"
-get "$COM/LOGO-Hauts-Bornave.webp"              "brand/logo-hauts-bornave.webp"
-
 echo
-echo "==> Total fichiers téléchargés :"
+echo "==> Total fichiers présents :"
 find "$MEDIA" -type f | wc -l
-echo "Terminé. Médias dans public/media/"
+echo "Terminé. Médias dans public/media/ (manifeste : scripts/media.json)"

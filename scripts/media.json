@@ -1,0 +1,816 @@
+[
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/LOGO-Hauts-Bornave.webp",
+    "dir": "brand",
+    "file": "logo-hauts-bornave.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/logo.svg",
+    "dir": "brand",
+    "file": "logo-les-hauts-de-bornave.svg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Domaine-Les-Hauts-de-Bornave-Deshaies-Guadeloupe-5.webp",
+    "dir": "domaine",
+    "file": "le-domaine-les-hauts-de-bornave-deshaies-guadeloupe-5.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-Hauts-de-Bornave-Deshaies-Guadeloupe-1-3-scaled.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-1-3-scaled.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-12.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-12.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-13.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-13.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-16.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-16.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-17.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-17.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-2-1.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-2-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-20.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-20.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-24.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-24.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-26-1.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-26-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-28.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-28.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-29.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-29.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Les-hauts-de-Bornave-Deshaies-Guadeloupe-30.webp",
+    "dir": "domaine",
+    "file": "les-hauts-de-bornave-deshaies-guadeloupe-30.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/vue-aerienne-deshaies.png",
+    "dir": "domaine",
+    "file": "vue-aerienne-deshaies.png",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/01.jpg",
+    "dir": "galerie",
+    "file": "galerie-01.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/02.jpg",
+    "dir": "galerie",
+    "file": "galerie-02.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/03.jpg",
+    "dir": "galerie",
+    "file": "galerie-03.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/04.jpg",
+    "dir": "galerie",
+    "file": "galerie-04.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/05.jpg",
+    "dir": "galerie",
+    "file": "galerie-05.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/06.jpg",
+    "dir": "galerie",
+    "file": "galerie-06.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/07.jpg",
+    "dir": "galerie",
+    "file": "galerie-07.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/08.jpg",
+    "dir": "galerie",
+    "file": "galerie-08.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/09.jpg",
+    "dir": "galerie",
+    "file": "galerie-09.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/10.jpg",
+    "dir": "galerie",
+    "file": "galerie-10.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/11.jpg",
+    "dir": "galerie",
+    "file": "galerie-11.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/12.jpg",
+    "dir": "galerie",
+    "file": "galerie-12.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/13.jpg",
+    "dir": "galerie",
+    "file": "galerie-13.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/14.jpg",
+    "dir": "galerie",
+    "file": "galerie-14.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/15.jpg",
+    "dir": "galerie",
+    "file": "galerie-15.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/16.jpg",
+    "dir": "galerie",
+    "file": "galerie-16.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/17.jpg",
+    "dir": "galerie",
+    "file": "galerie-17.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/18.jpg",
+    "dir": "galerie",
+    "file": "galerie-18.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/19.jpg",
+    "dir": "galerie",
+    "file": "galerie-19.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/20.jpg",
+    "dir": "galerie",
+    "file": "galerie-20.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/21.jpg",
+    "dir": "galerie",
+    "file": "galerie-21.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/22.jpg",
+    "dir": "galerie",
+    "file": "galerie-22.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/23.jpg",
+    "dir": "galerie",
+    "file": "galerie-23.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/24.jpg",
+    "dir": "galerie",
+    "file": "galerie-24.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/25.jpg",
+    "dir": "galerie",
+    "file": "galerie-25.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/26.jpg",
+    "dir": "galerie",
+    "file": "galerie-26.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/27.jpg",
+    "dir": "galerie",
+    "file": "galerie-27.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/28.jpg",
+    "dir": "galerie",
+    "file": "galerie-28.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/29.jpg",
+    "dir": "galerie",
+    "file": "galerie-29.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/30.jpg",
+    "dir": "galerie",
+    "file": "galerie-30.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/31.jpg",
+    "dir": "galerie",
+    "file": "galerie-31.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/32.jpg",
+    "dir": "galerie",
+    "file": "galerie-32.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/33.jpg",
+    "dir": "galerie",
+    "file": "galerie-33.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/34.jpg",
+    "dir": "galerie",
+    "file": "galerie-34.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/35.jpg",
+    "dir": "galerie",
+    "file": "galerie-35.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/images/galerie/36.jpg",
+    "dir": "galerie",
+    "file": "galerie-36.jpg",
+    "source": "fr"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-1.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-11.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-11.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-13.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-13.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-14.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-14.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-15.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-15.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-2.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-3.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-3.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-4-1.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-4-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-5-1.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-5-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-6.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-6.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-7.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-7.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/GRAN-KAZ-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-9.webp",
+    "dir": "gites",
+    "file": "gran-kaz-les-hauts-de-bornave-gites-deshaies-guadeloupe-9.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-1-1.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-1-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-10.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-10.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-11-1.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-11-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-2.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-4.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-4.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-5.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-5.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-6.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-6.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-9-1.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-9-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/03/KAZ-AN-NOU-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-9.webp",
+    "dir": "gites",
+    "file": "kaz-an-nou-les-hauts-de-bornave-gites-deshaies-guadeloupe-9.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Bleu-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-1-1.webp",
+    "dir": "gites",
+    "file": "le-rayon-bleu-les-hauts-de-bornave-gites-deshaies-guadeloupe-1-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Bleu-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-1-2.webp",
+    "dir": "gites",
+    "file": "le-rayon-bleu-les-hauts-de-bornave-gites-deshaies-guadeloupe-1-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Bleu-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-2.webp",
+    "dir": "gites",
+    "file": "le-rayon-bleu-les-hauts-de-bornave-gites-deshaies-guadeloupe-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Bleu-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-5.webp",
+    "dir": "gites",
+    "file": "le-rayon-bleu-les-hauts-de-bornave-gites-deshaies-guadeloupe-5.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Bleu-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-6.webp",
+    "dir": "gites",
+    "file": "le-rayon-bleu-les-hauts-de-bornave-gites-deshaies-guadeloupe-6.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Bleu-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-7.webp",
+    "dir": "gites",
+    "file": "le-rayon-bleu-les-hauts-de-bornave-gites-deshaies-guadeloupe-7.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Jaune-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-2.webp",
+    "dir": "gites",
+    "file": "le-rayon-jaune-les-hauts-de-bornave-gites-deshaies-guadeloupe-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Jaune-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-3-1.webp",
+    "dir": "gites",
+    "file": "le-rayon-jaune-les-hauts-de-bornave-gites-deshaies-guadeloupe-3-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Jaune-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-3-2.webp",
+    "dir": "gites",
+    "file": "le-rayon-jaune-les-hauts-de-bornave-gites-deshaies-guadeloupe-3-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Jaune-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-4.webp",
+    "dir": "gites",
+    "file": "le-rayon-jaune-les-hauts-de-bornave-gites-deshaies-guadeloupe-4.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Jaune-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-6.webp",
+    "dir": "gites",
+    "file": "le-rayon-jaune-les-hauts-de-bornave-gites-deshaies-guadeloupe-6.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Rayon-Jaune-Les-Hauts-de-Bornave-Gites-Deshaies-Guadeloupe-7.webp",
+    "dir": "gites",
+    "file": "le-rayon-jaune-les-hauts-de-bornave-gites-deshaies-guadeloupe-7.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-1-2.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-1-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-1.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-11-1.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-11-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-3.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-3.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-4.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-4.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-6.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-6.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-7.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-7.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/TI-KAZ-LA-Les-Hauts-de-Bornave-Gites-Deshaie-Guadeloupe-9.webp",
+    "dir": "gites",
+    "file": "ti-kaz-la-les-hauts-de-bornave-gites-deshaie-guadeloupe-9.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Chutes_du_Carbet.jpg",
+    "dir": "lieux",
+    "file": "chutes-du-carbet-basse-terre-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "Kevin Charpentier / Wikimedia Commons — CC BY-SA 4.0",
+    "optimize": true
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Coucher-de-soleil-depuis-Tainos-Cottage-a-Deshaies-en-Guadeloupe-9-scaled.webp",
+    "dir": "lieux",
+    "file": "coucher-de-soleil-depuis-tainos-cottage-a-deshaies-en-guadeloupe-9-scaled.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/coucher-soleil-depuis-tainos-11-scaled.webp",
+    "dir": "lieux",
+    "file": "coucher-de-soleil-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-la-Perle-a-Deshaies-en-Guadeloupe-8.webp",
+    "dir": "lieux",
+    "file": "coucher-de-soleil-plage-de-la-perle-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Coucher-de-soleil-sur-Deshaies.webp",
+    "dir": "lieux",
+    "file": "coucher-de-soleil-sur-deshaies.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Coucher-de-soleil-sur-Grande-Anse-Deshaies-en-Guadeloupe-4-2.webp",
+    "dir": "lieux",
+    "file": "coucher-de-soleil-sur-grande-anse-deshaies-en-guadeloupe-4-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Rivi%C3%A8re_du_Parc_national_Guadeloupe.jpg",
+    "dir": "lieux",
+    "file": "foret-tropicale-parc-national-basse-terre-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "Filo gèn' / Wikimedia Commons — CC BY-SA 4.0",
+    "optimize": true
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Iguane-vert-au-Parc-des-Mamelles-Guadeloupe-3.webp",
+    "dir": "lieux",
+    "file": "iguane-vert-parc-des-mamelles-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Jardin-Botanique-de-Deshaies-en-Guadeloupe-8.webp",
+    "dir": "lieux",
+    "file": "jardin-botanique-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Jardin-Botanique-de-Deshaies-en-Guadeloupe-12.webp",
+    "dir": "lieux",
+    "file": "jardin-botanique-deshaies-guadeloupe-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-Jardin-Botanique-de-Deshaies-en-Guadeloupe-6.webp",
+    "dir": "lieux",
+    "file": "jardin-botanique-deshaies-guadeloupe-3.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Le-port-Deshaies-en-Guadeloupe-3.webp",
+    "dir": "lieux",
+    "file": "le-port-deshaies-en-guadeloupe-3.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Anciennement-Maison-de-Coluche-Deshaies-en-Guadeloupe-1.webp",
+    "dir": "lieux",
+    "file": "maison-coluche-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Maison-du-cacao.avif",
+    "dir": "lieux",
+    "file": "maison-du-cacao-pointe-noire-guadeloupe-1.avif",
+    "source": "com"
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b5/Epice_marche_Pointe_a_Pitre.JPG",
+    "dir": "lieux",
+    "file": "marche-creole-epices-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "KoS / Wikimedia Commons — CC BY-SA 3.0",
+    "optimize": true
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e3/Fish_seller_Saint-Anne_Guadeloupe_2010-03-27.jpg",
+    "dir": "lieux",
+    "file": "marche-poisson-creole-sainte-anne-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "Kim Hansen / Wikimedia Commons — CC BY-SA 3.0",
+    "optimize": true
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Parc-des-Mamelles-Guadeloupe-1-scaled.webp",
+    "dir": "lieux",
+    "file": "parc-des-mamelles-zoo-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-lAnse-Tillet-Deshaies-Guadeloupe-8.webp",
+    "dir": "lieux",
+    "file": "plage-anse-tillet-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-Paul-Thomas-dite-Bosco-Deshaies-Guadeloupe-19.webp",
+    "dir": "lieux",
+    "file": "plage-bosco-paul-thomas-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Ferry-Leroux-12.webp",
+    "dir": "lieux",
+    "file": "plage-de-ferry-leroux-12.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Ferry-Leroux-2.webp",
+    "dir": "lieux",
+    "file": "plage-de-ferry-leroux-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Ferry-Leroux-4.webp",
+    "dir": "lieux",
+    "file": "plage-de-ferry-leroux-4.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Ferry-Leroux-8.webp",
+    "dir": "lieux",
+    "file": "plage-de-ferry-leroux-8.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Grande-Anse-a-Deshaies-Guadeloupe-11.webp",
+    "dir": "lieux",
+    "file": "plage-de-grande-anse-a-deshaies-guadeloupe-11.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Grande-Anse-a-Deshaies-Guadeloupe-12.webp",
+    "dir": "lieux",
+    "file": "plage-de-grande-anse-a-deshaies-guadeloupe-12.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Grande-Anse-a-Deshaies-Guadeloupe-13.webp",
+    "dir": "lieux",
+    "file": "plage-de-grande-anse-a-deshaies-guadeloupe-13.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Grande-Anse-a-Deshaies-Guadeloupe-14.webp",
+    "dir": "lieux",
+    "file": "plage-de-grande-anse-a-deshaies-guadeloupe-14.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Grande-Anse-a-Deshaies-Guadeloupe-2.webp",
+    "dir": "lieux",
+    "file": "plage-de-grande-anse-a-deshaies-guadeloupe-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-Grande-Anse-a-Deshaies-Guadeloupe-6.webp",
+    "dir": "lieux",
+    "file": "plage-de-grande-anse-a-deshaies-guadeloupe-6.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-la-Perle-a-Deshaies-en-Guadeloupe-6-1.webp",
+    "dir": "lieux",
+    "file": "plage-de-la-perle-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-la-Perle-a-Deshaies-en-Guadeloupe-7.webp",
+    "dir": "lieux",
+    "file": "plage-de-la-perle-deshaies-guadeloupe-2.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Plage-de-la-Perle-a-Deshaies-en-Guadeloupe-4.webp",
+    "dir": "lieux",
+    "file": "plage-de-la-perle-deshaies-guadeloupe-3.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/titanse-9.webp",
+    "dir": "lieux",
+    "file": "plage-tit-anse-pointe-noire-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Pointe_de_Malendure%2C_face_aux_%C3%AElets_Pigeon.jpg",
+    "dir": "lieux",
+    "file": "pointe-malendure-ilets-pigeon-cousteau-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "Enrevseluj / Wikimedia Commons — CC BY-SA 4.0",
+    "optimize": true
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Guadeloupe_R%C3%A9serve_Cousteau_Malendure_Poisson_Ange.jpg",
+    "dir": "lieux",
+    "file": "poisson-ange-reserve-cousteau-malendure-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "Alain NEGRONI / Wikimedia Commons — CC BY-SA 4.0",
+    "optimize": true
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Deshaies-en-Guadeloupe-13.webp",
+    "dir": "lieux",
+    "file": "port-bourg-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/Guadeloupe_%284%29.JPG",
+    "dir": "lieux",
+    "file": "saut-de-l-acomat-pointe-noire-basse-terre-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "Zivax / Wikimedia Commons — CC BY-SA 3.0",
+    "optimize": true
+  },
+  {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Guadeloupe_Tortue_et_monnaie_%C3%A0_Malendure.jpg",
+    "dir": "lieux",
+    "file": "tortue-marine-reserve-cousteau-malendure-guadeloupe-1.webp",
+    "source": "wikimedia",
+    "credit": "Alain NEGRONI / Wikimedia Commons — CC BY-SA 4.0",
+    "optimize": true
+  },
+  {
+    "url": "https://leshautsdebornave.com/wp-content/uploads/2026/02/Deshaies-en-Guadeloupe-depuis-batterie-8-1.webp",
+    "dir": "lieux",
+    "file": "vue-panoramique-deshaies-guadeloupe-1.webp",
+    "source": "com"
+  },
+  {
+    "url": "https://leshautsdebornave.fr/assets/partenaires/ecoute-toi-logo.png",
+    "dir": "partenaires",
+    "file": "ecoute-toi-logo.png",
+    "source": "fr"
+  }
+]
