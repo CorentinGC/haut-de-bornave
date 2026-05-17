@@ -4,6 +4,7 @@
  */
 
 import { test, expect, type Page } from "@playwright/test";
+import { articleRoutes } from "../helpers/articles";
 
 /** Routes communes aux deux locales (slugs identiques). */
 const COMMON = [
@@ -26,13 +27,15 @@ const COMMON = [
   "mentions-legales",
 ];
 
-/** Le slug d'article diffère par locale (SEO local). */
-const ARTICLE = {
-  fr: "que-visiter/plus-belles-plages-deshaies",
-  en: "que-visiter/best-beaches-deshaies",
-} as const;
+/** Tous les articles « Que visiter » (slugs localisés, dérivés des JSON). */
+const routesFor = (locale: "fr" | "en") => [
+  ...COMMON,
+  ...articleRoutes(locale),
+];
 
-const routesFor = (locale: "fr" | "en") => [...COMMON, ARTICLE[locale]];
+/** Vrai pour une page article (que-visiter/<slug>), pas la liste. */
+const isArticle = (route: string) =>
+  route.startsWith("que-visiter/") && route !== "que-visiter";
 
 /** Collecte erreurs console + médias/images en échec pendant la navigation. */
 function watch(page: Page) {
@@ -98,6 +101,18 @@ for (const locale of ["fr", "en"] as const) {
         .first()
         .textContent();
       expect(() => JSON.parse(ld!)).not.toThrow();
+
+      // Page article : ≥ 1 image dans le corps + bloc FAQ rendu
+      if (isArticle(route)) {
+        expect(
+          await page.locator(".article-figure img").count(),
+          "image de corps d'article",
+        ).toBeGreaterThan(0);
+        expect(
+          await page.locator(".faq-item").count(),
+          "bloc FAQ article",
+        ).toBeGreaterThanOrEqual(3);
+      }
 
       // Aucune image cassée, aucune erreur console
       expect(brokenMedia, "médias manquants").toEqual([]);
