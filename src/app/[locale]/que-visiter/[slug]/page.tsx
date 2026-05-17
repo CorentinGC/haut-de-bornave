@@ -91,7 +91,7 @@ export default async function ArticlePage({
       />
 
       <Section>
-        <article className="prose reveal" style={{ maxWidth: "72ch" }}>
+        <article className="prose reveal" style={{ maxWidth: "72ch", marginInline: "auto" }}>
           {a.sections.map((s, i) => (
             <div key={i} style={{ marginBottom: "2rem" }}>
               {s.heading && <h2 className="h-md">{s.heading}</h2>}
