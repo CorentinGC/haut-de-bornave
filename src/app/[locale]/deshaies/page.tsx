@@ -40,7 +40,7 @@ export default async function DeshaiesPage({
     <>
       <JsonLd
         data={breadcrumbLd(lc, [
-          { name: c.nav.domaine, path: "" },
+          { name: c.nav.home, path: "" },
           { name: c.nav.deshaies, path: "deshaies" },
         ])}
       />
@@ -51,7 +51,7 @@ export default async function DeshaiesPage({
         lead={d.intro}
         media={media(KEY_MEDIA.grandeAnse, d.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.deshaies },
         ]}
       />

@@ -59,7 +59,7 @@ export default async function ArticlePage({
         data={[
           articleLd(lc, a),
           breadcrumbLd(lc, [
-            { name: c.nav.domaine, path: "" },
+            { name: c.nav.home, path: "" },
             { name: c.nav.queVisiter, path: "que-visiter" },
             { name: a.title, path: `que-visiter/${a.slug}` },
           ]),
@@ -72,7 +72,7 @@ export default async function ArticlePage({
         lead={a.excerpt}
         media={media(a.cover, a.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.queVisiter, href: href(lc, "que-visiter") },
           { name: a.title },
         ]}

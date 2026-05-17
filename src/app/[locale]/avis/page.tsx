@@ -64,7 +64,7 @@ export default async function AvisPage({
         data={[
           reviewLd,
           breadcrumbLd(lc, [
-            { name: c.nav.domaine, path: "" },
+            { name: c.nav.home, path: "" },
             { name: c.nav.avis, path: "avis" },
           ]),
         ]}
@@ -76,7 +76,7 @@ export default async function AvisPage({
         lead={c.avis.intro}
         media={media(KEY_MEDIA.coucherGrandeAnse, c.avis.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.avis },
         ]}
       />

@@ -53,6 +53,13 @@ export default async function LocaleLayout({
       className={`${fraunces.variable} ${inter.variable} h-full`}
     >
       <body className="min-h-full flex flex-col">
+        {/* Active les animations reveal AVANT le 1er paint (comme le site .fr) :
+            sans JS, .reveal reste visible (résilient / SEO). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
         <JsonLd data={organizationLd()} />
         <a href="#main" className="skip-link">
           {content.common.skipToContent}

@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbLd } from "@/lib/jsonld";
 import { PageHero, Section } from "@/components/ui";
 import { ContactForm } from "@/components/ContactForm";
+import { WhatsappBanner } from "@/components/WhatsappBanner";
 
 export const dynamic = "force-static";
 
@@ -41,7 +42,7 @@ export default async function ContactPage({
     <>
       <JsonLd
         data={breadcrumbLd(lc, [
-          { name: c.nav.domaine, path: "" },
+          { name: c.nav.home, path: "" },
           { name: c.nav.contact, path: "contact" },
         ])}
       />
@@ -52,23 +53,13 @@ export default async function ContactPage({
         lead={ct.intro}
         media={media(KEY_MEDIA.coucherDeshaies, ct.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.contact },
         ]}
       />
 
       <Section>
-        <a
-          href={SITE.whatsapp}
-          target="_blank"
-          rel="noopener"
-          className="contact-wa-banner"
-        >
-          <span className="contact-wa-banner__inner">
-            <strong>{ct.waBanner}</strong>
-            <span>{SITE.phone.display}</span>
-          </span>
-        </a>
+        <WhatsappBanner wa={ct.wa} />
 
         <div className="contact-wrap">
           <div className="contact-intro">

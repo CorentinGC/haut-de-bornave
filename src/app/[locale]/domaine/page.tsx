@@ -49,7 +49,7 @@ export default async function DomainePage({
     <>
       <JsonLd
         data={breadcrumbLd(lc, [
-          { name: c.nav.domaine, path: "" },
+          { name: c.nav.home, path: "" },
           { name: d.eyebrow, path: "domaine" },
         ])}
       />
@@ -60,7 +60,7 @@ export default async function DomainePage({
         lead={d.intro}
         media={media(KEY_MEDIA.domaineWide, d.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: d.eyebrow },
         ]}
       />

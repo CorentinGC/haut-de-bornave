@@ -1,0 +1,33 @@
+{
+  "_comment": "Informations vendeur / domaine — SOURCE UNIQUE éditable par l'exploitant. Modifiez ici (téléphone, email, adresse, GPS, réseaux, paiements, note). Consommé par src/lib/site.ts. Voir docs/contenu-decisions.md pour les données à confirmer.",
+  "name": "Les Hauts de Bornave",
+  "legalName": "Les Hauts de Bornave",
+  "shortName": "Bornave",
+  "url": "https://leshautsdebornave.fr",
+  "host": { "name": "Serge", "alias": "Sergio" },
+  "phone": { "display": "+590 690 00 37 30", "e164": "+590690003730" },
+  "whatsapp": "https://wa.me/590690003730",
+  "email": "contact@leshautsdebornave.fr",
+  "address": {
+    "street": "Chemin Bornave, Quartier Ferry",
+    "postalCode": "97126",
+    "locality": "Deshaies",
+    "region": "Guadeloupe",
+    "country": "GP"
+  },
+  "geo": { "lat": 16.298, "lng": -61.787, "_todo": "Remplacer par la position GPS exacte du domaine" },
+  "social": {
+    "facebook": "https://www.facebook.com/bornave971/",
+    "instagram": "https://www.instagram.com/les_hauts_de_bornave"
+  },
+  "partner": { "name": "ECOUTE TOI", "url": "https://www.ecoute-toi.fr/" },
+  "payments": [
+    "Revolut Business",
+    "PayPal Business",
+    "Cryptomonnaies · RedotPay",
+    "Carte bancaire",
+    "Virement bancaire"
+  ],
+  "priceRange": "€€",
+  "rating": { "value": 9.6, "count": 5, "best": 10, "_todo": "Aligner sur les vraies données Booking/Google" }
+}

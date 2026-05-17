@@ -35,11 +35,13 @@ export function Btn({
   arrow?: boolean;
 }) {
   const cls = `btn btn--${variant}`;
+  // Contenu enveloppé dans un <span> : `.btn--primary > *` le remonte
+  // au-dessus du calque ::before (sinon texte masqué au survol).
   const inner = (
-    <>
+    <span className="btn__inner">
       {children}
       {arrow && <ArrowSvg />}
-    </>
+    </span>
   );
   if (external) {
     return (
@@ -322,7 +324,7 @@ export function Breadcrumbs({
     <nav className="breadcrumbs" aria-label="Fil d'Ariane">
       <ol>
         {trail.map((t, i) => (
-          <li key={t.name}>
+          <li key={`${i}-${t.name}`}>
             {t.href && i < trail.length - 1 ? (
               <Link href={t.href}>{t.name}</Link>
             ) : (
@@ -443,7 +445,7 @@ export function PageHero({
       <div className="container">
         <nav className="breadcrumb" aria-label="Fil d'Ariane">
           {breadcrumb.map((t, i) => (
-            <span key={t.name}>
+            <span key={`${i}-${t.name}`}>
               {t.href && i < breadcrumb.length - 1 ? (
                 <Link href={t.href}>{t.name}</Link>
               ) : (

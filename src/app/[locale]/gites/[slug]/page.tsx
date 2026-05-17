@@ -72,7 +72,7 @@ export default async function GitePage({
           ),
           faqPageLd(g.faq),
           breadcrumbLd(lc, [
-            { name: c.nav.domaine, path: "" },
+            { name: c.nav.home, path: "" },
             { name: c.nav.gites, path: "gites" },
             { name: g.name, path: `gites/${g.slug}` },
           ]),
@@ -85,7 +85,7 @@ export default async function GitePage({
         lead={g.tagline}
         media={photos[0] ?? media(KEY_MEDIA.domaineHero, g.name)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.gites, href: href(lc, "gites") },
           { name: g.name },
         ]}

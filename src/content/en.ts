@@ -7,6 +7,7 @@ import type { SiteContent } from "./types";
  */
 export const en: SiteContent = {
   nav: {
+    home: "Home",
     domaine: "The Estate",
     gites: "The Gîtes",
     rayons: "Rayons de Soleil",
@@ -384,7 +385,12 @@ export const en: SiteContent = {
     title: "Let's talk about your stay",
     intro:
       "Direct booking, no middleman. Serge personally guides you through organising your stay or event at Les Hauts de Bornave.",
-    waBanner: "Chat with Serge on WhatsApp",
+    wa: {
+      eyebrow: "Fastest reply",
+      leadPre: "For a quick reply, prefer",
+      hint: "Tap to open WhatsApp",
+      telAlt: "Or by phone:",
+    },
     form: {
       name: "Name",
       email: "Email",

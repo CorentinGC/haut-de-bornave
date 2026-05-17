@@ -9,6 +9,28 @@ de `leshautsdebornave.com`.
 
 > Opérationnel (commandes, env, CI) : voir **AGENTS.md** (importé ci-dessus).
 > Cas d'usage détaillés : voir **/docs**. Stratégie de référencement : **/seo**.
+> État & demandes permanentes du client : voir **MEMORY.md**.
+
+## 0. Workflow OBLIGATOIRE — tester ET reviewer à chaque modification
+
+Toute modification (code, contenu, style) DOIT être suivie de :
+
+1. **Tests logiques** : `npm run test` (Vitest unitaires) **et**
+   `npm run test:e2e` (Playwright e2e desktop + mobile). 0 échec.
+   Un test qui échoue révèle un bug → corriger le **code**, pas le test
+   (sauf si le test est faux). Toute nouvelle fonctionnalité = nouveaux tests
+   dans **`/tests`** (`tests/unit/**` ou `tests/e2e/**`).
+2. **Review visuelle** via le **MCP chrome-devtools** (`.mcp.json`) :
+   `npm run build && npm run start`, puis pour CHAQUE page modifiée,
+   screenshots **plein écran en desktop ET mobile**, vérifier : aucun bug
+   visuel, aucun média manquant (console + réseau), **tous les états hover**,
+   contrastes, parité vs `leshautsdebornave.fr`. Corriger puis re-screenshoter.
+3. Raccourci : `npm run verify` (lint + unit + build). e2e + review visuelle
+   restent à lancer explicitement.
+
+> Ne jamais considérer une tâche « terminée » sans tests verts **et** review
+> visuelle desktop+mobile. La review design fine est déléguée à l'agent
+> **`.claude/agents/ui-ux-reviewer`** (finition ultra-pro, perf/images).
 
 ## 1. Priorités produit (dans l'ordre)
 
@@ -41,6 +63,11 @@ de `leshautsdebornave.com`.
   serveur : `src/app/api/contact/route.ts`.
 - **i18n** : tout texte vient de `src/content/{fr,en}.ts` via `getContent(locale)`
   (jamais de chaîne en dur dans une page). Liens internes via `href(locale, …)`.
+- **Infos vendeur** : exclusivement dans **`/config.json`** (racine, éditable
+  par l'exploitant) → lu par `src/lib/site.ts`. Jamais de tel/email/adresse en
+  dur ailleurs.
+- **Tests** : tout sous **`/tests`** (`tests/unit/{lib,content,components}`,
+  `tests/e2e`, `tests/setup.ts`, `tests/helpers`). Pas de test colocalisé.
 - **Médias** : toujours `next/image` + helper `src/lib/media.ts` (dimensions
   réelles fournies, anti-CLS). Aucun hotlink vers `.com`/`.fr`.
 - **Clean code** : SRP, fonctions courtes, noms explicites, early returns, DRY,
@@ -67,6 +94,16 @@ de `leshautsdebornave.com`.
 haut-de-bornave/
 ├ CLAUDE.md ............ ce fichier (règles + sitemap, importe AGENTS.md)
 ├ AGENTS.md ............ commandes, env, CI, règles agent (Next.js 16)
+├ MEMORY.md ............ état projet + demandes permanentes du client
+├ config.json ......... infos vendeur (NAP, tel, email, geo, réseaux…) — éditable
+├ .mcp.json ........... MCP projet : chrome-devtools (review) + context7
+├ .claude/agents/ ..... ui-ux-reviewer.md (agent finition design/perf)
+├ tests/ ............... TOUS les tests
+│  ├ unit/{lib,content,components}/  Vitest (libs, contenu, composants client)
+│  ├ e2e/ ............. Playwright (site.spec, screenshots.spec) desktop+mobile
+│  ├ setup.ts ......... setup Vitest (jest-dom, mock next/font)
+│  └ helpers/empty.ts . stub server-only
+├ vitest.config.mts | playwright.config.ts
 ├ docs/ ................ cas d'usage spécifiques
 │  ├ architecture.md ... structure repo, conventions, flux de rendu
 │  ├ i18n.md ........... routing fr/en, ajouter/traduire une page
@@ -102,7 +139,7 @@ haut-de-bornave/
    │                      ui.tsx (primitives : Btn, Section, Hero, Cover…)
    ├ content/ ........... types.ts, fr.ts, en.ts, articles.{fr,en}.ts,
    │                      index.ts (getContent/getGite/getArticle, server-only)
-   ├ lib/ ............... site.ts (NAP/geo), nav.ts, seo.ts, jsonld.ts,
+   ├ lib/ ............... site.ts (lit /config.json), nav.ts, seo.ts, jsonld.ts,
    │                      media.ts (+ media-dimensions.json), fonts.ts
    └ styles/lhdb.css .... CHARTE .fr portée — source de vérité visuelle
 ```
@@ -116,7 +153,7 @@ haut-de-bornave/
   Rich Results Test après toute modif de données structurées.
 - **Maillage interne** : guide local → gîtes pertinents (`relatedGites`),
   ancres riches en mots-clés (pas « cliquez ici »).
-- **NAP unique** : `src/lib/site.ts` (cohérence site / GBP / annuaires).
+- **NAP unique** : `/config.json` → `src/lib/site.ts` (cohérence site / GBP / annuaires).
   Coordonnées GPS du domaine à affiner (cf. `docs/contenu-decisions.md`).
 - **Hors-code** : Google Business Profile, Search Console + sitemap, avis
   post-séjour, annuaires (Gîtes de France, Atout France) — voir `seo/checklist.md`.

@@ -40,7 +40,7 @@ export default async function MentionsPage({
     <Section>
       <Breadcrumbs
         trail={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: m.title },
         ]}
       />
