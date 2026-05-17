@@ -632,6 +632,7 @@
   color: rgba(255, 255, 255, 0.95) !important;
   text-shadow: 0 1px 12px rgba(12, 35, 28, 0.6) !important;
   max-width: 62ch;
+  margin-top: 0;
 }
 .page-hero::before {
   background: linear-gradient(
@@ -652,13 +653,6 @@
   text-wrap: balance;
   margin-bottom: 1.5rem !important;
 }
-.page-hero .eyebrow {
-  margin-bottom: 0.7rem;
-}
-.page-hero .lead {
-  margin-top: 0;
-}
-
 /* Fil d'Ariane du héros : la règle .fr `.page-hero .breadcrumb span
    { opacity:.5 }` s'appliquait à NOS spans wrappers → tout le fil
    illisible (~37 % sur photo). On rétablit un contraste AA. */
@@ -990,6 +984,7 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
    cohérence avec le reste du héros, lisibilité AA, esprit .fr conservé.
    --------------------------------------------------------------------------- */
 .page-hero .eyebrow {
+  margin-bottom: 0.7rem;
   text-shadow: 0 1px 10px rgba(12, 35, 28, 0.65);
 }
 .page-hero .eyebrow::before {
