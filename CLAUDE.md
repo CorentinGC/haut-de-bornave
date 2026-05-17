@@ -30,7 +30,8 @@ Toute modification (code, contenu, style) DOIT être suivie de :
 
 > Ne jamais considérer une tâche « terminée » sans tests verts **et** review
 > visuelle desktop+mobile. La review design fine est déléguée à l'agent
-> **`.claude/agents/ui-ux-reviewer`** (finition ultra-pro, perf/images).
+> **`.claude/agents/ui-ux-reviewer`** (finition ultra-pro, perf/images) —
+> raccourci : skill **`/ui-review`** (lance l'agent, périmètre optionnel).
 
 ## 1. Priorités produit (dans l'ordre)
 
