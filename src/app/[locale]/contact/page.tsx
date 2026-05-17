@@ -63,7 +63,7 @@ export default async function ContactPage({
         ]}
       />
 
-      <Section>
+      <Section id="reserver">
         <WhatsappBanner wa={ct.wa} />
 
         <div className="contact-wrap">

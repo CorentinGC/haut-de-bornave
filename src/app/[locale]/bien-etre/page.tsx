@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, SITE, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent } from "@/content";
 import { pageMetadata } from "@/lib/seo";
 import { media, KEY_MEDIA } from "@/lib/media";
@@ -78,7 +78,7 @@ export default async function BienEtrePage({
         eyebrow={c.contact.eyebrow}
         title={c.cta.genericTitle}
         text={c.contact.intro}
-        cta={{ href: href(lc, "contact"), label: c.common.contactUs }}
+        cta={{ href: bookingHref(lc), label: c.common.contactUs }}
         bg={media(KEY_MEDIA.coucherTainos, b.title)}
       />
     </>

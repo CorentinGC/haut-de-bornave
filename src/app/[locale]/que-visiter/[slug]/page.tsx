@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent, getArticle } from "@/content";
 import { articlesFr } from "@/content/articles.fr";
 import { articlesEn } from "@/content/articles.en";
@@ -132,7 +132,7 @@ export default async function ArticlePage({
         eyebrow={c.contact.eyebrow}
         title={c.cta.homeTitle}
         text={c.cta.homeText}
-        cta={{ href: href(lc, "contact"), label: c.common.bookNow }}
+        cta={{ href: bookingHref(lc), label: c.common.bookNow }}
         bg={media(a.cover, a.title)}
       />
     </>

@@ -812,3 +812,109 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
 .footer__credit strong {
   font-weight: 600;
 }
+
+/* ===========================================================================
+   Corrections review visuelle — itération 2 (finition ultra-pro)
+   Ajustements ciblés (la charte lhdb.css n'est pas modifiée) :
+   - boutons de réservation gîte non tronqués en mobile,
+   - lockup d'en-tête mobile compact (plus de retour à la ligne du nom),
+   - respiration de la 404, détails optiques.
+   =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   P1 — Pages gîte (`/gites/[slug]`) & Rayons de Soleil : la charte met
+   `.gite-card__actions .btn { flex:1 }` en mobile → les deux boutons se
+   partagent la ligne (~50 %). « Réserver — <nom du gîte> » + flèche dépasse
+   alors la largeur et se fait rogner par `.btn--primary { overflow:hidden }`
+   (texte coupé à gauche ET à droite). On empile les actions verticalement
+   en mobile : libellé complet lisible, cible tactile pleine largeur ≥ 48px.
+   --------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .gite-card__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gite-card__actions .btn {
+    flex: none;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   P2 — En-tête mobile : sous ~900px la charte rétrécit la nav, mais le nom
+   « Les Hauts De Bornave » se retrouvait sur 3 lignes et « DESHAIES ·
+   GUADELOUPE » sur 2 (en-tête ~270px, lourd et peu pro). On compacte le
+   lockup : nom sur 2 lignes maîtrisées, baseline soignée, logo légèrement
+   réduit, gap resserré — sans toucher la charte desktop.
+   --------------------------------------------------------------------------- */
+@media (max-width: 899px) {
+  .nav__inner {
+    gap: 0.85rem;
+  }
+  .nav__brand {
+    font-size: 1.05rem;
+    gap: 0.55rem;
+    line-height: 1.12;
+  }
+  .nav__brand-text {
+    gap: 0.18rem;
+    max-width: 9.5em;
+  }
+  .nav__brand small {
+    font-size: 0.52rem;
+    letter-spacing: 0.22em;
+    white-space: nowrap;
+  }
+  .nav__logo {
+    width: 38px;
+    height: 24px;
+  }
+  /* Bouton « Réserver » de l'en-tête : compact et non tronqué en mobile. */
+  .nav__cta {
+    padding: 0.6rem 1.05rem;
+    font-size: 0.78rem;
+    box-shadow: 0 3px 12px rgba(12, 35, 28, 0.22);
+  }
+  .nav__lang {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 380px) {
+  /* Très petits écrans : nom sur 2 lignes courtes, encore plus compact. */
+  .nav__brand {
+    font-size: 0.98rem;
+  }
+  .nav__brand-text {
+    max-width: 8em;
+  }
+  .nav__cta {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.74rem;
+  }
+}
+
+/* P3 — Page 404 : respiration titre↔description corrigée directement dans
+   `src/app/global-not-found.tsx` (styles inline → priorité sur la feuille). */
+
+/* Détail optique : équilibrage des titres de section longs (anti-veuves)
+   sans dénaturer la charte (titres .fr déjà cadrés ; on ajoute le wrap). */
+.h-lg,
+.sec-head h2,
+.split__content h2 {
+  text-wrap: balance;
+}
+
+/* CTA de réservation : ancre #reserver sur la page contact. Décalage pour
+   ne pas masquer la bannière WhatsApp sous l'en-tête fixe (scroll direct
+   vers le formulaire, pas le haut de page). */
+#reserver {
+  scroll-margin-top: 6.5rem;
+}
+@media (max-width: 899px) {
+  #reserver {
+    scroll-margin-top: 5rem;
+  }
+}

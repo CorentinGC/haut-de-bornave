@@ -7,7 +7,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent } from "@/content";
 import { pageMetadata } from "@/lib/seo";
 import { media, KEY_MEDIA, gitePhotos } from "@/lib/media";
@@ -88,7 +88,7 @@ export default async function HomePage({
         <LocationBlock
           data={c.home.location}
           rating={{ score: "9.6", text: c.avis.eyebrow }}
-          ctaHref={href(lc, "contact")}
+          ctaHref={bookingHref(lc)}
         />
       </Section>
 
@@ -182,7 +182,7 @@ export default async function HomePage({
         eyebrow={c.contact.eyebrow}
         title={c.cta.homeTitle}
         text={c.cta.homeText}
-        cta={{ href: href(lc, "contact"), label: c.common.contactUs }}
+        cta={{ href: bookingHref(lc), label: c.common.contactUs }}
         bg={media(KEY_MEDIA.coucherGrandeAnse, c.cta.homeTitle)}
       />
     </>

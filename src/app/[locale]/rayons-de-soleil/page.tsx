@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent, getGite } from "@/content";
 import { pageMetadata } from "@/lib/seo";
 import { gitePhotos, media, KEY_MEDIA } from "@/lib/media";
@@ -114,7 +114,7 @@ export default async function RayonsPage({
                       + {g.cleaningFee} € {c.common.cleaningFee.toLowerCase()}
                     </span>
                   </div>
-                  <Btn href={href(lc, "contact")} variant="primary">
+                  <Btn href={bookingHref(lc)} variant="primary">
                     {c.common.bookNow} — {g.name}
                   </Btn>
                 </div>
@@ -149,7 +149,7 @@ export default async function RayonsPage({
         eyebrow={c.contact.eyebrow}
         title={lc === "fr" ? "Une escapade à deux ?" : "A getaway for two?"}
         text={c.contact.intro}
-        cta={{ href: href(lc, "contact"), label: c.common.bookNow }}
+        cta={{ href: bookingHref(lc), label: c.common.bookNow }}
         bg={media(KEY_MEDIA.coucherTainos, r.title)}
       />
     </>

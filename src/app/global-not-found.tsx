@@ -48,7 +48,7 @@ export default function GlobalNotFound() {
           </span>
           <h1
             className="h-hero"
-            style={{ margin: "1rem 0 0.5rem", maxWidth: "16ch" }}
+            style={{ margin: "1rem 0 1.35rem", maxWidth: "16ch" }}
           >
             Page <em>introuvable</em>
           </h1>

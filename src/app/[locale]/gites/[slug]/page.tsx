@@ -6,8 +6,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { isLocale, LOCALES, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { isLocale, LOCALES, SITE, type Locale } from "@/lib/site";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent, getGite } from "@/content";
 import { pageMetadata } from "@/lib/seo";
 import { gitePhotos, media, KEY_MEDIA } from "@/lib/media";
@@ -130,11 +130,11 @@ export default async function GitePage({
                 </span>
               </div>
               <div className="gite-card__actions">
-                <Btn href={href(lc, "contact")} variant="primary">
+                <Btn href={bookingHref(lc)} variant="primary">
                   {c.common.bookNow} — {g.name}
                 </Btn>
                 <Btn
-                  href="https://wa.me/590690003730"
+                  href={SITE.whatsapp}
                   variant="ghost"
                   external
                   arrow={false}
@@ -203,7 +203,7 @@ export default async function GitePage({
         eyebrow={c.contact.eyebrow}
         title={`${c.cta.giteTitle} — ${g.name}`}
         text={c.contact.intro}
-        cta={{ href: href(lc, "contact"), label: c.common.bookNow }}
+        cta={{ href: bookingHref(lc), label: c.common.bookNow }}
         bg={media(KEY_MEDIA.coucherGrandeAnse, g.name)}
       />
     </>

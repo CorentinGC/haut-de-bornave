@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent } from "@/content";
 import { pageMetadata } from "@/lib/seo";
 import { media, KEY_MEDIA } from "@/lib/media";
@@ -111,7 +111,7 @@ export default async function EvenementsPage({
         eyebrow={c.contact.eyebrow}
         title={lc === "fr" ? "Un projet d'événement ?" : "An event project?"}
         text={c.contact.intro}
-        cta={{ href: href(lc, "contact"), label: c.common.requestQuote }}
+        cta={{ href: bookingHref(lc), label: c.common.requestQuote }}
         bg={media(KEY_MEDIA.coucherGrandeAnse, e.title)}
       />
     </>
