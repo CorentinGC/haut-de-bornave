@@ -18,6 +18,10 @@ import reserveCousteau from "./reserve-cousteau.json";
 import pointeNoire from "./pointe-noire.json";
 import commentVenirAeroport from "./comment-venir-aeroport.json";
 import quandVenir from "./quand-venir.json";
+import plageDeLaPerle from "./plage-de-la-perle.json";
+import bourgPortDeshaies from "./bourg-port-deshaies.json";
+import randonneesCascades from "./randonnees-cascades-basse-terre.json";
+import marcheCreole from "./marche-creole-gastronomie.json";
 
 /**
  * Tous les fichiers d'articles. Le cast `as unknown as ArticleFile[]` est
@@ -31,6 +35,10 @@ const FILES = [
   pointeNoire,
   commentVenirAeroport,
   quandVenir,
+  plageDeLaPerle,
+  bourgPortDeshaies,
+  randonneesCascades,
+  marcheCreole,
 ] as unknown as ArticleFile[];
 
 /** Articles ordonnés par `order` croissant (liste + sitemap + parité FR/EN). */
