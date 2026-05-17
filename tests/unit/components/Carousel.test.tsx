@@ -10,9 +10,9 @@ import type { Media } from "@/lib/media";
 
 afterEach(cleanup);
 
-/** Indice courant affiché par le compteur `.current`. */
+/** Indice courant affiché par le compteur (data-testid). */
 const current = (c: HTMLElement) =>
-  c.querySelector(".current")?.textContent?.trim();
+  c.querySelector('[data-testid="current"]')?.textContent?.trim();
 
 const photos: Media[] = [
   { src: "/media/a.webp", width: 1600, height: 1067, alt: "Photo A Deshaies" },
@@ -24,7 +24,7 @@ describe("Carousel", () => {
   it("rend toutes les diapos avec alt et un compteur 1 / N", () => {
     const { container } = render(<Carousel photos={photos} />);
     expect(current(container)).toBe("1");
-    expect(container.querySelector(".total")?.textContent).toBe("3");
+    expect(container.querySelector('[data-testid="total"]')?.textContent).toBe("3");
     expect(screen.getByAltText("Photo A Deshaies")).toBeInTheDocument();
     expect(screen.getByAltText("Photo C Deshaies")).toBeInTheDocument();
   });

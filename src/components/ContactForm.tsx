@@ -7,6 +7,8 @@
 
 import { useState, type FormEvent } from "react";
 import type { SiteContent } from "@/content/types";
+import { Btn } from "@/ui/atoms/Btn";
+import styles from "./ContactForm.module.scss";
 
 type Status = "idle" | "sending" | "ok" | "error";
 
@@ -57,74 +59,75 @@ export function ContactForm({ form }: { form: SiteContent["contact"]["form"] }) 
 
   if (status === "ok") {
     return (
-      <div className="contact-form-card" role="status">
-        <p className="form-success">✓ {form.success}</p>
+      <div className={styles.card} role="status" data-testid="form-success">
+        <p className={styles.success}>✓ {form.success}</p>
       </div>
     );
   }
 
   return (
-    <form className="contact-form-card form" onSubmit={onSubmit} noValidate>
-      {/* Honeypot anti-spam : doit rester vide. */}
-      <div aria-hidden="true" className="hp-field">
+    <form className={styles.card} onSubmit={onSubmit} noValidate>
+      <div aria-hidden="true" className={styles.honeypot}>
         <label>
           Company
           <input type="text" name="company" tabIndex={-1} autoComplete="off" />
         </label>
       </div>
 
-      <div className="form-row">
-        <label htmlFor="cf-name">
-          {form.name} *
-          <input id="cf-name" name="name" type="text" required autoComplete="name" />
+      <div className={styles.form}>
+        <div className={styles.row}>
+          <label htmlFor="cf-name">
+            {form.name} *
+            <input id="cf-name" name="name" type="text" required autoComplete="name" />
+          </label>
+          <label htmlFor="cf-email">
+            {form.email} *
+            <input id="cf-email" name="email" type="email" required autoComplete="email" />
+          </label>
+        </div>
+
+        <div className={styles.row}>
+          <label htmlFor="cf-phone">
+            {form.phone}
+            <input id="cf-phone" name="phone" type="tel" autoComplete="tel" />
+          </label>
+          <label htmlFor="cf-dates">
+            {form.dates}
+            <input
+              id="cf-dates"
+              name="dates"
+              type="text"
+              placeholder={form.datesPlaceholder}
+            />
+          </label>
+        </div>
+
+        <label htmlFor="cf-subject">
+          {form.subject}
+          <input id="cf-subject" name="subject" type="text" />
         </label>
-        <label htmlFor="cf-email">
-          {form.email} *
-          <input id="cf-email" name="email" type="email" required autoComplete="email" />
+
+        <label htmlFor="cf-message">
+          {form.message} *
+          <textarea id="cf-message" name="message" rows={5} required />
         </label>
-      </div>
 
-      <div className="form-row">
-        <label htmlFor="cf-phone">
-          {form.phone}
-          <input id="cf-phone" name="phone" type="tel" autoComplete="tel" />
-        </label>
-        <label htmlFor="cf-dates">
-          {form.dates}
-          <input
-            id="cf-dates"
-            name="dates"
-            type="text"
-            placeholder={form.datesPlaceholder}
-          />
-        </label>
-      </div>
+        {status === "error" && error && (
+          <p className={styles.error} role="alert">
+            {error}
+          </p>
+        )}
 
-      <label htmlFor="cf-subject">
-        {form.subject}
-        <input id="cf-subject" name="subject" type="text" />
-      </label>
-
-      <label htmlFor="cf-message">
-        {form.message} *
-        <textarea id="cf-message" name="message" rows={5} required />
-      </label>
-
-      {status === "error" && error && (
-        <p className="form-error" role="alert">
-          {error}
-        </p>
-      )}
-
-      <button
-        type="submit"
-        className="btn btn--primary"
-        disabled={status === "sending"}
-      >
-        <span className="btn__inner">
+        <Btn
+          type="submit"
+          variant="primary"
+          disabled={status === "sending"}
+          arrow={false}
+          className={styles.submit}
+        >
           {status === "sending" ? form.sending : form.send}
-        </span>
-      </button>
+        </Btn>
+      </div>
     </form>
   );
 }

@@ -1,0 +1,91 @@
+/**
+ * Styles de la mosaïque d'hébergements (UniverseGrid).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.universe {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem;
+  color: #fff;
+  cursor: pointer;
+  transition: transform .6s var(--ease);
+
+  img {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: -2;
+    transition: transform 1s var(--ease);
+  }
+
+  &::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(12, 35, 28, .05) 0%, rgba(12, 35, 28, .85) 100%);
+    z-index: -1;
+    transition: opacity .4s var(--ease);
+  }
+
+  &:hover img { transform: scale(1.08); }
+  &:hover .more svg { transform: translateX(6px); }
+
+  h3 {
+    color: #fff;
+    font-size: clamp(1.4rem, 2vw, 1.9rem);
+    margin-bottom: .4rem;
+  }
+
+  p {
+    color: rgba(255, 255, 255, .82);
+    font-size: .95rem;
+    margin-bottom: 1.5rem;
+    max-width: 40ch;
+  }
+}
+
+/* Badge long : display:block évite le chevauchement avec le h3 suivant */
+.badge {
+  display: block;
+  color: var(--c-gold);
+  line-height: 1.4;
+  margin-bottom: 0.55rem;
+  text-wrap: balance;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-size: .82rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-gold);
+
+  svg { transition: transform .4s var(--ease); }
+}
+
+.xl { grid-column: span 8; min-height: 560px; }
+.md { grid-column: span 4; }
+.sm { grid-column: span 4; min-height: 340px; }
+.half { grid-column: span 6; }
+
+@media (max-width: 960px) {
+  .xl,
+  .md,
+  .sm,
+  .half { grid-column: span 12; min-height: 360px; }
+}

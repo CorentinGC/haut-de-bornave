@@ -1,0 +1,152 @@
+/**
+ * Styles de la fiche gîte (carrousel + détails).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.card {
+  background: var(--c-surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--c-line);
+  margin-bottom: 3rem;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  align-items: stretch;
+}
+
+/* Variante inversée : carousel passe en 2e colonne via :first/:last-child */
+.card.reverse .inner > :first-child { order: 2; }
+.card.reverse .inner > :last-child  { order: 1; }
+
+.content {
+  padding: clamp(2rem, 4vw, 3.5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tag {
+  font-family: var(--f-body);
+  font-size: .72rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: var(--c-accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.content h2 {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+
+  em { font-style: italic; color: var(--c-accent); }
+}
+
+.lead {
+  font-size: 1.02rem;
+  color: var(--c-ink-soft);
+  margin-bottom: 1.5rem;
+}
+
+/* Grille de chiffres clés (Facts) */
+.facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  margin-bottom: 1.5rem;
+}
+
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+
+  strong {
+    font-family: var(--f-display);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--c-emerald);
+    line-height: 1;
+  }
+
+  span {
+    font-size: .7rem;
+    color: var(--c-muted);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+  }
+}
+
+/* Liste équipements */
+.equip {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .5rem .8rem;
+
+  li {
+    font-size: .9rem;
+    color: var(--c-ink-soft);
+    padding-left: 1.4rem;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0; top: .5rem;
+      width: 8px; height: 8px;
+      border-right: 1.5px solid var(--c-accent);
+      border-bottom: 1.5px solid var(--c-accent);
+      transform: rotate(45deg);
+    }
+  }
+}
+
+/* Bloc prix */
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: .4rem;
+  padding: 1rem 1.3rem;
+  background: var(--c-bg-alt);
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
+  font-size: .9rem;
+  flex-wrap: wrap;
+
+  strong {
+    font-family: var(--f-display);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--c-emerald);
+  }
+
+  small { color: var(--c-muted); font-size: .82rem; }
+}
+
+.actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+
+  /* Annule le reverse en mobile */
+  .card.reverse .inner > :first-child,
+  .card.reverse .inner > :last-child { order: initial; }
+
+  .content { padding: clamp(1.4rem, 4vw, 2rem); }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .equip { grid-template-columns: 1fr; }
+}

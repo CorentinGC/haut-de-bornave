@@ -16,11 +16,11 @@ import {
   Btn,
   CtaBlock,
   FaqList,
+  GiteCard,
   PageHero,
   Section,
   SecHead,
 } from "@/components/ui";
-import { Carousel } from "@/components/Carousel";
 
 export const dynamic = "force-static";
 
@@ -89,37 +89,26 @@ export default async function RayonsPage({
         const theme = g.slug === "rayon-jaune" ? "jaune" : "bleu";
         return (
           <Section key={g.slug} alt={i % 2 === 1} id={g.slug}>
-            <article
-              className={`gite-card reveal${
-                i % 2 ? " gite-card--reverse" : ""
-              }`}
-              data-rayon={theme}
-            >
-              <div className="gite-card__inner">
-                <Carousel photos={photos} />
-                <div className="gite-card__content">
-                  <span className="gite-card__tag">{g.kicker}</span>
-                  <h2>{g.name}</h2>
-                  <p className="gite-card__lead">{g.intro}</p>
-                  <ul className="gite-card__equip">
-                    {g.equipment.map((e) => (
-                      <li key={e}>{e}</li>
-                    ))}
-                  </ul>
-                  <div className="gite-card__price">
-                    <strong>{g.pricePerNight} €</strong>
-                    <small>{c.common.perNight}</small>
-                    <span style={{ color: "var(--c-line)" }}>·</span>
-                    <span>
-                      + {g.cleaningFee} € {c.common.cleaningFee.toLowerCase()}
-                    </span>
-                  </div>
-                  <Btn href={bookingHref(lc)} variant="primary">
-                    {c.common.bookNow} — {g.name}
-                  </Btn>
-                </div>
-              </div>
-            </article>
+            <GiteCard
+              photos={photos}
+              kicker={g.kicker}
+              name={g.name}
+              lead={g.intro}
+              equipment={g.equipment}
+              price={{
+                amount: g.pricePerNight,
+                perNightLabel: c.common.perNight,
+                cleaningFee: g.cleaningFee,
+                cleaningLabel: c.common.cleaningFee.toLowerCase(),
+              }}
+              reverse={i % 2 !== 0}
+              dataAttributes={{ "data-rayon": theme }}
+              actions={
+                <Btn href={bookingHref(lc)} variant="primary">
+                  {c.common.bookNow} — {g.name}
+                </Btn>
+              }
+            />
           </Section>
         );
       })}

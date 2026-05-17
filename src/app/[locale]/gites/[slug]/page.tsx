@@ -16,13 +16,12 @@ import { vacationRentalLd, faqPageLd, breadcrumbLd } from "@/lib/jsonld";
 import {
   Btn,
   CtaBlock,
-  Facts,
   FaqList,
+  GiteCard,
   PageHero,
   Section,
   SecHead,
 } from "@/components/ui";
-import { Carousel } from "@/components/Carousel";
 
 export const dynamic = "force-static";
 
@@ -97,54 +96,34 @@ export default async function GitePage({
       />
 
       <Section>
-        <article className="gite-card reveal">
-          <div className="gite-card__inner">
-            <Carousel photos={photos} />
-            <div className="gite-card__content">
-              <span className="gite-card__tag">{g.kicker}</span>
-              <h2>{g.name}</h2>
-              <p className="gite-card__lead">{g.intro}</p>
-              <Facts
-                facts={[
-                  { value: g.facts.surface, label: lc === "fr" ? "Surface" : "Area" },
-                  {
-                    value: g.facts.capacity.replace(/\D/g, ""),
-                    label: lc === "fr" ? "Personnes" : "People",
-                  },
-                  {
-                    value: g.facts.bedrooms.replace(/\D/g, "") || "1",
-                    label: lc === "fr" ? "Chambres" : "Bedrooms",
-                  },
-                  {
-                    value: g.facts.privatePool ? "✓" : "—",
-                    label: lc === "fr" ? "Piscine privée" : "Private pool",
-                  },
-                ]}
-              />
-              <div className="gite-card__price">
-                <strong>{g.pricePerNight} €</strong>
-                <small>{c.common.perNight}</small>
-                <span style={{ color: "var(--c-line)" }}>·</span>
-                <span>
-                  + {g.cleaningFee} € {c.common.cleaningFee.toLowerCase()}
-                </span>
-              </div>
-              <div className="gite-card__actions">
-                <Btn href={bookingHref(lc)} variant="primary">
-                  {c.common.bookNow} — {g.name}
-                </Btn>
-                <Btn
-                  href={SITE.whatsapp}
-                  variant="ghost"
-                  external
-                  arrow={false}
-                >
-                  WhatsApp
-                </Btn>
-              </div>
-            </div>
-          </div>
-        </article>
+        <GiteCard
+          photos={photos}
+          kicker={g.kicker}
+          name={g.name}
+          lead={g.intro}
+          facts={[
+            { value: g.facts.surface, label: lc === "fr" ? "Surface" : "Area" },
+            { value: g.facts.capacity.replace(/\D/g, ""), label: lc === "fr" ? "Personnes" : "People" },
+            { value: g.facts.bedrooms.replace(/\D/g, "") || "1", label: lc === "fr" ? "Chambres" : "Bedrooms" },
+            { value: g.facts.privatePool ? "✓" : "—", label: lc === "fr" ? "Piscine privée" : "Private pool" },
+          ]}
+          price={{
+            amount: g.pricePerNight,
+            perNightLabel: c.common.perNight,
+            cleaningFee: g.cleaningFee,
+            cleaningLabel: c.common.cleaningFee.toLowerCase(),
+          }}
+          actions={
+            <>
+              <Btn href={bookingHref(lc)} variant="primary">
+                {c.common.bookNow} — {g.name}
+              </Btn>
+              <Btn href={SITE.whatsapp} variant="ghost" external arrow={false}>
+                WhatsApp
+              </Btn>
+            </>
+          }
+        />
       </Section>
 
       <Section alt>

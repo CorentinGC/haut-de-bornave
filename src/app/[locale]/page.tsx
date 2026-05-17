@@ -26,6 +26,7 @@ import {
   UniverseGrid,
 } from "@/components/ui";
 import { Typewriter } from "@/components/Typewriter";
+import { WelcomeBanner } from "@/components/WelcomeBanner";
 
 export const dynamic = "force-static";
 
@@ -121,21 +122,9 @@ export default async function HomePage({
       <Marquee items={c.home.marquee} />
 
       {/* Banner machine à écrire */}
-      <section
-        className="welcome-banner-section section-tight"
-        aria-labelledby="welcome-bornave-title"
-      >
-        <div className="container">
-          <div className="welcome-banner-card reveal">
-            <h2
-              id="welcome-bornave-title"
-              className="welcome-banner-card__hero-title"
-            >
-              <Typewriter text="Les Hauts De Bornave" />
-            </h2>
-          </div>
-        </div>
-      </section>
+      <WelcomeBanner titleId="welcome-bornave-title">
+        <Typewriter text="Les Hauts De Bornave" />
+      </WelcomeBanner>
 
       {/* Privatisation / événements */}
       <Section alt>

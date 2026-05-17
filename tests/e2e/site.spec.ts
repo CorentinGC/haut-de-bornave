@@ -127,9 +127,9 @@ test("navigation : desktop vs bottom-nav mobile", async ({ page }, info) => {
     await expect(page.locator(".mobile-nav")).toBeVisible();
     await page.locator(".mobile-nav__more").click();
     await expect(page.locator(".mobile-nav-panel.is-open")).toBeVisible();
-    await expect(page.locator(".nav__links")).toBeHidden();
+    await expect(page.locator("[data-testid='nav-links']")).toBeHidden();
   } else {
-    await expect(page.locator(".nav__links")).toBeVisible();
+    await expect(page.locator("[data-testid='nav-links']")).toBeVisible();
     await expect(page.locator(".mobile-nav")).toBeHidden();
   }
 });
@@ -142,7 +142,7 @@ test("bascule de langue FR → EN en conservant la page", async ({
     await page.locator(".mobile-nav__more").click();
     await page.locator('.mobile-nav-panel a[hreflang="en"]').click();
   } else {
-    await page.locator('.nav__lang[hreflang="en"]').click();
+    await page.locator('a[aria-label="Switch to English"]').click();
   }
   await expect(page).toHaveURL(/\/en\/gites/);
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
@@ -157,7 +157,7 @@ test("formulaire de contact : validation puis succès", async ({ page }) => {
   await page.getByLabel(/Email/).fill("test@example.com");
   await page.getByLabel(/Message/).fill("Demande de séjour test e2e.");
   await page.getByRole("button", { name: "Envoyer" }).click();
-  await expect(page.locator(".form-success")).toBeVisible({ timeout: 10_000 });
+  await expect(page.locator("[data-testid='form-success']")).toBeVisible({ timeout: 10_000 });
 });
 
 test("sitemap.xml et robots.txt", async ({ request }) => {

@@ -8,9 +8,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { clsx } from "clsx";
 import type { Locale } from "@/lib/site";
 import type { SiteContent } from "@/content/types";
 import { bookingHref, href, mainNav, switchLocaleHref } from "@/lib/nav";
+import styles from "./Header.module.scss";
 
 const Arrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -57,32 +59,32 @@ export function Header({
 
   return (
     <nav
-      className={`nav${scrolled || solidTop ? " scrolled" : ""}`}
+      className={clsx(styles.nav, { [styles.scrolled]: scrolled || solidTop })}
       aria-label="Navigation principale"
     >
-      <div className="container nav__inner">
-        <Link href={href(locale)} className="nav__brand" aria-label={content.nav.domaine}>
-          <span className="nav__logo" aria-hidden="true" />
-          <span className="nav__brand-text">
+      <div className={`container ${styles.inner}`}>
+        <Link href={href(locale)} className={styles.brand} aria-label={content.nav.domaine}>
+          <span className={styles.logo} aria-hidden="true" />
+          <span className={styles.brandText}>
             Les Hauts De Bornave
             <small>Deshaies · Guadeloupe</small>
           </span>
         </Link>
 
-        <ul className="nav__links">
+        <ul className={styles.links} data-testid="nav-links">
           {items.map((item, i) => (
             <li key={item.path}>
               <Link
                 href={href(locale, item.path)}
-                className={isActive(item.path) ? "active" : undefined}
+                className={isActive(item.path) ? styles.active : undefined}
                 aria-current={isActive(item.path) ? "page" : undefined}
               >
-                <span className="nav__num">{String(i + 1).padStart(2, "0")}</span>
-                <span className="nav__lbl">
+                <span className={styles.num}>{String(i + 1).padStart(2, "0")}</span>
+                <span className={styles.lbl}>
                   <strong>{item.label}</strong>
                   <em>{item.sub}</em>
                 </span>
-                <span className="nav__arrow">
+                <span className={styles.arrow}>
                   <Arrow />
                 </span>
               </Link>
@@ -90,17 +92,17 @@ export function Header({
           ))}
         </ul>
 
-        <div className="nav__end">
+        <div className={styles.end}>
           <Link
             href={otherHref}
-            className="nav__lang"
+            className={styles.lang}
             hrefLang={other}
             aria-label={other === "en" ? "Switch to English" : "Passer en français"}
           >
             {content.common.langSwitch}
           </Link>
-          <Link href={bookingHref(locale)} className="btn btn--primary nav__cta">
-            <span className="btn__inner">{content.nav.reserve}</span>
+          <Link href={bookingHref(locale)} className={styles.cta}>
+            {content.nav.reserve}
           </Link>
         </div>
       </div>

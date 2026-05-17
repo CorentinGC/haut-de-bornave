@@ -1,0 +1,163 @@
+/**
+ * Styles de la bannière WhatsApp (page contact).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.banner {
+  margin-bottom: clamp(2rem, 4vw, 2.85rem);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.25rem, 3vw, 1.6rem);
+  background:
+    radial-gradient(ellipse 120% 180% at 50% 0%, rgba(37, 211, 102, .14), transparent 52%),
+    linear-gradient(165deg, #4f4744 0%, #3d3634 48%, #342e2c 100%);
+  border: 1px solid rgba(255, 255, 255, .08);
+  box-shadow:
+    0 18px 44px rgba(12, 35, 28, .14),
+    inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+
+.inner {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 .35rem;
+  font-family: var(--f-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .26em;
+  text-transform: uppercase;
+  color: #c9a66b;
+}
+
+.lead {
+  margin: 0 0 1.1rem;
+  font-family: var(--f-display);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(245, 239, 231, .88);
+  line-height: 1.45;
+
+  strong {
+    font-weight: 400;
+    font-style: normal;
+    color: #25d366;
+    text-shadow: 0 0 24px rgba(37, 211, 102, .35);
+  }
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: clamp(.95rem, 2.5vw, 1.15rem) clamp(1.2rem, 3vw, 1.6rem);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(145deg, #2eb85c 0%, #25d366 42%, #128c7e 100%);
+  border: 1px solid rgba(255, 255, 255, .22);
+  box-shadow:
+    0 10px 28px rgba(37, 211, 102, .35),
+    inset 0 1px 0 rgba(255, 255, 255, .25);
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), filter .35s var(--ease);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 16px 40px rgba(37, 211, 102, .42),
+      inset 0 1px 0 rgba(255, 255, 255, .28);
+    filter: brightness(1.05);
+    color: #fff;
+  }
+
+  &:focus-visible {
+    outline: 3px solid var(--c-gold);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 520px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: .85rem;
+  }
+}
+
+.ctaIcon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, .18);
+  border: 1px solid rgba(255, 255, 255, .28);
+
+  svg { width: 28px; height: 28px; }
+}
+
+.ctaBody {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+
+  @media (max-width: 520px) {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.ctaNum {
+  display: block;
+  font-family: var(--f-body);
+  font-size: clamp(1.35rem, 4vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: .04em;
+  line-height: 1.15;
+}
+
+.ctaHint {
+  display: block;
+  margin-top: .25rem;
+  font-size: .76rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity: .92;
+}
+
+.ctaArrow {
+  flex-shrink: 0;
+  opacity: .85;
+  transition: transform .3s var(--ease);
+
+  .cta:hover & { transform: translate(3px, -3px); }
+
+  @media (max-width: 520px) { display: none; }
+}
+
+.telAlt {
+  margin: .85rem 0 0;
+  font-family: var(--f-body);
+  font-size: .8rem;
+  color: rgba(235, 227, 218, .55);
+
+  a {
+    color: rgba(235, 227, 218, .78);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color .25s var(--ease);
+
+    &:hover { color: #f5efe7; }
+  }
+}

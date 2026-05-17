@@ -7,12 +7,13 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { clsx } from "clsx";
 import type { Media } from "@/lib/media";
+import styles from "./Carousel.module.scss";
 
 /**
- * Carrousel photo d'un gîte — composant React autonome (état local, pas de
- * manipulation DOM ni de lib). Clavier (←/→), swipe tactile, pastilles,
- * compteur. Markup/classes fidèles au site .fr (stylé par lhdb.css).
+ * Carrousel photo d'un gîte — clavier (←/→), swipe tactile, pastilles,
+ * compteur. Composant client autonome (état local, pas de lib externe).
  */
 export function Carousel({ photos }: { photos: Media[] }) {
   const [index, setIndex] = useState(0);
@@ -33,13 +34,13 @@ export function Carousel({ photos }: { photos: Media[] }) {
   if (!count) return null;
 
   return (
-    <div className="gite-card__media">
-      <span className="gite-card__counter">
-        <span className="current">{index + 1}</span> /{" "}
-        <span className="total">{count}</span>
+    <div className={styles.media}>
+      <span className={styles.counter}>
+        <span data-testid="current">{index + 1}</span> /{" "}
+        <span data-testid="total">{count}</span>
       </span>
       <div
-        className="carousel"
+        className={styles.carousel}
         role="region"
         aria-roledescription="carrousel"
         aria-label="Photos du gîte"
@@ -63,7 +64,7 @@ export function Carousel({ photos }: { photos: Media[] }) {
         }}
       >
         <div
-          className="carousel__track"
+          className={styles.track}
           style={{
             transform: `translateX(-${index * 100}%)`,
             transition: "transform .55s cubic-bezier(.22,1,.36,1)",
@@ -72,7 +73,7 @@ export function Carousel({ photos }: { photos: Media[] }) {
         >
           {photos.map((p, i) => (
             <div
-              className="carousel__slide"
+              className={styles.slide}
               key={p.src}
               aria-hidden={i !== index}
               style={{ flex: "0 0 100%" }}
@@ -90,7 +91,7 @@ export function Carousel({ photos }: { photos: Media[] }) {
         </div>
         <button
           type="button"
-          className="carousel__btn carousel__btn--prev"
+          className={clsx(styles.btn, styles.prev)}
           aria-label="Image précédente"
           onClick={() => go(index - 1)}
         >
@@ -98,18 +99,18 @@ export function Carousel({ photos }: { photos: Media[] }) {
         </button>
         <button
           type="button"
-          className="carousel__btn carousel__btn--next"
+          className={clsx(styles.btn, styles.next)}
           aria-label="Image suivante"
           onClick={() => go(index + 1)}
         >
           ›
         </button>
-        <div className="carousel__dots">
+        <div className={styles.dots}>
           {photos.map((p, i) => (
             <button
               type="button"
               key={p.src}
-              className={`carousel__dot${i === index ? " is-active" : ""}`}
+              className={clsx(styles.dot, i === index && styles.active)}
               aria-label={`Image ${i + 1}`}
               aria-current={i === index}
               onClick={() => go(i)}

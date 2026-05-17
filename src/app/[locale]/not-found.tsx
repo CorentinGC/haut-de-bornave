@@ -3,7 +3,7 @@
  * @author Eden Solutions <contact@eden-solutions.pro>
  */
 
-import Link from "next/link";
+import { Btn } from "@/components/ui";
 
 /** Page 404 (bilingue neutre — la locale n'est pas disponible ici). */
 export default function NotFound() {
@@ -28,12 +28,8 @@ export default function NotFound() {
             flexWrap: "wrap",
           }}
         >
-          <Link href="/fr" className="btn btn--primary">
-            <span className="btn__inner">Accueil</span>
-          </Link>
-          <Link href="/en" className="btn btn--ghost">
-            Home
-          </Link>
+          <Btn href="/fr" variant="primary">Accueil</Btn>
+          <Btn href="/en" variant="ghost">Home</Btn>
         </div>
       </div>
     </section>

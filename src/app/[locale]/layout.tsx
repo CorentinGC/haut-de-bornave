@@ -16,6 +16,7 @@ import { ScrollReveal } from "@/components/ScrollReveal";
 import { JsonLd } from "@/components/JsonLd";
 import { organizationLd } from "@/lib/jsonld";
 import "../globals.css";
+import "@/styles/lhdb/index.scss";
 
 export const dynamicParams = false;
 

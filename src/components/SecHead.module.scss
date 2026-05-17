@@ -1,0 +1,16 @@
+/**
+ * Styles de l'en-tête de section (SecHead).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.head {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+
+  // Marges internes du titre
+  h2 { margin: 1rem 0; text-wrap: balance; }
+
+  // Lead hérite de la classe globale .lead — on donne juste la marge
+  p { margin: 0 auto; }
+}

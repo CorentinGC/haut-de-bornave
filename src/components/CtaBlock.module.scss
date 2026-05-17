@@ -1,0 +1,31 @@
+/**
+ * Styles du bloc CTA avec image de fond (CtaBlock).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.block {
+  position: relative;
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 5vw, 5rem);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff;
+  text-align: center;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(12, 35, 28, .85), rgba(201, 123, 94, .5));
+    z-index: -1;
+  }
+
+  h2 { color: #fff; margin-bottom: 1rem; }
+  p { color: rgba(255, 255, 255, .85); max-width: 50ch; margin: 0 auto 2rem; }
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+}
