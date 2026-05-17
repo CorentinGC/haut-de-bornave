@@ -5,7 +5,7 @@
 
 import type { MetadataRoute } from "next";
 import { LOCALES, absoluteUrl } from "@/lib/site";
-import { articlesFr } from "@/content/articles.fr";
+import { articlesFr } from "@/content/articles";
 
 /** Sitemap FR + EN avec alternates hreflang (réciproques + x-default). */
 export default function sitemap(): MetadataRoute.Sitemap {

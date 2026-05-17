@@ -9,13 +9,19 @@ import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/site";
 import { bookingHref, href } from "@/lib/nav";
 import { getContent, getArticle } from "@/content";
-import { articlesFr } from "@/content/articles.fr";
-import { articlesEn } from "@/content/articles.en";
+import { articlesFr, articlesEn } from "@/content/articles";
 import { pageMetadata } from "@/lib/seo";
 import { media } from "@/lib/media";
 import { JsonLd } from "@/components/JsonLd";
-import { articleLd, breadcrumbLd } from "@/lib/jsonld";
-import { CtaBlock, PageHero, Section, SecHead } from "@/components/ui";
+import { articleLd, breadcrumbLd, faqPageLd } from "@/lib/jsonld";
+import {
+  CtaBlock,
+  FaqList,
+  PageHero,
+  Pic,
+  Section,
+  SecHead,
+} from "@/components/ui";
 
 export const dynamic = "force-static";
 
@@ -63,6 +69,7 @@ export default async function ArticlePage({
       <JsonLd
         data={[
           articleLd(lc, a),
+          ...(a.faq.length > 0 ? [faqPageLd(a.faq)] : []),
           breadcrumbLd(lc, [
             { name: c.nav.home, path: "" },
             { name: c.nav.queVisiter, path: "que-visiter" },
@@ -93,6 +100,25 @@ export default async function ArticlePage({
                   {p}
                 </p>
               ))}
+              {s.image && (
+                <figure className="article-figure reveal">
+                  <Pic
+                    media={media(s.image.src, s.image.alt)}
+                    sizes="(max-width: 820px) 100vw, 72ch"
+                  />
+                  {(s.image.caption || s.image.credit) && (
+                    <figcaption>
+                      {s.image.caption}
+                      {s.image.credit && (
+                        <span className="article-figure__credit">
+                          {s.image.caption ? " — " : ""}
+                          {s.image.credit}
+                        </span>
+                      )}
+                    </figcaption>
+                  )}
+                </figure>
+              )}
             </div>
           ))}
           <p style={{ marginTop: "2.5rem" }}>
@@ -103,8 +129,21 @@ export default async function ArticlePage({
         </article>
       </Section>
 
-      {related.length > 0 && (
+      {a.faq.length > 0 && (
         <Section alt>
+          <FaqList
+            title={
+              lc === "fr"
+                ? "Questions fréquentes"
+                : "Frequently asked questions"
+            }
+            items={a.faq}
+          />
+        </Section>
+      )}
+
+      {related.length > 0 && (
+        <Section>
           <SecHead
             eyebrow={c.gitesPage.eyebrow}
             title={

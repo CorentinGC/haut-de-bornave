@@ -5,8 +5,7 @@
 
 import type { Locale } from "./site";
 import type { SiteContent } from "@/content/types";
-import { articlesFr } from "@/content/articles.fr";
-import { articlesEn } from "@/content/articles.en";
+import { articlesFr, articlesEn } from "@/content/articles";
 
 /** Lien interne préfixé par la locale. `path` sans slash initial. */
 export function href(locale: Locale, path = ""): string {

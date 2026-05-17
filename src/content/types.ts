@@ -56,6 +56,24 @@ export interface GiteContent {
   seo: SeoMeta;
 }
 
+export interface ArticleImage {
+  /** Chemin /media/... auto-hébergé (jamais de hotlink). */
+  src: string;
+  /** Texte alternatif géolocalisé (« … Deshaies, Guadeloupe »). */
+  alt: string;
+  /** Légende affichée sous l'image (optionnel). */
+  caption?: string;
+  /** Crédit/licence si image libre de droits (obligatoire pour celles-ci). */
+  credit?: string;
+}
+
+export interface ArticleSection {
+  heading?: string;
+  paragraphs: string[];
+  /** Illustration optionnelle de la section (anti-CLS via le manifeste). */
+  image?: ArticleImage;
+}
+
 export interface Article {
   slug: string;
   /** Photo de couverture (/media/...). */
@@ -67,10 +85,50 @@ export interface Article {
   readingTime: string;
   /** Distance / temps depuis le domaine (SEO local). */
   distance?: string;
-  sections: { heading?: string; paragraphs: string[] }[];
+  /** Date de publication ISO (JSON-LD Article). */
+  datePublished: string;
+  /** Date de dernière révision ISO (JSON-LD Article). */
+  dateModified?: string;
+  sections: ArticleSection[];
+  /** Questions fréquentes (JSON-LD FAQPage + accordéon). */
+  faq: FaqItem[];
   /** Slugs de gîtes vers lesquels mailler en interne. */
   relatedGites: GiteContent["slug"][];
   seo: SeoMeta;
+}
+
+/** Partie d'un article spécifique à une locale (dans le fichier JSON). */
+export interface ArticleLocale {
+  slug: string;
+  title: string;
+  excerpt: string;
+  /** Catégorie affichée, localisée (« Plages » / « Beaches »…). */
+  category: string;
+  readingTime: string;
+  distance?: string;
+  sections: ArticleSection[];
+  faq: FaqItem[];
+  seo: SeoMeta;
+}
+
+/**
+ * Forme d'un fichier src/content/articles/<slug>.json : champs communs aux
+ * deux langues + charges FR/EN. Le loader le dérive en deux `Article` (un par
+ * locale) — voir src/content/articles/index.ts.
+ */
+export interface ArticleFile {
+  /** Ordre d'affichage (liste + sitemap). */
+  order: number;
+  /** Photo de couverture (/media/...). */
+  cover: string;
+  /** Date de publication ISO (JSON-LD Article). */
+  datePublished: string;
+  /** Date de dernière révision ISO (JSON-LD Article). */
+  dateModified?: string;
+  /** Slugs de gîtes vers lesquels mailler en interne. */
+  relatedGites: GiteContent["slug"][];
+  fr: ArticleLocale;
+  en: ArticleLocale;
 }
 
 export interface SiteContent {
