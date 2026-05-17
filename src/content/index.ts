@@ -8,8 +8,7 @@ import type { Locale } from "@/lib/site";
 import type { Article, GiteContent, SiteContent } from "./types";
 import { fr } from "./fr";
 import { en } from "./en";
-import { articlesFr } from "./articles.fr";
-import { articlesEn } from "./articles.en";
+import { articlesFr, articlesEn } from "./articles";
 
 const CONTENT: Record<Locale, SiteContent> = {
   fr: { ...fr, articles: articlesFr },

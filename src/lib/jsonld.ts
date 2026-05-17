@@ -191,14 +191,24 @@ export function breadcrumbLd(
 }
 
 export function articleLd(locale: Locale, a: Article) {
+  const sectionImages = a.sections.flatMap((s) =>
+    s.image ? [abs(s.image.src)] : [],
+  );
   return {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: a.title,
     description: a.excerpt,
-    image: abs(a.cover),
+    image: [abs(a.cover), ...sectionImages],
     articleSection: a.category,
     inLanguage: locale,
+    datePublished: a.datePublished,
+    dateModified: a.dateModified ?? a.datePublished,
+    author: {
+      "@type": "Organization",
+      name: SITE.name,
+      url: SITE.url,
+    },
     isPartOf: { "@type": "WebSite", name: SITE.name, url: SITE.url },
     publisher: {
       "@type": "Organization",
