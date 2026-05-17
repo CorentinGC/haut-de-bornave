@@ -4,6 +4,7 @@
  */
 
 import { test } from "@playwright/test";
+import { articleRoutes } from "../helpers/articles";
 
 /**
  * Captures plein écran de chaque page (desktop & mobile selon le projet
@@ -25,13 +26,8 @@ const COMMON = [
   "contact",
   "mentions-legales",
 ];
-const ARTICLE = {
-  fr: "que-visiter/plus-belles-plages-deshaies",
-  en: "que-visiter/best-beaches-deshaies",
-} as const;
-
 for (const locale of ["fr", "en"] as const) {
-  for (const route of [...COMMON, ARTICLE[locale]]) {
+  for (const route of [...COMMON, ...articleRoutes(locale)]) {
     test(`screenshot ${locale}/${route}`, async ({ page }, info) => {
       await page.goto(`/${locale}/${route}`, { waitUntil: "load" });
       // Laisse jouer les animations reveal/Ken Burns.
