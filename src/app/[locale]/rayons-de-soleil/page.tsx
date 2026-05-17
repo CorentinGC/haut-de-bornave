@@ -85,7 +85,7 @@ export default async function RayonsPage({
         return (
           <Section key={g.slug} alt={i % 2 === 1} id={g.slug}>
             <article
-              className={`gite-card reveal rayon-panel rayon-panel--${theme}${
+              className={`gite-card reveal${
                 i % 2 ? " gite-card--reverse" : ""
               }`}
               data-rayon={theme}

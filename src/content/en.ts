@@ -109,6 +109,30 @@ export const en: SiteContent = {
     deshaiesTitle: "Stay in Deshaies and explore Pointe-Noire",
     deshaiesText:
       "Ideally located between the peaceful district of Leroux in Deshaies and the preserved landscapes of Pointe-Noire, Les Hauts de Bornave is a privileged base to explore the west coast of Guadeloupe. Secluded beaches, lush nature, sunsets over the Caribbean Sea — everything for an authentic experience, between relaxation and exploration.",
+    location: {
+      mapChip: "Ferry district · Deshaies",
+      panelTitle: "A <em>strategic</em> location on the leeward coast",
+      panelText:
+        "On the heights of the Ferry district in Deshaies, the estate places you minutes from the finest beaches of Basse-Terre and close to the village.",
+      items: [
+        {
+          label: "Address",
+          value: "Chemin Bornave, Quartier Ferry",
+          detail: "97126 Deshaies, Guadeloupe",
+        },
+        {
+          label: "Beaches",
+          value: "Leroux & Grande Anse",
+          detail: "A few minutes by car",
+        },
+        {
+          label: "Deshaies village",
+          value: "Harbour & restaurants",
+          detail: "A few minutes — leeward coast",
+        },
+      ],
+      cta: "Directions & contact",
+    },
     espritEyebrow: "The Bornave spirit",
     espritTitle: "A place you feel",
     espritText:

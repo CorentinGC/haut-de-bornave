@@ -578,3 +578,63 @@
 .cta-block {
   isolation: isolate;
 }
+
+/* ---------------------------------------------------------------------------
+   Carrousel gîte : la charte .fr stylait un carrousel scroll-snap (HTML
+   statique). Le composant React pilote la position via `transform:
+   translateX()` sur la piste. Or `.carousel__track` héritait de
+   `overflow-x:auto; scroll-snap-type` qui borne la piste à la largeur du
+   carrousel : le transform déplaçait alors toute la boîte hors écran →
+   carrousel vide. On neutralise le mécanisme de scroll pour laisser la
+   piste s'étendre à toutes les slides et le transform faire le glissement.
+   --------------------------------------------------------------------------- */
+.carousel__track {
+  overflow: visible;
+  scroll-snap-type: none;
+  width: 100%;
+  will-change: transform;
+}
+.carousel__slide {
+  scroll-snap-align: none;
+}
+/* next/image (fill) injecte un <img> en position:absolute ; la règle .fr
+   `.carousel__slide img { width/height:100% }` suffit, mais on garantit le
+   recouvrement complet de la slide (anti bord sable). */
+.carousel__slide img {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   PageHero : le héros est sombre (image + dégradé) et `.page-hero` impose
+   `color:#fff`. Mais `.lead` porte un `color: var(--c-ink-soft)` (vert
+   foncé) hérité de la charte → texte d'intro illisible sur le héros.
+   On force une couleur claire pour le lead et on renforce légèrement le
+   dégradé bas afin de garantir un contraste AA sur les photos claires,
+   sans alourdir l'esthétique (toujours dans l'esprit .fr).
+   --------------------------------------------------------------------------- */
+.page-hero .lead {
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 12px rgba(12, 35, 28, 0.55);
+  max-width: 62ch;
+}
+.page-hero::before {
+  background: linear-gradient(
+    180deg,
+    rgba(12, 35, 28, 0.42) 0%,
+    rgba(12, 35, 28, 0.62) 55%,
+    rgba(12, 35, 28, 0.86) 100%
+  );
+}
+.page-hero h1 {
+  text-shadow: 0 2px 24px rgba(12, 35, 28, 0.4);
+}
+
+/* ---------------------------------------------------------------------------
+   Pages sans héros plein cadre (mentions légales) : la nav est `fixed`.
+   La 1re section doit dégager la hauteur de la nav (sinon le fil d'Ariane
+   passe sous l'en-tête, surtout en mobile où le padding clamp est court).
+   --------------------------------------------------------------------------- */
+.section.legal-page {
+  padding-top: clamp(7rem, 12vw, 9rem);
+}

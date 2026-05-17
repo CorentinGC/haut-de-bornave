@@ -116,7 +116,9 @@ export function ContactForm({ form }: { form: SiteContent["contact"]["form"] }) 
         className="btn btn--primary"
         disabled={status === "sending"}
       >
-        {status === "sending" ? form.sending : form.send}
+        <span className="btn__inner">
+          {status === "sending" ? form.sending : form.send}
+        </span>
       </button>
     </form>
   );

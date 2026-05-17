@@ -108,6 +108,30 @@ export const fr: SiteContent = {
     deshaiesTitle: "Séjourner à Deshaies et découvrir Pointe-Noire",
     deshaiesText:
       "Idéalement situés entre le quartier paisible de Leroux à Deshaies et les paysages préservés de Pointe-Noire, Les Hauts de Bornave offrent un point de départ privilégié pour découvrir la côte ouest de la Guadeloupe. Plages confidentielles, nature luxuriante, couchers de soleil sur la mer des Caraïbes… tout est réuni pour vivre une expérience authentique, entre détente et exploration.",
+    location: {
+      mapChip: "Quartier Ferry · Deshaies",
+      panelTitle: "Un emplacement <em>stratégique</em> sur la côte sous le vent",
+      panelText:
+        "Sur les hauteurs du quartier Ferry à Deshaies, le domaine vous place à quelques minutes des plus belles plages de la Basse-Terre et à proximité immédiate du bourg.",
+      items: [
+        {
+          label: "Adresse",
+          value: "Chemin Bornave, Quartier Ferry",
+          detail: "97126 Deshaies, Guadeloupe",
+        },
+        {
+          label: "Plages",
+          value: "Leroux & Grande Anse",
+          detail: "À quelques minutes en voiture",
+        },
+        {
+          label: "Bourg de Deshaies",
+          value: "Port & restaurants",
+          detail: "À quelques minutes — côte sous le vent",
+        },
+      ],
+      cta: "Itinéraire & contact",
+    },
     espritEyebrow: "L'esprit Bornave",
     espritTitle: "Un lieu que l'on ressent",
     espritText:

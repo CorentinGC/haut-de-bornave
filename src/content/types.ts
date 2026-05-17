@@ -131,6 +131,13 @@ export interface SiteContent {
     deshaiesEyebrow: string;
     deshaiesTitle: string;
     deshaiesText: string;
+    location: {
+      mapChip: string;
+      panelTitle: string; // peut contenir <em>
+      panelText: string;
+      items: { label: string; value: string; detail: string }[];
+      cta: string;
+    };
     espritEyebrow: string;
     espritTitle: string;
     espritText: string;

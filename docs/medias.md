@@ -51,6 +51,22 @@ fs.writeFileSync("src/lib/media-dimensions.json",JSON.stringify(s));'
 Toujours rendre via `<Cover>` (plein cadre, `fill`) ou `<Pic>` (dimensionné)
 de `src/components/ui.tsx` — jamais de `<img>` brut.
 
+## Optimisation qualité (poids transféré)
+
+`next.config.ts` → `images.qualities: [60, 62, 72, 75]` (Next 16 exige
+d'autoriser explicitement les qualités ≠ 75). Stratégie (perte visuelle
+nulle, gain de poids réel — mandat client) :
+
+| Contexte | Composant | `quality` | Pourquoi |
+|----------|-----------|-----------|----------|
+| Fond CTA (`cta-block__bg`) | `Cover` | **60** | Fortement assombri par overlay |
+| Héros pages internes (`page-hero__bg`, LCP) | `Cover` | **62** | Dégradé sombre dessus → LCP plus léger |
+| Couvertures décoratives (universe, split, frame) | `Cover` | **72** (défaut) | Décor / souvent partiellement masqué |
+| Photos détaillées (carrousels gîtes, `Pic`) | `Image`/`Pic` | **75** (défaut) | Détail intérieur — qualité préservée |
+
+`<Cover>` accepte une prop `quality` (défaut 72). Le `sizes` reste contextuel
+(`100vw` héros, `33/66vw` cartes…) pour ne pas servir de variante trop large.
+
 ## Ajouter un média
 
 1. Le déposer dans le bon sous-dossier de `public/media/` (ou ajouter son URL

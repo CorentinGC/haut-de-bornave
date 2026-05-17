@@ -148,7 +148,7 @@ export function MobileBottomNav({
             rel="noopener"
             className="btn btn--primary"
           >
-            {content.common.whatsappSerge}
+            <span className="btn__inner">{content.common.whatsappSerge}</span>
           </a>
           <div className="mobile-nav-panel__sub">
             <Link
