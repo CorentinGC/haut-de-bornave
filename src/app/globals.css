@@ -620,9 +620,13 @@
    dégradé bas afin de garantir un contraste AA sur les photos claires,
    sans alourdir l'esthétique (toujours dans l'esprit .fr).
    --------------------------------------------------------------------------- */
+/* `!important` assumé : texte du héros superposé à une PHOTO → la
+   lisibilité (contraste AA) est une exigence non négociable qui ne doit
+   jamais retomber sur la couleur générique `.lead` (vert foncé), quels
+   que soient l'ordre de cascade / les layers Tailwind en dev comme en prod. */
 .page-hero .lead {
-  color: rgba(255, 255, 255, 0.92);
-  text-shadow: 0 1px 12px rgba(12, 35, 28, 0.55);
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 1px 12px rgba(12, 35, 28, 0.6) !important;
   max-width: 62ch;
 }
 .page-hero::before {
@@ -634,14 +638,15 @@
   );
 }
 .page-hero h1 {
-  text-shadow: 0 2px 24px rgba(12, 35, 28, 0.4);
+  color: #fff !important;
+  text-shadow: 0 2px 24px rgba(12, 35, 28, 0.45) !important;
   /* Titres internes souvent longs (3-4 lignes) : taille plus mesurée
      que le hero d'accueil + respiration avant la description. */
   font-size: clamp(2.4rem, 5vw, 4.2rem);
   line-height: 1.08;
   max-width: 22ch;
   text-wrap: balance;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem !important;
 }
 .page-hero .eyebrow {
   margin-bottom: 0.7rem;
@@ -654,14 +659,14 @@
    { opacity:.5 }` s'appliquait à NOS spans wrappers → tout le fil
    illisible (~37 % sur photo). On rétablit un contraste AA. */
 .page-hero .breadcrumb {
-  color: rgba(255, 255, 255, 0.95);
+  color: rgba(255, 255, 255, 0.95) !important;
   text-shadow: 0 1px 8px rgba(12, 35, 28, 0.65);
 }
 .page-hero .breadcrumb span {
-  opacity: 1;
+  opacity: 1 !important;
 }
 .page-hero .breadcrumb a {
-  color: rgba(255, 255, 255, 0.82);
+  color: rgba(255, 255, 255, 0.82) !important;
 }
 .page-hero .breadcrumb a:hover {
   color: var(--color-gold);
@@ -1061,9 +1066,9 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
    verticalement (pas collé en bas) pour rester lisible et en avant. */
 @media (max-width: 899px) {
   .page-hero {
-    min-height: 100svh;
-    align-items: center;
-    padding: 6rem 0 4rem;
+    min-height: 100svh !important;
+    align-items: center !important;
+    padding: 6rem 0 4rem !important;
   }
 }
 
