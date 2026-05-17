@@ -11,11 +11,15 @@ déployé sur Vercel. Design repris de `leshautsdebornave.fr`, contenu de `.com`
 
 ## Stack & architecture
 
-- Next 16 `app/[locale]` (fr défaut / en), i18n natif (`src/proxy.ts`), 52 pages SSG.
+- Next 16 `app/[locale]` (fr défaut / en), i18n natif (`src/proxy.ts`), ~62 pages SSG.
 - Charte `.fr` portée : `src/styles/lhdb.css` = **vérité visuelle** (+ tokens Tailwind `@theme`).
-- Contenu typé `src/content/{fr,en}.ts` + `articles.{fr,en}.ts` (verbatim `.com`).
+- Contenu typé `src/content/{fr,en}.ts` (verbatim `.com`). Articles « Que visiter » :
+  **1 JSON bilingue/article** `src/content/articles/<slug>.json` + loader typé
+  `index.ts` (images de section + FAQ + datePublished ; 10 articles).
 - Infos vendeur : **`/config.json`** (racine, source unique) → lu par `src/lib/site.ts`.
-- Médias auto-hébergés `public/media` (108) + `src/lib/media-dimensions.json` (anti-CLS).
+- Médias auto-hébergés `public/media` (~133) ; manifeste de fetch unique
+  `scripts/media.json` (com/fr/wikimedia créditées, `optimize` via sharp) ;
+  `src/lib/media-dimensions.json` (anti-CLS).
 - SEO : `src/lib/seo.ts` (metadata/hreflang) + `src/lib/jsonld.ts` (JSON-LD).
 - Nav mobile = **bottom nav app-style** (`MobileBottomNav`), jamais de burger.
 - Interactions = **React moderne** (Carousel, Typewriter, ScrollReveal, ContactForm) — aucun JS brut/lib ancienne.

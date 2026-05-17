@@ -136,8 +136,9 @@ haut-de-bornave/
 │  └ local-poi.md ...... POI locaux + distances (SEO local)
 ├ scripts/
 │  ├ fetch-media.sh .... télécharge tous les médias → public/media
-│  └ media-com-urls.txt  liste des URLs sources
-├ public/media/ ........ ~108 médias auto-hébergés (gites, domaine, lieux,
+│  ├ media.json ....... manifeste unique des médias (url/dir/file/source/credit)
+│  └ optimize-image.cjs  normalise les sources lourdes en WebP (sharp)
+├ public/media/ ........ ~133 médias auto-hébergés (gites, domaine, lieux,
 │                         galerie, brand, partenaires)
 └ src/
    ├ proxy.ts ........... i18n : redirige vers /fr|/en (ex-middleware)
@@ -154,8 +155,9 @@ haut-de-bornave/
    ├ components/ ........ Header, Footer, MobileBottomNav, Carousel,
    │                      ScrollReveal, Typewriter, ContactForm, JsonLd,
    │                      ui.tsx (primitives : Btn, Section, Hero, Cover…)
-   ├ content/ ........... types.ts, fr.ts, en.ts, articles.{fr,en}.ts,
-   │                      index.ts (getContent/getGite/getArticle, server-only)
+   ├ content/ ........... types.ts, fr.ts, en.ts, index.ts (getContent/
+   │                      getGite/getArticle, server-only) ; articles/
+   │                      <slug>.json (1 JSON bilingue/article) + index.ts loader
    ├ lib/ ............... site.ts (lit /config.json), nav.ts, seo.ts, jsonld.ts,
    │                      media.ts (+ media-dimensions.json), fonts.ts
    └ styles/lhdb.css .... CHARTE .fr portée — source de vérité visuelle

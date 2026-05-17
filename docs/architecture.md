@@ -3,8 +3,9 @@
 ## Vue d'ensemble
 
 Site vitrine **statique** (SSG) bilingue, Next.js 16 App Router. Toutes les
-pages de contenu sont prérendues au build (52 pages = ~13 routes × 2 locales,
-+ gîtes/articles). Seule la route `/api/contact` est une fonction serverless.
+pages de contenu sont prérendues au build (~62 pages = ~13 routes × 2 locales,
++ gîtes + 10 articles ; +2 pages par nouvel article). Seule la route
+`/api/contact` est une fonction serverless.
 
 ## Flux de rendu
 
@@ -28,7 +29,8 @@ slugs d'articles) ⇒ génération statique exhaustive, 404 hors paramètres con
 |--------|----------|------|
 | Données site | `src/lib/site.ts` | NAP, geo, réseaux, paiements (source unique) |
 | Contenu | `src/content/*` | Textes FR/EN verbatim, typés (`types.ts`) |
-| Médias | `src/lib/media.ts` + `media-dimensions.json` | Accès typé + dimensions (anti-CLS) |
+| Articles | `src/content/articles/*.json` + `index.ts` | 1 JSON bilingue/article, loader typé (barrel) |
+| Médias | `src/lib/media.ts` + `media-dimensions.json` ; `scripts/media.json` | Accès typé + dimensions (anti-CLS) ; manifeste de fetch unique |
 | SEO | `src/lib/seo.ts`, `src/lib/jsonld.ts` | Metadata + JSON-LD réutilisables |
 | Nav/i18n | `src/lib/nav.ts`, `src/proxy.ts` | Liens localisés, routing |
 | UI | `src/components/*` | Composants (server + client minimal) |
