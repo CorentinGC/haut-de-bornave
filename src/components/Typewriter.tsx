@@ -10,7 +10,8 @@ import { useEffect, useRef, useState } from "react";
 /**
  * Effet machine à écrire (banner d'accueil) — composant React, état + timers,
  * démarre à l'entrée dans le viewport, respecte prefers-reduced-motion.
- * Reproduit le comportement du site .fr sans manipulation DOM externe.
+ * Frappe unique (pas de boucle effacement) puis curseur clignotant : la
+ * carte n'est jamais vide. Aucune manipulation DOM externe.
  */
 export function Typewriter({ text }: { text: string }) {
   const ref = useRef<HTMLSpanElement | null>(null);
@@ -44,25 +45,20 @@ export function Typewriter({ text }: { text: string }) {
     const wait = (ms: number) =>
       new Promise<void>((res) => timers.push(window.setTimeout(res, ms)));
 
+    // Frappe unique : on tape le texte une fois puis on conserve le mot-clé
+    // de marque avec le curseur clignotant. Une boucle effacement/réécriture
+    // laissait la carte (proéminente, bordée) entièrement VIDE ~1 s à chaque
+    // cycle — rendu « cassé » au scroll. Le one-shot est plus pro pour un
+    // wordmark et garde l'intro machine à écrire élégante.
     const run = async () => {
       setShown("");
-      while (!cancelled) {
-        setDone(false);
-        for (let i = 1; i <= text.length; i++) {
-          if (cancelled) return;
-          setShown(text.slice(0, i));
-          await wait(text[i - 1] === " " ? 200 : 110);
-        }
-        setDone(true);
-        await wait(3400);
-        setDone(false);
-        for (let i = text.length; i >= 0; i--) {
-          if (cancelled) return;
-          setShown(text.slice(0, i));
-          await wait(60);
-        }
-        await wait(550);
+      setDone(false);
+      for (let i = 1; i <= text.length; i++) {
+        if (cancelled) return;
+        setShown(text.slice(0, i));
+        await wait(text[i - 1] === " " ? 200 : 110);
       }
+      setDone(true);
     };
     run();
     return () => {
