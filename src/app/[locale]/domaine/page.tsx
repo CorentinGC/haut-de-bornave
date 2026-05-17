@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent } from "@/content";
 import { pageMetadata } from "@/lib/seo";
 import { media, KEY_MEDIA, domainePhotos } from "@/lib/media";
@@ -134,7 +134,7 @@ export default async function DomainePage({
         eyebrow={c.contact.eyebrow}
         title={c.cta.domaineTitle}
         text={c.home.eventsText}
-        cta={{ href: href(lc, "contact"), label: c.common.requestQuote }}
+        cta={{ href: bookingHref(lc), label: c.common.requestQuote }}
         bg={media(KEY_MEDIA.coucherTainos, c.cta.domaineTitle)}
       />
     </>

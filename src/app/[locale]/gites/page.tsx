@@ -6,7 +6,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, type Locale } from "@/lib/site";
-import { href } from "@/lib/nav";
+import { bookingHref, href } from "@/lib/nav";
 import { getContent } from "@/content";
 import { pageMetadata } from "@/lib/seo";
 import { media, KEY_MEDIA, gitePhotos } from "@/lib/media";
@@ -115,7 +115,7 @@ export default async function GitesPage({
                       {c.common.discover}
                     </Btn>
                     <Btn
-                      href={href(lc, "contact")}
+                      href={bookingHref(lc)}
                       variant="ghost"
                       arrow={false}
                     >
@@ -138,7 +138,7 @@ export default async function GitesPage({
         eyebrow={c.contact.eyebrow}
         title={c.cta.genericTitle}
         text={c.contact.intro}
-        cta={{ href: href(lc, "contact"), label: c.common.requestQuote }}
+        cta={{ href: bookingHref(lc), label: c.common.requestQuote }}
         bg={media(KEY_MEDIA.coucherDeshaies, c.cta.genericTitle)}
       />
     </>

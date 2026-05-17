@@ -10,7 +10,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/site";
 import type { SiteContent } from "@/content/types";
-import { href, mainNav, switchLocaleHref } from "@/lib/nav";
+import { bookingHref, href, mainNav, switchLocaleHref } from "@/lib/nav";
 
 const Arrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -99,7 +99,7 @@ export function Header({
           >
             {content.common.langSwitch}
           </Link>
-          <Link href={href(locale, "contact")} className="btn btn--primary nav__cta">
+          <Link href={bookingHref(locale)} className="btn btn--primary nav__cta">
             <span className="btn__inner">{content.nav.reserve}</span>
           </Link>
         </div>

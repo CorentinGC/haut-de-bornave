@@ -14,6 +14,15 @@ export function href(locale: Locale, path = ""): string {
   return `/${locale}${clean ? `/${clean}` : ""}`;
 }
 
+/**
+ * Lien des CTA de conversion (« Réserver », « Book now », « Demander un
+ * devis »…) : page contact ancrée sur `#reserver` → scroll direct vers la
+ * bannière WhatsApp + le formulaire, sans passer par le haut de page.
+ */
+export function bookingHref(locale: Locale): string {
+  return `${href(locale, "contact")}#reserver`;
+}
+
 /** Correspondance des slugs d'articles entre locales (slugs localisés SEO).
  *  fr[i] ↔ en[i] (même ordre dans articles.fr.ts / articles.en.ts). */
 const ARTICLE_SLUG: Record<Locale, string[]> = {

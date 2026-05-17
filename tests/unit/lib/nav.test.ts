@@ -4,7 +4,7 @@
  */
 
 import { describe, it, expect } from "vitest";
-import { href, switchLocaleHref, mainNav } from "@/lib/nav";
+import { href, bookingHref, switchLocaleHref, mainNav } from "@/lib/nav";
 import { getContent } from "@/content";
 
 describe("nav", () => {
@@ -12,6 +12,11 @@ describe("nav", () => {
     expect(href("fr")).toBe("/fr");
     expect(href("en", "gites")).toBe("/en/gites");
     expect(href("fr", "/que-visiter/abc")).toBe("/fr/que-visiter/abc");
+  });
+
+  it("bookingHref ancre la page contact sur #reserver (scroll direct)", () => {
+    expect(bookingHref("fr")).toBe("/fr/contact#reserver");
+    expect(bookingHref("en")).toBe("/en/contact#reserver");
   });
 
   it("bascule de locale en conservant le chemin", () => {
