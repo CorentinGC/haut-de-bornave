@@ -12,6 +12,7 @@ import {
   Btn,
   CtaBlock,
   HeroSplit,
+  LocationBlock,
   Marquee,
   Section,
   SecHead,
@@ -79,17 +80,11 @@ export default async function HomePage({
           title={c.home.deshaiesTitle}
           lead={c.home.deshaiesText}
         />
-        <div className="location-wrap reveal">
-          <div className="location-map">
-            <iframe
-              src="https://maps.google.com/maps?q=Les+Hauts+de+Bornave,+Quartier+Ferry,+Deshaies,+Guadeloupe&t=k&z=14&ie=UTF8&iwloc=&output=embed"
-              title="Carte — Les Hauts de Bornave à Deshaies, Guadeloupe"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
-        </div>
+        <LocationBlock
+          data={c.home.location}
+          rating={{ score: "9.6", text: c.avis.eyebrow }}
+          ctaHref={href(lc, "contact")}
+        />
       </Section>
 
       {/* Le Domaine */}

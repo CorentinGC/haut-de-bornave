@@ -24,7 +24,7 @@ export default function NotFound() {
           }}
         >
           <Link href="/fr" className="btn btn--primary">
-            Accueil
+            <span className="btn__inner">Accueil</span>
           </Link>
           <Link href="/en" className="btn btn--ghost">
             Home

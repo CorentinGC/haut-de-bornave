@@ -32,6 +32,14 @@ export function Header({
   const other: Locale = locale === "fr" ? "en" : "fr";
   const otherHref = switchLocaleHref(other, pathNoLocale, locale);
 
+  // Les pages sans héros sombre plein cadre laissent le fond clair affleurer
+  // sous la nav : la nav transparente (texte blanc) y serait illisible. On
+  // force alors l'état opaque dès le haut. Dérivé du chemin (synchrone, pas
+  // d'effet, pas de flash d'hydratation). Seule `mentions-legales` n'a pas
+  // de PageHero/HeroSplit (toutes les autres routes en ont un).
+  const HERO_LESS_ROUTES = ["/mentions-legales"];
+  const solidTop = HERO_LESS_ROUTES.includes(pathNoLocale);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
     onScroll();
@@ -44,7 +52,7 @@ export function Header({
 
   return (
     <nav
-      className={`nav${scrolled ? " scrolled" : ""}`}
+      className={`nav${scrolled || solidTop ? " scrolled" : ""}`}
       aria-label="Navigation principale"
     >
       <div className="container nav__inner">
@@ -87,7 +95,7 @@ export function Header({
             {content.common.langSwitch}
           </Link>
           <Link href={href(locale, "contact")} className="btn btn--primary nav__cta">
-            {content.nav.reserve}
+            <span className="btn__inner">{content.nav.reserve}</span>
           </Link>
         </div>
       </div>

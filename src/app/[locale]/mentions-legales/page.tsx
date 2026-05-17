@@ -37,7 +37,7 @@ export default async function MentionsPage({
   const m = c.mentions;
 
   return (
-    <Section>
+    <Section className="legal-page">
       <Breadcrumbs
         trail={[
           { name: c.nav.home, href: href(lc) },

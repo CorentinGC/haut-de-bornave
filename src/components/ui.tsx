@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Media } from "@/lib/media";
+import { SITE } from "@/lib/site";
 
 /* ============================================================================
    Bibliothèque de composants UI — markup & classes BEM repris du site .fr
@@ -57,17 +58,21 @@ export function Btn({
   );
 }
 
-/** Image plein cadre (object-fit cover) pour conteneurs positionnés. */
+/** Image plein cadre (object-fit cover) pour conteneurs positionnés.
+ *  quality 72 par défaut : ces visuels sont en couverture (souvent sous
+ *  un dégradé/overlay) — gain de poids notable, perte visuelle nulle. */
 export function Cover({
   media,
   sizes = "100vw",
   priority,
   className,
+  quality = 72,
 }: {
   media: Media;
   sizes?: string;
   priority?: boolean;
   className?: string;
+  quality?: number;
 }) {
   return (
     <Image
@@ -76,6 +81,7 @@ export function Cover({
       fill
       sizes={sizes}
       priority={priority}
+      quality={quality}
       className={className}
       style={{ objectFit: "cover" }}
     />
@@ -211,7 +217,8 @@ export function CtaBlock({
       <div className="container">
         <div className="cta-block reveal">
           <div className="cta-block__bg">
-            <Cover media={bg} sizes="100vw" />
+            {/* Fond fortement assombri (overlay) → quality basse invisible. */}
+            <Cover media={bg} sizes="100vw" quality={60} />
           </div>
           <Eyebrow gold center>
             {eyebrow}
@@ -440,7 +447,9 @@ export function PageHero({
   return (
     <header className="page-hero">
       <div className="page-hero__bg">
-        <Cover media={media} sizes="100vw" priority />
+        {/* LCP des pages internes : fond sous dégradé sombre → quality
+            réduite = LCP plus léger, aucune perte perceptible. */}
+        <Cover media={media} sizes="100vw" priority quality={62} />
       </div>
       <div className="container">
         <nav className="breadcrumb" aria-label="Fil d'Ariane">
@@ -555,6 +564,95 @@ export function SplitFeature({
             {cta.label}
           </Btn>
         )}
+      </div>
+    </div>
+  );
+}
+
+/** Bloc localisation : carte Google Maps + panneau d'infos (NAP + accès).
+ *  Reproduit la structure 2 colonnes de la charte .fr (`.location-wrap`).
+ *  Les données vendeur viennent de /config.json via SITE. */
+export function LocationBlock({
+  data,
+  rating,
+  ctaHref,
+}: {
+  data: {
+    mapChip: string;
+    panelTitle: string;
+    panelText: string;
+    items: { label: string; value: string; detail: string }[];
+    cta: string;
+  };
+  rating?: { score: string; text: string };
+  ctaHref: string;
+}) {
+  const q = encodeURIComponent(
+    `${SITE.name}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region}`,
+  );
+  return (
+    <div className="location-wrap reveal">
+      <div className="location-map">
+        <span className="location-chip">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            aria-hidden="true"
+          >
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          {data.mapChip}
+        </span>
+        {rating && (
+          <div className="location-rating">
+            <span className="location-rating__score">{rating.score}</span>
+            <div className="location-rating__text">
+              <strong>★★★★★</strong>
+              {rating.text}
+            </div>
+          </div>
+        )}
+        <iframe
+          src={`https://maps.google.com/maps?q=${q}&t=k&z=14&ie=UTF8&iwloc=&output=embed`}
+          title={`Carte — ${SITE.name} à ${SITE.address.locality}, ${SITE.address.region}`}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          allowFullScreen
+        />
+      </div>
+      <div className="location-info">
+        <div className="location-info__head">
+          <h3 dangerouslySetInnerHTML={{ __html: data.panelTitle }} />
+          <p>{data.panelText}</p>
+        </div>
+        {data.items.map((it) => (
+          <div className="location-item" key={it.label}>
+            <span className="location-item__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </span>
+            <span className="location-item__text">
+              <strong>{it.label}</strong>
+              <span>{it.value}</span>
+              <small>{it.detail}</small>
+            </span>
+          </div>
+        ))}
+        <div className="location-cta">
+          <Btn href={ctaHref} variant="primary">
+            {data.cta}
+          </Btn>
+        </div>
       </div>
     </div>
   );
