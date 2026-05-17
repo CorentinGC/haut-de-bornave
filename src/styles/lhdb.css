@@ -2182,7 +2182,6 @@ h1, h2, h3, h4 {
 
   
   .hero-split { padding: 5.5rem 0 2rem; }
-  .page-hero-split { padding: 5rem 0 2rem; }
 
   
   .section { padding: 2.5rem 0; }
@@ -2270,9 +2269,6 @@ h1, h2, h3, h4 {
   .hero-split__stat strong { font-size: 1.4rem; }
 
   
-  .page-hero-split__content h1 { margin-bottom: .8rem; }
-  .page-hero-split__content p { margin-bottom: 1.1rem; font-size: .94rem; }
-  .page-hero-split__content .breadcrumb { margin-bottom: .9rem; }
 
   
   .event-card { min-height: 280px; padding: 1.5rem; }
@@ -2342,7 +2338,7 @@ body::after {
   mix-blend-mode: multiply;
 }
 
-.nav, .hero, .hero-split, .page-hero-split, .section, .section-tight, .footer { z-index: 2; }
+.nav, .hero, .hero-split, .section, .section-tight, .footer { z-index: 2; }
 .nav { z-index: 100; }
 
 .sticker {
@@ -3191,226 +3187,6 @@ body::after {
   .hero-split__content h1 { font-size: clamp(2rem, 8vw, 3rem); }
   .hero-split__cta { flex-direction: column; align-items: stretch; gap: .6rem; }
   .hero-split__cta .btn { width: 100%; justify-content: center; }
-}
-
-.page-hero-split {
-  position: relative;
-  padding: 8rem 0 4rem;
-  background: var(--c-bg);
-  overflow: hidden;
-}
-.page-hero-split::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: -10%;
-  width: 40%;
-  height: 100%;
-  background: radial-gradient(ellipse, rgba(201, 166, 107, .12), transparent 65%);
-  pointer-events: none;
-}
-
-.page-hero-split > .container {
-  max-width: min(1440px, 96vw);
-  padding: 0 1rem;
-}
-.page-hero-split__grid {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 1.05fr;
-  gap: 0;
-  align-items: stretch;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 24px 60px rgba(12, 35, 28, .22);
-  isolation: isolate;
-  min-height: 400px;
-  max-height: 480px;
-  overflow: hidden;
-}
-.page-hero-split__content {
-  position: relative;
-  padding: clamp(1.6rem, 2.8vw, 2.4rem);
-  background: var(--c-emerald);
-  color: #fff;
-  border-radius: 0;
-  overflow: hidden;
-  isolation: isolate;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.page-hero-split__content::before {
-  content: "";
-  position: absolute;
-  top: -30%;
-  right: -20%;
-  width: 70%;
-  height: 70%;
-  background: radial-gradient(circle, rgba(201, 166, 107, .18), transparent 60%);
-  pointer-events: none;
-  z-index: -1;
-}
-.page-hero-split__content::after {
-  content: "";
-  position: absolute;
-  bottom: -25%;
-  left: -20%;
-  width: 55%;
-  height: 50%;
-  background: radial-gradient(circle, rgba(201, 123, 94, .14), transparent 60%);
-  pointer-events: none;
-  z-index: -1;
-}
-.page-hero-split__content .breadcrumb {
-  display: flex;
-  gap: .6rem;
-  align-items: center;
-  font-size: .76rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, .5);
-  margin-bottom: 1.4rem;
-}
-.page-hero-split__content .breadcrumb a { color: rgba(255, 255, 255, .8); transition: color .3s var(--ease); }
-.page-hero-split__content .breadcrumb a:hover { color: var(--c-gold); }
-.page-hero-split__content .breadcrumb span:not(:last-child) { color: rgba(255, 255, 255, .25); }
-.page-hero-split__content h1 {
-  font-family: var(--f-display);
-  font-weight: 300;
-  font-size: clamp(2rem, 4vw, 3.3rem);
-  line-height: 1.04;
-  letter-spacing: -.02em;
-  color: #fff;
-  margin-bottom: 1.3rem;
-}
-.page-hero-split__content h1 em {
-  font-style: italic;
-  color: var(--c-gold);
-  font-weight: 300;
-}
-.page-hero-split__content p {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, .8);
-  max-width: 50ch;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.page-hero-split__content .chip {
-  background: rgba(255, 255, 255, .08);
-  border-color: rgba(255, 255, 255, .15);
-  color: rgba(255, 255, 255, .85);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-}
-.page-hero-split__content .chip--gold {
-  background: rgba(201, 166, 107, .14);
-  border-color: rgba(201, 166, 107, .4);
-  color: var(--c-gold);
-}
-.page-hero-split__content .chip--accent {
-  background: rgba(201, 123, 94, .18);
-  border-color: rgba(201, 123, 94, .4);
-  color: #e6a087;
-}
-.page-hero-split__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-  margin-bottom: 1.5rem;
-}
-.page-hero-split__media {
-  position: relative;
-  isolation: isolate;
-  display: flex;
-  min-height: 0;
-}
-.page-hero-split__frame {
-  position: relative;
-  border-radius: 0;
-  overflow: hidden;
-  width: 100%;
-  height: 100%;
-}
-.page-hero-split__frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 1.2s var(--ease);
-}
-.page-hero-split__media:hover .page-hero-split__frame img { transform: scale(1.04); }
-.page-hero-split__tag {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  padding: .5rem .9rem;
-  background: rgba(255, 255, 255, .95);
-  border-radius: 999px;
-  font-family: var(--f-body);
-  font-size: .72rem;
-  font-weight: 600;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--c-emerald);
-  backdrop-filter: blur(8px);
-  z-index: 2;
-  box-shadow: 0 4px 14px rgba(20, 52, 43, .12);
-}
-.page-hero-split__sticker {
-  position: absolute;
-  bottom: -1.2rem;
-  right: -1.2rem;
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: var(--c-emerald);
-  color: var(--c-gold);
-  display: grid;
-  place-items: center;
-  text-align: center;
-  font-family: var(--f-display);
-  box-shadow: 0 12px 30px rgba(20, 52, 43, .25);
-  z-index: 3;
-  transform: rotate(-6deg);
-}
-.page-hero-split__sticker strong {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 1;
-}
-.page-hero-split__sticker span {
-  display: block;
-  font-family: var(--f-body);
-  font-size: .62rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  margin-top: .3rem;
-  color: rgba(255, 255, 255, .8);
-}
-
-@media (max-width: 900px) {
-  .page-hero-split { padding: 6.5rem 0 3rem; }
-  .page-hero-split__grid {
-    grid-template-columns: 1fr;
-    gap: 0;
-    min-height: 0;
-    max-height: none;
-  }
-  .page-hero-split__media { order: -1; }
-  .page-hero-split__frame {
-    width: 100%;
-    height: auto;
-  }
-  .page-hero-split__frame img { aspect-ratio: 16 / 10; height: auto; }
-  .page-hero-split__content {
-    padding: 1.3rem 1.2rem 1.5rem;
-  }
-  .page-hero-split__sticker {
-    width: 90px; height: 90px;
-    bottom: -.8rem; right: -.4rem;
-  }
-  .page-hero-split__sticker strong { font-size: 1.3rem; }
 }
 
 .hero__scroll-modern {
