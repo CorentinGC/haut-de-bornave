@@ -31,6 +31,10 @@
   --ease-fluid: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Tokens charte (alias → @theme, source unique) — AVANT lhdb qui les
+   consomme via var(--c-*). */
+@import "../styles/tokens.css";
+
 /* Système de design complet porté du site .fr (source de vérité visuelle).
    Importé après Tailwind pour que ses classes BEM priment sur le preflight. */
 @import "../styles/lhdb.css";
