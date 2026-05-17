@@ -1,0 +1,33 @@
+/**
+ * Styles du bloc feature en deux colonnes (SplitFeature).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+
+  &.reverse .media { order: 2; }
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+
+    &.reverse .media { order: 0; }
+  }
+}
+
+/* position: relative requis — Cover utilise fill (position: absolute) */
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16 / 10;
+}
+
+.content {
+  h2 { margin: 1rem 0 1.5rem; }
+  p { margin-bottom: 1.2rem; color: var(--c-ink-soft); }
+}

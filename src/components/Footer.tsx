@@ -8,6 +8,7 @@ import type { Locale } from "@/lib/site";
 import { SITE } from "@/lib/site";
 import type { SiteContent } from "@/content/types";
 import { href, mainNav } from "@/lib/nav";
+import styles from "./Footer.module.scss";
 
 /** Pied de page fidèle au site .fr (fond émeraude profond). */
 export function Footer({
@@ -21,13 +22,13 @@ export function Footer({
   const items = mainNav(content);
 
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <div className="container">
-        <div className="footer__grid">
+        <div className={styles.grid}>
           <div>
-            <div className="footer__brand">
-              <span className="footer__logo" aria-hidden="true" />
-              <span className="footer__brand-text">
+            <div className={styles.brand}>
+              <span className={styles.logo} aria-hidden="true" />
+              <span className={styles.brandText}>
                 Les Hauts De Bornave
                 <small>Deshaies · Guadeloupe</small>
               </span>
@@ -35,7 +36,7 @@ export function Footer({
             <p style={{ maxWidth: "36ch", fontSize: ".92rem" }}>
               {content.footer.tagline}
             </p>
-            <div className="payments">
+            <div className={styles.payments}>
               {SITE.payments.map((p) => (
                 <span key={p}>{p}</span>
               ))}
@@ -79,7 +80,7 @@ export function Footer({
 
           <div>
             <h5>{content.footer.followCol}</h5>
-            <div className="footer__social">
+            <div className={styles.social}>
               <a
                 href={SITE.social.facebook}
                 target="_blank"
@@ -113,11 +114,11 @@ export function Footer({
           </div>
         </div>
 
-        <div className="footer__bottom">
+        <div className={styles.bottom}>
           <span>
             © {year} {SITE.name} — {content.footer.rights}
           </span>
-          <span className="footer__credit">
+          <span className={styles.credit}>
             <Link href={href(locale, "mentions-legales")}>
               {content.footer.legal}
             </Link>

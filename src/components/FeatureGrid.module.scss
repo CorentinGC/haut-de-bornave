@@ -1,0 +1,45 @@
+/**
+ * Styles de la grille de fonctionnalités (FeatureGrid).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+
+  @media (max-width: 860px) { grid-template-columns: 1fr; }
+}
+
+.feature {
+  background: var(--c-surface);
+  padding: 2.5rem 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--c-line);
+  transition: all .4s var(--ease);
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--c-accent);
+  }
+}
+
+.icon {
+  width: 52px; height: 52px;
+  display: grid; place-items: center;
+  background: var(--c-bg-alt);
+  border-radius: 50%;
+  color: var(--c-accent);
+  margin-bottom: 1.5rem;
+}
+
+.feature h3 {
+  font-size: 1.25rem;
+  margin-bottom: .8rem;
+}
+
+.feature p {
+  color: var(--c-ink-soft);
+  font-size: .95rem;
+}

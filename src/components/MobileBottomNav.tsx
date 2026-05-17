@@ -12,6 +12,7 @@ import type { Locale } from "@/lib/site";
 import { SITE } from "@/lib/site";
 import type { SiteContent } from "@/content/types";
 import { href, switchLocaleHref } from "@/lib/nav";
+import { Btn } from "@/ui/atoms/Btn";
 
 /* Icônes inline (aucune lib) — trait simple, héritent de currentColor. */
 const I = {
@@ -147,14 +148,9 @@ export function MobileBottomNav({
           ))}
         </ul>
         <div className="mobile-nav-panel__foot">
-          <a
-            href={SITE.whatsapp}
-            target="_blank"
-            rel="noopener"
-            className="btn btn--primary"
-          >
-            <span className="btn__inner">{content.common.whatsappSerge}</span>
-          </a>
+          <Btn href={SITE.whatsapp} variant="primary" external>
+            {content.common.whatsappSerge}
+          </Btn>
           <div className="mobile-nav-panel__sub">
             <Link
               href={href(locale, "mentions-legales")}

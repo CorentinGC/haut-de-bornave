@@ -39,6 +39,96 @@
    (src/styles/lhdb/index.scss) — hors de globals.css car Lightning CSS
    (Tailwind v4) ne compile pas le SCSS. */
 
+/* ===========================================================================
+   Base — typographie, reset complémentaire Preflight, utilitaires globaux.
+   (Tailwind v4 Preflight couvre box-sizing et reset de certains éléments ;
+   ici : margin/padding sur *, body, liens, boutons, titres charte, utils.)
+   =========================================================================== */
+
+/* Reset complémentaire : Preflight gère box-sizing mais pas margin/padding * */
+* { margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+body {
+  font-family: var(--f-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--c-ink);
+  background: var(--c-bg);
+  overflow-x: hidden;
+}
+
+img, picture, video { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; transition: color .3s var(--ease); }
+button { font: inherit; cursor: pointer; border: 0; background: none; color: inherit; }
+
+h1, h2, h3, h4 {
+  font-family: var(--f-display);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--c-emerald);
+}
+
+.h-hero {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  font-weight: 300;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.h-hero em { font-style: italic; color: var(--c-accent); font-weight: 300; }
+.h-xl { font-size: clamp(2.2rem, 4.5vw, 4rem); }
+.h-lg { font-size: clamp(1.8rem, 3vw, 2.6rem); }
+.h-md { font-size: clamp(1.4rem, 2vw, 1.8rem); }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-family: var(--f-body);
+  font-size: .76rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: var(--c-accent);
+}
+.eyebrow::before { content: "-"; font-weight: 500; opacity: .7; letter-spacing: 0; }
+
+.lead { font-size: clamp(1.05rem, 1.3vw, 1.18rem); color: var(--c-ink-soft); max-width: 60ch; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.section { padding: clamp(4rem, 9vw, 8rem) 0; position: relative; }
+.section-tight { padding: clamp(3rem, 6vw, 5rem) 0; position: relative; }
+.section > .container,
+.section-tight > .container { position: relative; z-index: 1; }
+
+.grid { display: grid; gap: 1.5rem; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 960px) { .grid-3, .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+/* Scroll reveal (classe .reveal appliquée par ScrollReveal — .js = JS chargé) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal--delay-1 { transition-delay: .1s; }
+.reveal--delay-2 { transition-delay: .2s; }
+.reveal--delay-3 { transition-delay: .3s; }
+
 /* Accessibilité : respect de prefers-reduced-motion (a11y) */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -49,6 +139,7 @@
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
 }
 
 /* Anneau de focus visible cohérent avec la charte (navigation clavier) */
@@ -191,22 +282,31 @@
   max-width: 70ch;
 }
 
-/* Machine à écrire (banner d'accueil) */
+/* Typewriter — curseur clignotant (Typewriter.tsx utilise ces classes globales
+   car le composant est client et applique les états via JS sur les spans). */
 .welcome-banner-card__cursor {
   display: inline-block;
   width: 3px;
-  height: 1em;
-  margin-left: 2px;
-  background: var(--color-accent);
-  vertical-align: text-bottom;
+  height: 0.82em;
+  margin-left: 0.08em;
+  vertical-align: -0.06em;
+  background: var(--c-accent);
+  border-radius: 1px;
+  opacity: 0;
+}
+.welcome-banner-card__wrap.is-typewriting .welcome-banner-card__cursor {
+  opacity: 1;
 }
 .welcome-banner-card__wrap.is-typewriter-done .welcome-banner-card__cursor {
-  animation: lhdb-caret 1.05s step-end infinite;
+  opacity: 1;
+  animation: typewriter-caret 1.05s step-end infinite;
 }
-@keyframes lhdb-caret {
-  50% {
-    opacity: 0;
-  }
+@keyframes typewriter-caret {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .welcome-banner-card__cursor { display: none; }
 }
 
 /* ---- Bottom navigation mobile (app-style) — masquée en desktop ---- */
@@ -492,65 +592,44 @@
   color: var(--color-accent);
 }
 
-/* Formulaire de contact */
-.form label {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-ink-soft);
-  margin-bottom: 1rem;
-}
-.form input,
-.form textarea {
-  font: inherit;
-  padding: 0.85rem 1rem;
-  background: var(--color-sand);
-  border: 1px solid var(--color-line, rgba(20, 52, 43, 0.12));
-  border-radius: var(--radius-sm);
-  color: var(--color-ink);
-}
-.form input:focus,
-.form textarea:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  background: #fff;
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 1rem;
-}
-@media (max-width: 600px) {
-  .form-row { grid-template-columns: 1fr; }
-}
-.form .btn { width: 100%; justify-content: center; margin-top: 0.5rem; }
-.hp-field {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-.form-error {
-  color: #a6563b;
-  font-size: 0.9rem;
-  margin-bottom: 0.75rem;
-}
-.form-success {
-  color: var(--color-emerald);
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  text-align: center;
-  padding: 2rem 0;
-}
 
 /* ===========================================================================
    Corrections review visuelle (hover, médias fill, contraste nav)
    =========================================================================== */
 
+/* Bouton global — styles de base partagés par les contextes hors routeur
+   Next.js (ex. 404 globale) et MobileBottomNav. Les composants React
+   utilisent Btn.module.scss (scoped) ; ici uniquement les classes brutes. */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 1rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: .92rem;
+  letter-spacing: .02em;
+  transition: all .35s var(--ease);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--c-emerald);
+  color: var(--c-bg);
+}
+.btn--primary:hover {
+  background: var(--c-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--c-emerald);
+  border: 1px solid var(--c-emerald);
+}
+.btn--ghost:hover { background: var(--c-emerald); color: var(--c-bg); }
+.btn--light { background: var(--c-bg); color: var(--c-emerald); }
+.btn--light:hover { background: var(--c-accent); color: #fff; }
 /* Btn : le contenu est dans .btn__inner pour passer au-dessus du calque
    ::before des boutons primaires (sinon texte invisible au survol). */
 .btn__inner {
@@ -563,137 +642,11 @@
   z-index: 1;
 }
 
-/* Conteneur média des blocs "split" : next/image fill nécessite un parent
-   positionné et dimensionné (sinon section blanche / image effondrée). */
-.split__media {
-  position: relative;
-  aspect-ratio: 16 / 10;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-md);
-}
-.split__media img {
-  border-radius: inherit;
-}
-
-/* Flèche des cartes "univers" (et autres .more) : taille bornée
-   (sinon SVG sans dimension → géant plein écran). */
+/* Flèche des liens « En savoir plus » (.more) — taille bornée SVG */
 .more svg {
   width: 16px;
   height: 16px;
   flex: none;
-}
-
-/* Sélecteur de langue : lisible aussi bien sur header transparent
-   (texte clair sur le héros sombre) que sur header opaque au scroll. */
-.nav:not(.scrolled) .nav__lang {
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.55);
-  text-shadow: 0 1px 8px rgba(12, 35, 28, 0.45);
-}
-.nav.scrolled .nav__lang {
-  color: var(--color-emerald);
-  border-color: rgba(20, 52, 43, 0.4);
-}
-
-/* Carte Google Maps : fond sable pendant le chargement de l'iframe
-   (jamais de bloc blanc vide). */
-.location-map {
-  background: var(--color-sand-alt);
-}
-
-/* .universe__card : crée un contexte d'empilement pour contenir l'image
-   de fond en z-index:-2 (sinon elle passe derrière le fond de page). */
-.universe__card,
-.cta-block {
-  isolation: isolate;
-}
-
-/* ---------------------------------------------------------------------------
-   Carrousel gîte : la charte .fr stylait un carrousel scroll-snap (HTML
-   statique). Le composant React pilote la position via `transform:
-   translateX()` sur la piste. Or `.carousel__track` héritait de
-   `overflow-x:auto; scroll-snap-type` qui borne la piste à la largeur du
-   carrousel : le transform déplaçait alors toute la boîte hors écran →
-   carrousel vide. On neutralise le mécanisme de scroll pour laisser la
-   piste s'étendre à toutes les slides et le transform faire le glissement.
-   --------------------------------------------------------------------------- */
-.carousel__track {
-  overflow: visible;
-  scroll-snap-type: none;
-  width: 100%;
-  will-change: transform;
-}
-.carousel__slide {
-  scroll-snap-align: none;
-}
-/* next/image (fill) injecte un <img> en position:absolute ; la règle .fr
-   `.carousel__slide img { width/height:100% }` suffit, mais on garantit le
-   recouvrement complet de la slide (anti bord sable). */
-.carousel__slide img {
-  position: absolute;
-  inset: 0;
-}
-
-/* ---------------------------------------------------------------------------
-   PageHero : le héros est sombre (image + dégradé) et `.page-hero` impose
-   `color:#fff`. Mais `.lead` porte un `color: var(--c-ink-soft)` (vert
-   foncé) hérité de la charte → texte d'intro illisible sur le héros.
-   On force une couleur claire pour le lead et on renforce légèrement le
-   dégradé bas afin de garantir un contraste AA sur les photos claires,
-   sans alourdir l'esthétique (toujours dans l'esprit .fr).
-   --------------------------------------------------------------------------- */
-/* `!important` assumé : texte du héros superposé à une PHOTO → la
-   lisibilité (contraste AA) est une exigence non négociable qui ne doit
-   jamais retomber sur la couleur générique `.lead` (vert foncé), quels
-   que soient l'ordre de cascade / les layers Tailwind en dev comme en prod. */
-.page-hero .lead {
-  color: rgba(255, 255, 255, 0.95) !important;
-  text-shadow: 0 1px 12px rgba(12, 35, 28, 0.6) !important;
-  max-width: 62ch;
-  margin-top: 0;
-}
-.page-hero::before {
-  background: linear-gradient(
-    180deg,
-    rgba(12, 35, 28, 0.42) 0%,
-    rgba(12, 35, 28, 0.62) 55%,
-    rgba(12, 35, 28, 0.86) 100%
-  );
-}
-.page-hero h1 {
-  color: #fff !important;
-  text-shadow: 0 2px 24px rgba(12, 35, 28, 0.45) !important;
-  /* Titres internes souvent longs (3-4 lignes) : taille plus mesurée
-     que le hero d'accueil + respiration avant la description. */
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
-  line-height: 1.08;
-  max-width: 22ch;
-  text-wrap: balance;
-  margin-bottom: 1.5rem !important;
-}
-/* Fil d'Ariane du héros : la règle .fr `.page-hero .breadcrumb span
-   { opacity:.5 }` s'appliquait à NOS spans wrappers → tout le fil
-   illisible (~37 % sur photo). On rétablit un contraste AA. */
-.page-hero .breadcrumb {
-  color: rgba(255, 255, 255, 0.95) !important;
-  text-shadow: 0 1px 8px rgba(12, 35, 28, 0.65);
-}
-.page-hero .breadcrumb span {
-  opacity: 1 !important;
-}
-.page-hero .breadcrumb a {
-  color: rgba(255, 255, 255, 0.82) !important;
-}
-.page-hero .breadcrumb a:hover {
-  color: var(--color-gold);
-}
-.page-hero .breadcrumb [aria-current="page"] {
-  color: #fff;
-  font-weight: 600;
-}
-.page-hero .breadcrumb span[aria-hidden="true"] {
-  opacity: 0.5;
 }
 
 /* ---------------------------------------------------------------------------
@@ -748,54 +701,6 @@
   color: var(--color-emerald);
   border-color: rgba(20, 52, 43, 0.4);
   text-shadow: none;
-}
-
-/* ---------------------------------------------------------------------------
-   Exception : pages à HÉROS IMAGE PLEIN CADRE (`.page-hero`, pages
-   secondaires). En haut (non scrollé), la navbar redevient TRANSPARENTE
-   pour laisser voir l'image du héros (effet immersif voulu). Texte clair
-   + dégradé de lisibilité. Au scroll → repasse solide (règles ci-dessus).
-   L'accueil (hero-split) et les pages sans héros gardent la navbar solide.
-   --------------------------------------------------------------------------- */
-body:has(.page-hero) .nav:not(.scrolled) {
-  background: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  border-bottom-color: transparent;
-  box-shadow: none;
-}
-body:has(.page-hero) .nav:not(.scrolled)::before {
-  display: block;
-  background: linear-gradient(
-    180deg,
-    rgba(12, 35, 28, 0.6) 0%,
-    rgba(12, 35, 28, 0) 100%
-  );
-}
-body:has(.page-hero) .nav:not(.scrolled) .nav__brand,
-body:has(.page-hero) .nav:not(.scrolled) .nav .nav__links a,
-body:has(.page-hero) .nav:not(.scrolled) .nav__links a,
-body:has(.page-hero) .nav:not(.scrolled) .nav:not(.scrolled) .nav__lang,
-body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
-  color: #fff;
-  text-shadow: 0 1px 10px rgba(12, 35, 28, 0.55);
-}
-body:has(.page-hero) .nav:not(.scrolled) .nav__brand small {
-  color: var(--color-gold);
-}
-body:has(.page-hero) .nav:not(.scrolled) .nav__logo {
-  background: #fff;
-  filter: drop-shadow(0 1px 4px rgba(12, 35, 28, 0.35));
-}
-body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
-  border-color: rgba(255, 255, 255, 0.55);
-}
-
-/* Héros image plein cadre plus immersif sur mobile (occupe + d'écran). */
-@media (max-width: 899px) {
-  .page-hero {
-    min-height: 86svh;
-  }
 }
 
 /* Citation de conclusion (page Deshaies & co.) — éditoriale, élégante */
@@ -928,13 +833,8 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
 /* P3 — Page 404 : respiration titre↔description corrigée directement dans
    `src/app/global-not-found.tsx` (styles inline → priorité sur la feuille). */
 
-/* Détail optique : équilibrage des titres de section longs (anti-veuves)
-   sans dénaturer la charte (titres .fr déjà cadrés ; on ajoute le wrap). */
-.h-lg,
-.sec-head h2,
-.split__content h2 {
-  text-wrap: balance;
-}
+/* Équilibrage des titres longs (anti-veuves) */
+.h-lg { text-wrap: balance; }
 
 /* CTA de réservation : ancre #reserver sur la page contact. Décalage pour
    ne pas masquer la bannière WhatsApp sous l'en-tête fixe (scroll direct
@@ -953,29 +853,6 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
    Ajustements ciblés, la charte lhdb.css n'est pas modifiée.
    =========================================================================== */
 
-/* ---------------------------------------------------------------------------
-   P1 — Mosaïque hébergements (accueil) : l'eyebrow de la carte (« VILLA
-   GRANDE CAPACITÉ · JUSQU'À 12 PERSONNES »…) est un <span class="eyebrow">
-   en display:inline-flex sans marge basse. Sur ces libellés longs il passe
-   sur 2 lignes et CHEVAUCHE le <h3> du gîte (desktop ET mobile). On le
-   passe en bloc, on borne l'interligne et on rétablit une respiration
-   eyebrow↔titre — sans toucher la charte ni l'esthétique .fr.
-   --------------------------------------------------------------------------- */
-.universe__card .eyebrow {
-  display: block;
-  line-height: 1.4;
-  margin-bottom: 0.55rem;
-  text-wrap: balance;
-}
-/* Le tiret décoratif `.eyebrow::before` est un flex-item : sur un libellé
-   long il se retrouvait seul sur la 1re ligne. On l'attache au texte. */
-.universe__card .eyebrow::before {
-  content: "– ";
-  margin-right: 0;
-}
-.universe__card h3 {
-  margin-bottom: 0.5rem;
-}
 
 /* ---------------------------------------------------------------------------
    P2 — Bloc localisation (accueil) : `.location-wrap` a un border-radius
@@ -1079,45 +956,56 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
   border-color: rgba(201, 123, 94, 0.4);
 }
 
-/* Héros image plein cadre : occupe TOUT le viewport en mobile (effet
-   « wahou » immersif, navbar transparente par-dessus) ; texte centré
-   verticalement (pas collé en bas) pour rester lisible et en avant. */
-@media (max-width: 899px) {
-  .page-hero {
-    min-height: 100svh !important;
-    align-items: center !important;
-    padding: 6rem 0 4rem !important;
-  }
-}
-
-/* Anti-flash au 1er affichage : fond émeraude sombre derrière l'image.
-   ⚠️ UNIQUEMENT sur `.page-hero__bg` (le calque image, z-index:-2) — JAMAIS
-   sur `.page-hero` lui-même : `.page-hero` n'étant pas un contexte
-   d'empilement, un background opaque masquerait l'image en z-index négatif. */
-.page-hero__bg {
-  background-color: var(--color-emerald-deep);
-}
-.hero-split__frame,
-.cta-block__bg,
-.split__media,
-.article-card__media,
-.universe__card {
+/* Anti-flash que-visiter : fond émeraude sombre pendant le chargement de l'image. */
+.article-card__media {
   background-color: var(--color-emerald-deep);
 }
 
-/* `Cover` = next/image `fill` → <img> en position:absolute (l'<img> du site
-   .fr est en flux). En mobile la charte pose `.hero-split__frame{height:auto}`
-   : sans enfant en flux le cadre s'effondre à 0 → image du héros INVISIBLE +
-   warning next/image « fill + height 0 ». On redonne au cadre une hauteur via
-   `aspect-ratio:16/10` (ratio charte .fr). Strictement borné à ≤900px (grille
-   1 colonne) : en desktop la grille est `1fr 1fr` et un `aspect-ratio` sur le
-   cadre gonflerait le minimum auto de la piste média (≈ h×16/10) → colonne
-   texte écrasée. Desktop conserve donc EXACTEMENT son rendu (height:100%
-   résolu par la grille étirée). */
+/* ===========================================================================
+   Texture & effets globaux (grain, bg-alt, z-index, responsive utils)
+   =========================================================================== */
+
+/* Film grain fixé sur tout le site (texture photographique, mix: multiply) */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.08 0 0 0 0 0.20 0 0 0 0 0.17 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: .35;
+  mix-blend-mode: multiply;
+}
+
+/* Texture papier sur les sections sable alterné (Section alt) */
+.bg-alt {
+  position: relative;
+}
+.bg-alt::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch' seed='5'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.55 0 0 0 0 0.48 0 0 0 0 0.30 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");
+  opacity: .55;
+  mix-blend-mode: multiply;
+}
+
+/* Z-index stacking : nav au-dessus du film grain (z-index:1) et des sections */
+.nav { z-index: 100; }
+.section, .section-tight { z-index: 2; }
+
+/* Responsive — ajustements globaux sur petits écrans */
 @media (max-width: 900px) {
-  .hero-split__frame {
-    aspect-ratio: 16 / 10;
-  }
+  .container { padding: 0 1.1rem; }
+  .section { padding: 2.5rem 0; }
+  .section-tight { padding: 2rem 0; }
+  .h-xl { font-size: clamp(1.7rem, 7vw, 2.3rem); }
+  .h-hero { font-size: clamp(2.2rem, 9vw, 3.2rem); }
+  .btn { padding: .75rem 1.3rem; font-size: .85rem; }
+}
+@media (max-width: 560px) {
+  .section { padding: 2rem 0; }
 }
 
 /* Phrase de conclusion sous la grille des 6 espaces communs (page Domaine)

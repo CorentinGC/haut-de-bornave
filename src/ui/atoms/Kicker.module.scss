@@ -1,0 +1,57 @@
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .45rem .9rem;
+  font-family: var(--f-body);
+  font-size: .74rem;
+  font-weight: 500;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--c-emerald);
+  background: rgba(20, 52, 43, .06);
+  border: 1px solid rgba(20, 52, 43, .12);
+  border-radius: 999px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 0 4px rgba(201, 166, 107, .2);
+  animation: kickerPulse 2.4s ease-in-out infinite;
+}
+
+@keyframes kickerPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(201, 166, 107, .12); }
+  50%       { box-shadow: 0 0 0 8px rgba(201, 166, 107, 0); }
+}
+
+// Variantes
+
+.light {
+  color: #fff;
+  background: rgba(255, 255, 255, .10);
+  border-color: rgba(255, 255, 255, .2);
+}
+
+.gold {
+  color: var(--c-gold);
+  background: rgba(201, 166, 107, .14);
+  border-color: rgba(201, 166, 107, .35);
+}
+
+// Fond sombre (HeroSplit emerald) — couleurs inversées
+.hero {
+  color: var(--c-gold);
+  background: rgba(255, 255, 255, .08);
+  border-color: rgba(255, 255, 255, .15);
+}
+
+.kicker.hero .dot {
+  background: var(--c-gold);
+  box-shadow: 0 0 0 4px rgba(201, 166, 107, .2);
+}

@@ -15,13 +15,12 @@ import { breadcrumbLd } from "@/lib/jsonld";
 import {
   Btn,
   CtaBlock,
-  Facts,
   FeatureGrid,
+  GiteCard,
   PageHero,
   Section,
   SecHead,
 } from "@/components/ui";
-import { Carousel } from "@/components/Carousel";
 
 export const dynamic = "force-static";
 
@@ -77,54 +76,36 @@ export default async function GitesPage({
         const photos = gitePhotos(g.mediaPrefix, g.name);
         return (
           <Section key={g.slug} alt={i % 2 === 1} id={g.slug}>
-            <article
-              className={`gite-card reveal${i % 2 ? " gite-card--reverse" : ""}`}
-            >
-              <div className="gite-card__inner">
-                <Carousel photos={photos} />
-                <div className="gite-card__content">
-                  <span className="gite-card__tag">{g.kicker}</span>
-                  <h2>{g.name}</h2>
-                  <p className="gite-card__lead">{g.tagline}</p>
-                  <Facts
-                    facts={[
-                      { value: g.facts.surface, label: c.common.discover === "Discover" ? "Area" : "Surface" },
-                      { value: g.facts.capacity.replace(/\D/g, ""), label: c.common.upTo === "up to" ? "People" : "Personnes" },
-                      { value: g.facts.bedrooms.replace(/\D/g, ""), label: lc === "fr" ? "Chambres" : "Bedrooms" },
-                      {
-                        value: g.facts.privatePool ? "✓" : "—",
-                        label: lc === "fr" ? "Piscine privée" : "Private pool",
-                      },
-                    ]}
-                  />
-                  <ul className="gite-card__equip">
-                    {g.equipment.slice(0, 8).map((e) => (
-                      <li key={e}>{e}</li>
-                    ))}
-                  </ul>
-                  <div className="gite-card__price">
-                    <strong>{g.pricePerNight} €</strong>
-                    <small>{c.common.perNight}</small>
-                    <span style={{ color: "var(--c-line)" }}>·</span>
-                    <span>
-                      + {g.cleaningFee} € {c.common.cleaningFee.toLowerCase()}
-                    </span>
-                  </div>
-                  <div className="gite-card__actions">
-                    <Btn href={href(lc, `gites/${g.slug}`)} variant="primary">
-                      {c.common.discover}
-                    </Btn>
-                    <Btn
-                      href={bookingHref(lc)}
-                      variant="ghost"
-                      arrow={false}
-                    >
-                      {c.common.bookNow}
-                    </Btn>
-                  </div>
-                </div>
-              </div>
-            </article>
+            <GiteCard
+              photos={photos}
+              kicker={g.kicker}
+              name={g.name}
+              lead={g.tagline}
+              facts={[
+                { value: g.facts.surface, label: lc === "fr" ? "Surface" : "Area" },
+                { value: g.facts.capacity.replace(/\D/g, ""), label: lc === "fr" ? "Personnes" : "People" },
+                { value: g.facts.bedrooms.replace(/\D/g, ""), label: lc === "fr" ? "Chambres" : "Bedrooms" },
+                { value: g.facts.privatePool ? "✓" : "—", label: lc === "fr" ? "Piscine privée" : "Private pool" },
+              ]}
+              equipment={g.equipment.slice(0, 8)}
+              price={{
+                amount: g.pricePerNight,
+                perNightLabel: c.common.perNight,
+                cleaningFee: g.cleaningFee,
+                cleaningLabel: c.common.cleaningFee.toLowerCase(),
+              }}
+              reverse={i % 2 !== 0}
+              actions={
+                <>
+                  <Btn href={href(lc, `gites/${g.slug}`)} variant="primary">
+                    {c.common.discover}
+                  </Btn>
+                  <Btn href={bookingHref(lc)} variant="ghost" arrow={false}>
+                    {c.common.bookNow}
+                  </Btn>
+                </>
+              }
+            />
           </Section>
         );
       })}

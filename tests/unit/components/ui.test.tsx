@@ -8,7 +8,7 @@ import { render, screen } from "@testing-library/react";
 import { Btn, FaqList, Breadcrumbs, Marquee } from "@/components/ui";
 
 describe("ui primitives", () => {
-  it("Btn interne rend un lien stylé avec flèche", () => {
+  it("Btn interne rend un lien avec le bon href", () => {
     render(
       <Btn href="/fr/contact" variant="primary">
         Réserver
@@ -16,7 +16,6 @@ describe("ui primitives", () => {
     );
     const a = screen.getByRole("link", { name: /Réserver/ });
     expect(a).toHaveAttribute("href", "/fr/contact");
-    expect(a).toHaveClass("btn", "btn--primary");
   });
 
   it("Btn externe ouvre dans un nouvel onglet sécurisé", () => {

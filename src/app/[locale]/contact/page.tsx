@@ -12,7 +12,7 @@ import { pageMetadata } from "@/lib/seo";
 import { media, KEY_MEDIA } from "@/lib/media";
 import { JsonLd } from "@/components/JsonLd";
 import { breadcrumbLd } from "@/lib/jsonld";
-import { PageHero, Section } from "@/components/ui";
+import { PageHero, Section, Chip } from "@/components/ui";
 import { ContactForm } from "@/components/ContactForm";
 import { WhatsappBanner } from "@/components/WhatsappBanner";
 
@@ -102,9 +102,7 @@ export default async function ContactPage({
               <h3 className="h-md">{ct.paymentsTitle}</h3>
               <div className="contact-pay__chips">
                 {SITE.payments.map((p) => (
-                  <span className="chip" key={p}>
-                    {p}
-                  </span>
+                  <Chip key={p}>{p}</Chip>
                 ))}
               </div>
             </div>

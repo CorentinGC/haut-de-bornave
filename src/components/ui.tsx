@@ -1,5 +1,5 @@
 /**
- * Composant UI ui.
+ * Composant UI ui — bibliothèque de composants de page.
  * @author Eden Solutions <contact@eden-solutions.pro>
  */
 
@@ -7,62 +7,29 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Media } from "@/lib/media";
-import { SITE } from "@/lib/site";
-import { FeatureIcon } from "@/components/icons";
+
+// Composants extraits vers leurs propres fichiers — re-exportés ici pour compatibilité.
+export { HeroSplit } from "./HeroSplit";
+export { PageHero } from "./PageHero";
+export { UniverseGrid } from "./UniverseGrid";
+export { SplitFeature } from "./SplitFeature";
+export { LocationBlock } from "./LocationBlock";
+export { GiteCard, Facts } from "./GiteCard";
+export { Testimonials } from "./Testimonials";
+export { FeatureGrid } from "./FeatureGrid";
+export { Marquee } from "./Marquee";
+export { CtaBlock } from "./CtaBlock";
+export { SecHead } from "./SecHead";
 
 /* ============================================================================
-   Bibliothèque de composants UI — markup & classes BEM repris du site .fr
-   (stylés par src/styles/lhdb.css). Images servies via next/image (CWV/SEO).
+   Bibliothèque de composants UI — markup & classes BEM repris du site .fr.
+   Images servies via next/image (CWV/SEO).
    ========================================================================== */
 
-const ArrowSvg = ({ className = "btn__arrow" }: { className?: string }) => (
-  <svg
-    className={className}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    aria-hidden="true"
-  >
-    <path d="M5 12h14M13 6l6 6-6 6" />
-  </svg>
-);
-
-export function Btn({
-  href,
-  children,
-  variant = "primary",
-  external,
-  arrow = true,
-}: {
-  href: string;
-  children: ReactNode;
-  variant?: "primary" | "ghost" | "light";
-  external?: boolean;
-  arrow?: boolean;
-}) {
-  const cls = `btn btn--${variant}`;
-  // Contenu enveloppé dans un <span> : `.btn--primary > *` le remonte
-  // au-dessus du calque ::before (sinon texte masqué au survol).
-  const inner = (
-    <span className="btn__inner">
-      {children}
-      {arrow && <ArrowSvg />}
-    </span>
-  );
-  if (external) {
-    return (
-      <a href={href} className={cls} target="_blank" rel="noopener">
-        {inner}
-      </a>
-    );
-  }
-  return (
-    <Link href={href} className={cls}>
-      {inner}
-    </Link>
-  );
-}
+// Primitives atomiques — re-exportées pour compatibilité des imports existants.
+export { Btn } from "@/ui/atoms/Btn";
+export { Chip, ChipRow } from "@/ui/atoms/Chip";
+export { Kicker } from "@/ui/atoms/Kicker";
 
 /** Image plein cadre (object-fit cover) pour conteneurs positionnés.
  *  quality 72 par défaut : ces visuels sont en couverture (souvent sous
@@ -141,28 +108,6 @@ export function Eyebrow({
   );
 }
 
-export function SecHead({
-  eyebrow,
-  title,
-  lead,
-  center,
-}: {
-  eyebrow: string;
-  title: ReactNode;
-  lead?: string;
-  center?: boolean;
-}) {
-  return (
-    <div
-      className="sec-head reveal"
-      style={center ? { textAlign: "center", margin: "0 auto" } : undefined}
-    >
-      <Eyebrow center={center}>{eyebrow}</Eyebrow>
-      <h2 className="h-xl">{title}</h2>
-      {lead && <p className="lead">{lead}</p>}
-    </div>
-  );
-}
 
 export function Section({
   children,
@@ -205,103 +150,6 @@ export function RichTitle({
   return <As className={className} dangerouslySetInnerHTML={{ __html: html }} />;
 }
 
-export function CtaBlock({
-  eyebrow,
-  title,
-  text,
-  cta,
-  bg,
-}: {
-  eyebrow: string;
-  title: string;
-  text: string;
-  cta: { href: string; label: string };
-  bg: Media;
-}) {
-  return (
-    <section className="section">
-      <div className="container">
-        <div className="cta-block reveal">
-          <div className="cta-block__bg">
-            {/* Fond fortement assombri (overlay) → quality basse invisible. */}
-            <Cover media={bg} sizes="100vw" quality={60} />
-          </div>
-          <Eyebrow gold center>
-            {eyebrow}
-          </Eyebrow>
-          <h2 className="h-xl">{title}</h2>
-          <p>{text}</p>
-          <Btn href={cta.href} variant="light">
-            {cta.label}
-          </Btn>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-export function FeatureGrid({
-  items,
-}: {
-  items: { icon?: string; title: string; text: string }[];
-}) {
-  return (
-    <div className="feature-grid">
-      {items.map((f, i) => (
-        <div
-          key={f.title}
-          className={`feature reveal${i % 3 ? ` reveal--delay-${i % 3}` : ""}`}
-        >
-          <span className="feature__icon" aria-hidden="true">
-            <FeatureIcon name={f.icon} />
-          </span>
-          <h3 className="feature__title">{f.title}</h3>
-          <p>{f.text}</p>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export function Testimonials({
-  reviews,
-}: {
-  reviews: {
-    author: string;
-    rating: number;
-    text: string;
-    detail?: string;
-  }[];
-}) {
-  return (
-    <div className="quotes">
-      {reviews.map((r, i) => (
-        <div
-          key={r.author + i}
-          className={`quote reveal${i % 3 ? ` reveal--delay-${i % 3}` : ""}`}
-        >
-          <span className="quote__quotemark" aria-hidden="true">
-            &quot;
-          </span>
-          <div className="quote__stars">
-            ★★★★★{" "}
-            <span style={{ color: "var(--c-muted)", fontSize: ".78rem" }}>
-              {r.rating}/10
-            </span>
-          </div>
-          <p>{r.text}</p>
-          <div className="quote__author">
-            <span className="quote__avatar">{r.author.charAt(0)}</span>
-            <div>
-              <strong>{r.author}</strong>
-              {r.detail ? ` ${r.detail}` : ""}
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  );
-}
 
 /** FAQ accessible (details/summary natif clavier). Le schéma FAQPage
  *  JSON-LD est injecté séparément par la page. */
@@ -347,335 +195,5 @@ export function Breadcrumbs({
         ))}
       </ol>
     </nav>
-  );
-}
-
-export function HeroSplit({
-  kicker,
-  titleHtml,
-  intro,
-  ctas,
-  stats,
-  media,
-  badge,
-  rating,
-  inset,
-}: {
-  kicker: string;
-  titleHtml: string;
-  intro: string;
-  ctas: { href: string; label: string; variant?: "primary" | "ghost" }[];
-  stats: { value: string; label: string }[];
-  media: Media;
-  badge: string;
-  rating?: { score: string; text: string };
-  inset?: Media;
-}) {
-  return (
-    <section className="hero-split">
-      <div className="container">
-        <div className="hero-split__grid">
-          <div className="hero-split__content">
-            <span className="kicker">
-              <span className="kicker__dot" />
-              {kicker}
-            </span>
-            <h1
-              className="h-hero"
-              dangerouslySetInnerHTML={{ __html: titleHtml }}
-            />
-            <p>{intro}</p>
-            <div className="hero-split__cta">
-              {ctas.map((c) => (
-                <Btn key={c.href} href={c.href} variant={c.variant ?? "primary"}>
-                  {c.label}
-                </Btn>
-              ))}
-            </div>
-            <div className="hero-split__stats">
-              {stats.map((s) => (
-                <div className="hero-split__stat" key={s.label}>
-                  <strong>{s.value}</strong>
-                  <span>{s.label}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="hero-split__media">
-            <span className="hero-split__deco" />
-            <div className="hero-split__frame">
-              <Cover media={media} sizes="(max-width: 900px) 100vw, 50vw" priority />
-              <div className="hero-split__chip">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z" />
-                  <circle cx="12" cy="10" r="3" />
-                </svg>
-                {badge}
-              </div>
-              {rating && (
-                <div className="hero-split__rating">
-                  <span className="hero-split__rating-score">
-                    {rating.score}
-                  </span>
-                  <div className="hero-split__rating-text">
-                    <strong>★★★★★</strong>
-                    {rating.text}
-                  </div>
-                </div>
-              )}
-            </div>
-            {inset && (
-              <div className="hero-split__inset">
-                <Cover media={inset} sizes="240px" />
-              </div>
-            )}
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/** Hero secondaire (pages internes) avec fil d'Ariane. */
-export function PageHero({
-  eyebrow,
-  title,
-  lead,
-  media,
-  breadcrumb,
-}: {
-  eyebrow: string;
-  title: string;
-  lead?: string;
-  media: Media;
-  breadcrumb: { name: string; href?: string }[];
-}) {
-  return (
-    <header className="page-hero">
-      <div className="page-hero__bg">
-        {/* LCP des pages internes : fond sous dégradé sombre → quality
-            réduite = LCP plus léger, aucune perte perceptible. */}
-        <Cover media={media} sizes="100vw" priority quality={62} />
-      </div>
-      <div className="container">
-        <nav className="breadcrumb" aria-label="Fil d'Ariane">
-          {breadcrumb.map((t, i) => (
-            <span key={`${i}-${t.name}`}>
-              {t.href && i < breadcrumb.length - 1 ? (
-                <Link href={t.href}>{t.name}</Link>
-              ) : (
-                <span aria-current="page">{t.name}</span>
-              )}
-              {i < breadcrumb.length - 1 && <span aria-hidden="true">/</span>}
-            </span>
-          ))}
-        </nav>
-        <Eyebrow gold>{eyebrow}</Eyebrow>
-        <h1 className="h-hero">{title}</h1>
-        {lead && <p className="lead">{lead}</p>}
-      </div>
-    </header>
-  );
-}
-
-/** Mosaïque des hébergements (page d'accueil). */
-export function UniverseGrid({
-  cards,
-}: {
-  cards: {
-    href: string;
-    media: Media;
-    badge: string;
-    title: string;
-    text: string;
-    size: "xl" | "md" | "sm";
-    cta: string;
-  }[];
-}) {
-  return (
-    <div className="universe">
-      {cards.map((c, i) => (
-        <Link
-          key={c.href + i}
-          href={c.href}
-          className={`universe__card universe__card--${c.size} reveal${
-            i % 3 ? ` reveal--delay-${i % 3}` : ""
-          }`}
-        >
-          <Cover
-            media={c.media}
-            sizes={c.size === "xl" ? "(max-width:900px) 100vw, 66vw" : "(max-width:900px) 100vw, 33vw"}
-          />
-          <span className="eyebrow" style={{ color: "var(--c-gold)" }}>
-            {c.badge}
-          </span>
-          <h3>{c.title}</h3>
-          <p>{c.text}</p>
-          <span className="more">
-            {c.cta}
-            <ArrowSvg className="" />
-          </span>
-        </Link>
-      ))}
-    </div>
-  );
-}
-
-/** Bloc gîte complet (page Les Gîtes) : carrousel + fiche. */
-export function Facts({
-  facts,
-}: {
-  facts: { value: string; label: string }[];
-}) {
-  return (
-    <div className="gite-card__facts">
-      {facts.map((f) => (
-        <div className="gite-card__fact" key={f.label}>
-          <strong>{f.value}</strong>
-          <span>{f.label}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-export function SplitFeature({
-  eyebrow,
-  title,
-  paragraphs,
-  media,
-  reverse,
-  cta,
-}: {
-  eyebrow: string;
-  title: string;
-  paragraphs: string[];
-  media: Media;
-  reverse?: boolean;
-  cta?: { href: string; label: string };
-}) {
-  return (
-    <div className={`split${reverse ? " split--reverse" : ""} reveal`}>
-      <div className="split__media">
-        <Cover media={media} sizes="(max-width: 900px) 100vw, 50vw" />
-      </div>
-      <div className="split__content">
-        <Eyebrow>{eyebrow}</Eyebrow>
-        <h2 className="h-lg">{title}</h2>
-        {paragraphs.map((p, i) => (
-          <p key={i}>{p}</p>
-        ))}
-        {cta && (
-          <Btn href={cta.href} variant="primary">
-            {cta.label}
-          </Btn>
-        )}
-      </div>
-    </div>
-  );
-}
-
-/** Bloc localisation : carte Google Maps + panneau d'infos (NAP + accès).
- *  Reproduit la structure 2 colonnes de la charte .fr (`.location-wrap`).
- *  Les données vendeur viennent de /config.json via SITE. */
-export function LocationBlock({
-  data,
-  rating,
-  ctaHref,
-}: {
-  data: {
-    mapChip: string;
-    panelTitle: string;
-    panelText: string;
-    items: { label: string; value: string; detail: string }[];
-    cta: string;
-  };
-  rating?: { score: string; text: string };
-  ctaHref: string;
-}) {
-  const q = encodeURIComponent(
-    `${SITE.name}, ${SITE.address.street}, ${SITE.address.locality}, ${SITE.address.region}`,
-  );
-  return (
-    <div className="location-wrap reveal">
-      <div className="location-map">
-        <span className="location-chip">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            aria-hidden="true"
-          >
-            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z" />
-            <circle cx="12" cy="10" r="3" />
-          </svg>
-          {data.mapChip}
-        </span>
-        {rating && (
-          <div className="location-rating">
-            <span className="location-rating__score">{rating.score}</span>
-            <div className="location-rating__text">
-              <strong>★★★★★</strong>
-              {rating.text}
-            </div>
-          </div>
-        )}
-        <iframe
-          src={`https://maps.google.com/maps?q=${q}&t=k&z=14&ie=UTF8&iwloc=&output=embed`}
-          title={`Carte — ${SITE.name} à ${SITE.address.locality}, ${SITE.address.region}`}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          allowFullScreen
-        />
-      </div>
-      <div className="location-info">
-        <div className="location-info__head">
-          <h3 dangerouslySetInnerHTML={{ __html: data.panelTitle }} />
-          <p>{data.panelText}</p>
-        </div>
-        {data.items.map((it) => (
-          <div className="location-item" key={it.label}>
-            <span className="location-item__icon" aria-hidden="true">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1118 0z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-            </span>
-            <span className="location-item__text">
-              <strong>{it.label}</strong>
-              <span>{it.value}</span>
-              <small>{it.detail}</small>
-            </span>
-          </div>
-        ))}
-        <div className="location-cta">
-          <Btn href={ctaHref} variant="primary">
-            {data.cta}
-          </Btn>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export function Marquee({ items }: { items: string[] }) {
-  const loop = [...items, ...items];
-  return (
-    <div className="event-marquee" aria-hidden="true">
-      <div className="event-marquee__track">
-        {loop.map((it, i) => (
-          <span key={i}>
-            {it}
-            <span className="event-marquee__dot">•</span>
-          </span>
-        ))}
-      </div>
-    </div>
   );
 }

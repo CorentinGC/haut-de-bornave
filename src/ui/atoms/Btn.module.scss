@@ -1,0 +1,112 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: 1rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: .92rem;
+  letter-spacing: .02em;
+  transition: all .35s var(--ease);
+  cursor: pointer;
+  white-space: nowrap;
+
+  &:hover .arrow { transform: translateX(4px); }
+
+  @media (max-width: 900px) {
+    padding: .75rem 1.3rem;
+    font-size: .85rem;
+  }
+}
+
+.inner {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  position: relative;
+  z-index: 1;
+}
+
+.arrow {
+  width: 18px;
+  height: 18px;
+  transition: transform .35s var(--ease);
+}
+
+// ── Variantes ────────────────────────────────────────────────────────────────
+
+.primary {
+  background: var(--c-emerald);
+  color: var(--c-bg);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, var(--c-accent) 0%, var(--c-accent-dark) 100%);
+    opacity: 0;
+    transition: opacity .35s var(--ease);
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+
+    &::before { opacity: 1; }
+  }
+}
+
+.ghost {
+  background: transparent;
+  color: var(--c-emerald);
+  border: 1px solid var(--c-emerald);
+
+  &:hover { background: var(--c-emerald); color: var(--c-bg); }
+}
+
+.light {
+  background: var(--c-bg);
+  color: var(--c-emerald);
+
+  &:hover { background: var(--c-accent); color: #fff; }
+}
+
+// Variantes pour fond émeraude sombre (HeroSplit)
+
+.heroPrimary {
+  background: var(--c-gold);
+  color: var(--c-emerald-deep);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #fff 0%, var(--c-gold) 100%);
+    opacity: 0;
+    transition: opacity .35s var(--ease);
+  }
+
+  &:hover {
+    color: var(--c-emerald-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(201, 166, 107, .35);
+
+    &::before { opacity: 1; }
+  }
+}
+
+.heroGhost {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, .4);
+
+  &:hover {
+    background: #fff;
+    color: var(--c-emerald);
+    border-color: #fff;
+  }
+}

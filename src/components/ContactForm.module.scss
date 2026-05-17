@@ -1,0 +1,92 @@
+/**
+ * Styles du formulaire de contact.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.card {
+  background: var(--c-surface);
+  padding: clamp(1.8rem, 3.5vw, 3rem);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--c-line);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle, rgba(201, 166, 107, .15), transparent 70%);
+    pointer-events: none;
+  }
+}
+
+.form {
+  position: relative;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: .4rem;
+    font-family: var(--f-body);
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--c-ink-soft);
+    margin-bottom: 1rem;
+  }
+
+  input,
+  textarea {
+    font: inherit;
+    padding: .85rem 1rem;
+    background: var(--c-bg);
+    border: 1px solid var(--c-line);
+    border-radius: var(--radius-sm);
+    color: var(--c-ink);
+
+    &:focus {
+      outline: none;
+      border-color: var(--c-accent);
+      background: #fff;
+    }
+  }
+
+  textarea { min-height: 140px; resize: vertical; }
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 1rem;
+
+  @media (max-width: 600px) { grid-template-columns: 1fr; }
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.error {
+  color: #a6563b;
+  font-size: .9rem;
+  margin-bottom: .75rem;
+}
+
+.success {
+  color: var(--c-emerald);
+  font-family: var(--f-display);
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.submit {
+  width: 100%;
+  justify-content: center;
+  margin-top: .5rem;
+}

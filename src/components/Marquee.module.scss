@@ -1,0 +1,38 @@
+/**
+ * Styles du bandeau défilant (Marquee).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
+.marquee {
+  overflow: hidden;
+  padding: 2rem 0;
+  border-top: 1px solid var(--c-line);
+  border-bottom: 1px solid var(--c-line);
+  background: var(--c-bg-alt);
+}
+
+.track {
+  display: flex;
+  gap: 3rem;
+  animation: marqueeScroll 30s linear infinite;
+  white-space: nowrap;
+  font-family: var(--f-display);
+  font-size: clamp(1.6rem, 3vw, 2.6rem);
+  color: var(--c-emerald);
+
+  span { display: flex; align-items: center; gap: 3rem; }
+  em { color: var(--c-accent); font-style: italic; }
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
