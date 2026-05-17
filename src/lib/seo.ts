@@ -1,3 +1,8 @@
+/**
+ * Utilitaires seo.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { Metadata } from "next";
 import { SITE, absoluteUrl, type Locale } from "./site";
 import type { SeoMeta } from "@/content/types";

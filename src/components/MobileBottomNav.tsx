@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Composant UI MobileBottomNav.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";

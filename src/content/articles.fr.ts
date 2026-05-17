@@ -1,3 +1,8 @@
+/**
+ * Données de contenu (articles.fr).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { Article } from "./types";
 
 /**

@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Composant UI ContactForm.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { useState, type FormEvent } from "react";
 import type { SiteContent } from "@/content/types";
 

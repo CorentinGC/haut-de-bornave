@@ -1,3 +1,8 @@
+/**
+ * Utilitaires site.test.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect } from "vitest";
 import { isLocale, absoluteUrl, SITE, LOCALES, DEFAULT_LOCALE } from "@/lib/site";
 

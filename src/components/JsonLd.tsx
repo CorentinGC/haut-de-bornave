@@ -1,6 +1,7 @@
 /**
  * Injecte un bloc JSON-LD. Le `<` est échappé (<) pour prévenir
  * toute injection XSS via les chaînes (recommandation Next.js docs/json-ld).
+ * @author Eden Solutions <contact@eden-solutions.pro>
  */
 export function JsonLd({ data }: { data: object | object[] }) {
   return (

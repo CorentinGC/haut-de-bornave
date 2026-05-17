@@ -1,3 +1,8 @@
+/**
+ * Utilitaires nav.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { Locale } from "./site";
 import type { SiteContent } from "@/content/types";
 import { articlesFr } from "@/content/articles.fr";

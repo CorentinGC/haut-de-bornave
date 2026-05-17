@@ -1,3 +1,8 @@
+/**
+ * Utilitaires nav.test.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect } from "vitest";
 import { href, switchLocaleHref, mainNav } from "@/lib/nav";
 import { getContent } from "@/content";

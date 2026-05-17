@@ -1,3 +1,8 @@
+/**
+ * Composant UI Footer.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import Link from "next/link";
 import type { Locale } from "@/lib/site";
 import { SITE } from "@/lib/site";
@@ -112,9 +117,20 @@ export function Footer({
           <span>
             © {year} {SITE.name} — {content.footer.rights}
           </span>
-          <Link href={href(locale, "mentions-legales")}>
-            {content.footer.legal}
-          </Link>
+          <span className="footer__credit">
+            <Link href={href(locale, "mentions-legales")}>
+              {content.footer.legal}
+            </Link>
+            <span aria-hidden="true">·</span>
+            <a
+              href="https://eden-solutions.pro"
+              target="_blank"
+              rel="noopener"
+            >
+              {content.footer.madeBy}{" "}
+              <strong>Eden&nbsp;Solutions</strong>
+            </a>
+          </span>
         </div>
       </div>
     </footer>

@@ -1,3 +1,8 @@
+/**
+ * Données de contenu (index).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import "server-only";
 import type { Locale } from "@/lib/site";
 import type { Article, GiteContent, SiteContent } from "./types";

@@ -1,3 +1,8 @@
+/**
+ * Tests — site.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { test, expect, type Page } from "@playwright/test";
 
 /** Routes communes aux deux locales (slugs identiques). */

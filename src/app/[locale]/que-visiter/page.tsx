@@ -1,3 +1,8 @@
+/**
+ * Page « que-visiter » du site.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";

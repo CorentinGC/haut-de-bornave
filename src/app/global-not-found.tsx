@@ -1,3 +1,8 @@
+/**
+ * Structure de page (App Router).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 /* eslint-disable @next/next/no-html-link-for-pages --
    global-not-found est un document HTML complet rendu HORS de l'arbre du
    routeur Next (bypass). next/link n'y a pas de contexte routeur : la

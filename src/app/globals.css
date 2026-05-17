@@ -628,6 +628,19 @@
 }
 .page-hero h1 {
   text-shadow: 0 2px 24px rgba(12, 35, 28, 0.4);
+  /* Titres internes souvent longs (3-4 lignes) : taille plus mesurée
+     que le hero d'accueil + respiration avant la description. */
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.08;
+  max-width: 22ch;
+  text-wrap: balance;
+  margin-bottom: 1.5rem;
+}
+.page-hero .eyebrow {
+  margin-bottom: 0.7rem;
+}
+.page-hero .lead {
+  margin-top: 0;
 }
 
 /* ---------------------------------------------------------------------------
@@ -637,4 +650,93 @@
    --------------------------------------------------------------------------- */
 .section.legal-page {
   padding-top: clamp(7rem, 12vw, 9rem);
+}
+
+/* ===========================================================================
+   Navbar — fond solide permanent (sans dégradé), texte sombre lisible
+   PARTOUT : accueil (hero split sur fond sable clair), héros internes
+   sombres, pages claires. Remplace l'état transparent+dégradé hérité du
+   .fr (conçu pour un héros plein sombre, illisible ici).
+   =========================================================================== */
+.nav,
+.nav.scrolled {
+  background: rgba(246, 241, 231, 0.92);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-line, rgba(20, 52, 43, 0.12));
+  box-shadow: 0 2px 20px rgba(12, 35, 28, 0.06);
+}
+.nav::before {
+  display: none;
+}
+.nav__brand,
+.nav__brand small,
+.nav .nav__links a {
+  text-shadow: none;
+}
+.nav__brand {
+  color: var(--color-emerald);
+}
+.nav__brand small {
+  color: var(--color-accent);
+}
+.nav .nav__links a {
+  color: var(--color-ink);
+}
+.nav .nav__links a::after {
+  background: var(--color-accent);
+}
+.nav__logo {
+  background: var(--color-emerald);
+  filter: none;
+}
+.nav:not(.scrolled) .nav__lang,
+.nav__lang {
+  color: var(--color-emerald);
+  border-color: rgba(20, 52, 43, 0.4);
+  text-shadow: none;
+}
+
+/* Citation de conclusion (page Deshaies & co.) — éditoriale, élégante */
+.pull-quote {
+  max-width: 30ch;
+  margin: 0 auto;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--color-emerald);
+  text-wrap: balance;
+}
+.pull-quote::before,
+.pull-quote::after {
+  content: "“";
+  color: var(--color-gold);
+  font-size: 1.2em;
+  line-height: 0;
+  vertical-align: -0.3em;
+}
+.pull-quote::after {
+  content: "”";
+}
+
+/* Crédit agence (footer) — discret, lien vers eden-solutions.pro */
+.footer__credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+.footer__credit > span[aria-hidden] {
+  opacity: 0.4;
+}
+.footer__credit a {
+  transition: color 0.25s var(--ease-fluid);
+}
+.footer__credit a:hover {
+  color: var(--color-gold);
+}
+.footer__credit strong {
+  font-weight: 600;
 }

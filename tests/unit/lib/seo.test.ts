@@ -1,3 +1,8 @@
+/**
+ * Utilitaires seo.test.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect } from "vitest";
 import { pageMetadata } from "@/lib/seo";
 import { SITE } from "@/lib/site";

@@ -1,3 +1,8 @@
+/**
+ * Données de contenu (content.test).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect } from "vitest";
 import { getContent, getGite, getArticle } from "@/content";
 

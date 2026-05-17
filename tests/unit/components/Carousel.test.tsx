@@ -1,3 +1,8 @@
+/**
+ * Composant UI Carousel.test.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect, afterEach } from "vitest";
 import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 import { Carousel } from "@/components/Carousel";

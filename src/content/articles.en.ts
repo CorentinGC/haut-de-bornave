@@ -1,3 +1,8 @@
+/**
+ * Données de contenu (articles.en).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { Article } from "./types";
 
 /** Local guide "What to see" — English mirror of articles.fr.ts. */

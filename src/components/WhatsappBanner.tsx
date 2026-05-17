@@ -1,3 +1,8 @@
+/**
+ * Composant UI WhatsappBanner.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { SITE } from "@/lib/site";
 import type { SiteContent } from "@/content/types";
 

@@ -1,3 +1,8 @@
+/**
+ * Données de contenu (fr).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { SiteContent } from "./types";
 
 /**
@@ -481,6 +486,7 @@ export const fr: SiteContent = {
     paymentsCol: "Paiements acceptés",
     legal: "Mentions légales",
     rights: "Tous droits réservés",
+    madeBy: "Site réalisé par",
   },
   cta: {
     homeTitle: "Prêt à vivre la parenthèse Bornave ?",

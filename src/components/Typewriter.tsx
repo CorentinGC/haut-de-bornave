@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Composant UI Typewriter.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { useEffect, useRef, useState } from "react";
 
 /**

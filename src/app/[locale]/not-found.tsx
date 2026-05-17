@@ -1,3 +1,8 @@
+/**
+ * Structure de page (App Router).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import Link from "next/link";
 
 /** Page 404 (bilingue neutre — la locale n'est pas disponible ici). */

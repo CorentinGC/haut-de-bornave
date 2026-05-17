@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Composant UI ScrollReveal.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 

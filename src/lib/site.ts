@@ -2,6 +2,7 @@
  * Constantes globales du site — NAP, coordonnées, réseaux, paiements.
  * Les données vendeur sont éditées dans /config.json (source unique de
  * vérité, modifiable sans toucher au code). Voir docs/contenu-decisions.md.
+ * @author Eden Solutions <contact@eden-solutions.pro>
  */
 import config from "../../config.json";
 

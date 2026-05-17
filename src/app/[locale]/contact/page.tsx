@@ -1,3 +1,8 @@
+/**
+ * Page « contact » du site.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { isLocale, SITE, type Locale } from "@/lib/site";

@@ -1,3 +1,8 @@
+/**
+ * Tests — setup.ts.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 // Setup global Vitest : matchers jest-dom + mock next/font.
 import "@testing-library/jest-dom/vitest";
 import { vi } from "vitest";
