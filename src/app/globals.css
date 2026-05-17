@@ -918,3 +918,82 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
     scroll-margin-top: 5rem;
   }
 }
+
+/* ===========================================================================
+   Corrections review visuelle — itération 3 (passe complète ultra-pro)
+   Ajustements ciblés, la charte lhdb.css n'est pas modifiée.
+   =========================================================================== */
+
+/* ---------------------------------------------------------------------------
+   P1 — Mosaïque hébergements (accueil) : l'eyebrow de la carte (« VILLA
+   GRANDE CAPACITÉ · JUSQU'À 12 PERSONNES »…) est un <span class="eyebrow">
+   en display:inline-flex sans marge basse. Sur ces libellés longs il passe
+   sur 2 lignes et CHEVAUCHE le <h3> du gîte (desktop ET mobile). On le
+   passe en bloc, on borne l'interligne et on rétablit une respiration
+   eyebrow↔titre — sans toucher la charte ni l'esthétique .fr.
+   --------------------------------------------------------------------------- */
+.universe__card .eyebrow {
+  display: block;
+  line-height: 1.4;
+  margin-bottom: 0.55rem;
+  text-wrap: balance;
+}
+/* Le tiret décoratif `.eyebrow::before` est un flex-item : sur un libellé
+   long il se retrouvait seul sur la 1re ligne. On l'attache au texte. */
+.universe__card .eyebrow::before {
+  content: "– ";
+  margin-right: 0;
+}
+.universe__card h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* ---------------------------------------------------------------------------
+   P2 — Bloc localisation (accueil) : `.location-wrap` a un border-radius
+   de 36px + overflow:hidden. Les badges `.location-chip` (haut-gauche) et
+   `.location-rating` (bas-gauche) sont collés à 1.2rem du bord de la carte
+   et leur coin se fait ROGNER par l'arrondi du conteneur (encoche sombre
+   disgracieuse). On augmente l'inset pour dégager le rayon (≈ 24px), coins
+   nets. Symétrie haut/bas conservée.
+   --------------------------------------------------------------------------- */
+.location-rating {
+  bottom: 1.6rem;
+  left: 1.6rem;
+}
+.location-chip {
+  top: 1.6rem;
+  left: 1.6rem;
+}
+
+/* ---------------------------------------------------------------------------
+   P2 — PageHero (toutes pages secondaires) : le h1, le lead et le fil
+   d'Ariane ont un text-shadow pour rester lisibles sur photo, mais
+   l'eyebrow doré (`.page-hero .eyebrow`, 12px) n'en avait pas → faible
+   contraste sur les héros mi-tons (ex. « ESCAPADE À DEUX » sur la jungle
+   verte de /rayons-de-soleil). On lui applique la même ombre douce —
+   cohérence avec le reste du héros, lisibilité AA, esprit .fr conservé.
+   --------------------------------------------------------------------------- */
+.page-hero .eyebrow {
+  text-shadow: 0 1px 10px rgba(12, 35, 28, 0.65);
+}
+.page-hero .eyebrow::before {
+  opacity: 0.85;
+}
+
+/* ---------------------------------------------------------------------------
+   P3 — Cartes d'avis (.quote, accueil + /avis) : la grille étire les
+   cartes à hauteur égale mais le bloc auteur suit directement le texte.
+   Sur un avis court il « flotte » au milieu d'une carte vide → rythme
+   irrégulier. On passe la carte en colonne flex et on laisse le texte
+   pousser : l'auteur est calé en bas, alignement homogène entre cartes.
+   --------------------------------------------------------------------------- */
+.quote {
+  display: flex;
+  flex-direction: column;
+}
+.quote p {
+  flex: 1 0 auto;
+}
+.quote__author {
+  margin-top: auto;
+}
