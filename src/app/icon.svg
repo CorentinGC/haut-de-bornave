@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Les Hauts de Bornave — palmier">
+  <rect width="64" height="64" rx="14" fill="#14342b"/>
+  <!-- tronc -->
+  <path d="M31 30c-1.6 6.5-3.4 12.4-7.6 19.2-.7 1.1.9 2.1 1.8 1.2C29.9 45 32.4 39 34.6 31.4z"
+        fill="#c9a66b"/>
+  <!-- palmes -->
+  <g fill="none" stroke="#f3e7cf" stroke-width="3.4" stroke-linecap="round">
+    <path d="M33 27C27 19 19 16 11 17c6-5 15-4 21 4"/>
+    <path d="M33 27C30 17 24 11 16 8c8-1 16 4 19 14"/>
+    <path d="M33 27c2-10 0-18-3-25 7 3 12 12 9 23"/>
+    <path d="M33 27c6-8 14-11 22-10-6-5-15-4-21 4"/>
+    <path d="M33 27c4-9 11-14 20-15-7-3-16 1-22 12"/>
+  </g>
+  <!-- coeur de la palme -->
+  <circle cx="33" cy="27" r="3.4" fill="#c97b5e"/>
+  <!-- ligne d'horizon / sol -->
+  <path d="M14 52h36" stroke="#c9a66b" stroke-width="2.4" stroke-linecap="round" opacity="0.65"/>
+</svg>
