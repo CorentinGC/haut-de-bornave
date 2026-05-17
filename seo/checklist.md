@@ -11,7 +11,8 @@
 - [x] 1 `<h1>` par page, `alt` géolocalisés, noms de fichiers sémantiques
 - [x] Images WebP/AVIF via `next/image` + dimensions (CLS≈0)
 - [x] Fonts self-host (next/font), pages statiques SSG (CDN)
-- [x] Guide local `/que-visiter` (6 articles FR+EN) + maillage interne
+- [x] Guide local `/que-visiter` (10 articles FR+EN illustrés, FAQ par
+      article → FAQPage, JSON-LD Article daté) + maillage interne
 - [x] Bilingue FR/EN complet, mobile-first
 
 ## Phase 1 — Mise en ligne (semaine 1‑2)
@@ -29,7 +30,11 @@
 
 - [ ] Audit Lighthouse/PageSpeed mobile (objectif Perf/SEO/A11y/BP ≥ 95,
       LCP < 2,5 s, INP < 200 ms, CLS < 0,1)
-- [ ] Enrichir le guide local (nouveaux articles — backlog `blog-que-visiter.md`)
+- [x] Guide local enrichi : +4 articles (Plage de la Perle, bourg/port de
+      Deshaies « Death in Paradise », randonnées & cascades Basse-Terre,
+      marché créole) + images de section + FAQ. Backlog restant
+      (`blog-que-visiter.md`) : snorkeling famille, itinéraire 7 j, Malendure,
+      Zoo des Mamelles — à poursuivre ≈ 1 article/mois (`/que-visiter-article`)
 - [ ] Stratégie d'avis : sollicitation post‑séjour systématique + réponses
 - [ ] Citations/annuaires : Gîtes de France, Atout France, OT Guadeloupe,
       lesilesdeguadeloupe.com (NAP strictement identique)

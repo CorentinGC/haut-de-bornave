@@ -5,19 +5,39 @@ Toutes les photos d'illustration sont **identiques aux sites source** et
 
 ## Source & téléchargement
 
-- `scripts/media-com-urls.txt` : URLs des photos du CDN `leshautsdebornave.com`
-  (extraites du HTML `.fr` qui est la référence design).
+- **`scripts/media.json`** : manifeste **unique** de tous les médias à
+  récupérer. Tableau d'entrées `{ url, dir, file, source, credit?, optimize? }` :
+  - `dir` : sous-dossier cible (`gites|domaine|lieux|galerie|brand|partenaires`).
+  - `file` : nom final kebab-case minuscule, **géolocalisé** et sémantique.
+  - `source` : `com` (CDN `leshautsdebornave.com`), `fr` (assets `.fr`),
+    `wikimedia`, `unsplash`.
+  - `credit` : **obligatoire** si image libre de droits (Wikimedia/Unsplash) —
+    « Auteur / Source — Licence » ; vide/absent pour `com`/`fr`.
+  - `optimize: true` : source lourde (originaux Wikimedia…) → normalisée en
+    WebP ≤ 2000 px via `scripts/optimize-image.cjs` (sharp). Le `file` doit
+    alors être en `.webp`.
 - `scripts/fetch-media.sh` : télécharge (idempotent — ignore les fichiers déjà
-  présents) vers `public/media/` en sous-dossiers :
-  `gites/ domaine/ lieux/ galerie/ brand/ partenaires/`. Noms en kebab-case
-  minuscule (déjà géolocalisés et sémantiques côté source).
+  présents) en consommant `scripts/media.json`, et optimise les entrées
+  `optimize: true`.
 
 ```bash
-bash scripts/fetch-media.sh        # ~108 fichiers, ~21 Mo
+bash scripts/fetch-media.sh        # ~133 fichiers
 ```
 
 Une seule image source est absente côté `.com` (Gran Kaz #7, 404) — sans
 impact (12 photos Gran Kaz, ≥ 8 requis pour le JSON-LD).
+
+## Images libres de droits & crédits
+
+Quand le site source ne couvre pas un sujet (ex. fonds de la Réserve Cousteau,
+Chutes du Carbet, marché créole), utiliser des images **libres pour usage
+commercial** uniquement : domaine public, CC0, CC BY, CC BY-SA (Wikimedia
+Commons) ou licence Unsplash. **Jamais** : non-free, CC BY-NC, CC BY-ND.
+Le `credit` (« Auteur / Wikimedia Commons — CC BY-SA 4.0 ») est reporté dans
+`scripts/media.json` **et** dans le champ `image.credit` de l'article
+(`src/content/articles/<slug>.json`) — il s'affiche en légende
+(`<figcaption>`). Une image créditée ne sert pas de `cover` sans apparaître
+aussi en image de section (l'attribution doit être visible sur la page).
 
 ## Manifeste de dimensions (anti-CLS)
 
@@ -30,7 +50,7 @@ node -e '
 const {imageSize}=require("image-size");const fs=require("fs"),p=require("path");
 const out={};(function w(d){for(const e of fs.readdirSync(d,{withFileTypes:true})){
 const f=p.join(d,e.name);if(e.isDirectory())w(f);
-else if(/\.(webp|jpe?g|png)$/i.test(e.name)){const{width,height}=imageSize(fs.readFileSync(f));
+else if(/\.(webp|jpe?g|png|avif)$/i.test(e.name)){const{width,height}=imageSize(fs.readFileSync(f));
 out["/"+f.replace(/^public\//,"")]=[width,height];}}})("public/media");
 const s={};for(const k of Object.keys(out).sort())s[k]=out[k];
 fs.writeFileSync("src/lib/media-dimensions.json",JSON.stringify(s));'
@@ -69,7 +89,9 @@ nulle, gain de poids réel — mandat client) :
 
 ## Ajouter un média
 
-1. Le déposer dans le bon sous-dossier de `public/media/` (ou ajouter son URL
-   à `media-com-urls.txt` puis relancer `fetch-media.sh`).
-2. Régénérer le manifeste (commande ci-dessus).
-3. Le référencer via `media("/media/.../fichier.webp", "alt géolocalisé")`.
+1. Ajouter une entrée à **`scripts/media.json`** (`url`, `dir`, `file`,
+   `source`, `credit` si libre de droits, `optimize: true` si source lourde)
+   puis `bash scripts/fetch-media.sh` (idempotent).
+2. Régénérer le manifeste de dimensions (commande ci-dessus).
+3. Le référencer via `media("/media/.../fichier.webp", "alt géolocalisé")`
+   (et `image.credit` dans l'article si libre de droits).

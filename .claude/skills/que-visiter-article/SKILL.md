@@ -25,49 +25,58 @@ top-of-funnel et mailler vers les gîtes. À relancer ≈ **1 fois par mois**.
   est incertaine, rester général et factuel (cf. `docs/contenu-decisions.md`).
   Les distances/temps proviennent de `seo/local-poi.md` (indicatifs).
 
-## 2. Choisir la photo de couverture
+## 2. Choisir les images (couverture + sections)
 
 - Réutiliser une image **déjà présente** dans `public/media/` ET listée dans
   `src/lib/media-dimensions.json` (sinon `next/image` casse / CLS). Lieux
   pertinents : `/media/lieux/*`, `/media/domaine/*`, `/media/galerie/*`.
-- Si une nouvelle image est requise : suivre `docs/medias.md` (ajouter l'URL à
-  `scripts/media-com-urls.txt` → `bash scripts/fetch-media.sh` → régénérer le
-  manifeste), `alt` géolocalisé. Aucun hotlink externe.
+- Nouvelle image requise → `docs/medias.md` : ajouter une entrée à
+  **`scripts/media.json`** (manifeste unique) puis `bash scripts/fetch-media.sh`
+  puis régénérer le manifeste de dimensions. Priorité aux photos du site source
+  `leshautsdebornave.com` (`source: "com"`) ; à défaut images **libres de
+  droits** (Wikimedia CC BY/BY-SA, Unsplash) avec `source` + `credit` (et
+  `optimize: true` pour les originaux lourds → WebP ≤ 2000 px). Aucun hotlink.
+- `alt` géolocalisé (« … Deshaies, Guadeloupe »). Une image libre de droits a
+  un `credit` **obligatoire** (affiché en légende) ; jamais en `cover` sans
+  qu'elle apparaisse aussi en image de section créditée.
 
-## 3. Rédiger l'article (FR **et** EN)
+## 3. Rédiger l'article (FR **et** EN) — 1 fichier JSON
 
-Ajouter UN objet `Article` (type : `src/content/types.ts`) :
-- dans `src/content/articles.fr.ts` (`articlesFr`) — FR,
-- dans `src/content/articles.en.ts` (`articlesEn`) — traduction pro (pas auto),
-- **au MÊME index dans les deux tableaux** (⚠️ critique : `src/lib/nav.ts`
-  `ARTICLE_SLUG` mappe `fr[i] ↔ en[i]` pour le sélecteur de langue ; un
-  décalage = 404 au changement de langue + test e2e rouge).
+Créer **`src/content/articles/<slug>.json`** (forme `ArticleFile`,
+`src/content/types.ts`) puis l'enregistrer dans
+`src/content/articles/index.ts` (import + tableau `FILES`). FR et EN sont dans
+le **même fichier** (plus de couplage par index).
 
-Champs : `slug` (kebab-case, **localisé/différent par locale** pour le SEO,
-ex. `randonnee-cascade-acomat` / `acomat-waterfall-hike`), `cover`, `category`,
-`title`, `excerpt` (1 phrase), `readingTime` (« 3 min »), `distance`
-(optionnel, depuis le domaine), `sections[]` (`heading?` + `paragraphs[]`,
-1 idée/section, paragraphes courts), `relatedGites` (slugs valides parmi
-`gran-kaz, kaz-an-nou, ti-kaz-la, rayon-jaune, rayon-bleu`), `seo`
-(`title` unique géolocalisé `… | Bornave`, `description` **50–165 caractères**
-— un test échoue au-delà).
+Champs racine : `order` (entier unique, ordre d'affichage), `cover`,
+`datePublished` (ISO), `dateModified?` (ISO), `relatedGites` (slugs valides
+parmi `gran-kaz, kaz-an-nou, ti-kaz-la, rayon-jaune, rayon-bleu`).
+Par locale (`fr`, `en`) : `slug` (kebab-case **localisé/différent par locale**,
+ex. `randonnee-cascade-acomat` / `acomat-waterfall-hike`), `title`, `excerpt`
+(1 phrase), `category` (localisée), `readingTime`, `distance?`, `sections[]`
+(`heading?` + `paragraphs[]` + `image?` `{src, alt, caption?, credit?}`,
+1 idée/section), `faq` (**≥ 3** Q/R factuelles → rich result FAQPage), `seo`
+(`title` unique géolocalisé, `description` **50–165 caractères** — test échoue
+au-delà). Parité FR/EN exigée (mêmes nb de sections, faq, images).
 
 Style : éditorial, fidèle aux faits, mots-clés naturels, **maillage interne**
 pertinent (ne pas mettre tous les gîtes systématiquement).
 
 > Aucune autre modification nécessaire : sitemap (`app/sitemap.ts`), pages
-> `/que-visiter` + `[slug]`, JSON-LD `Article`, `generateStaticParams`,
-> hreflang se mettent à jour automatiquement à partir des tableaux.
+> `/que-visiter` + `[slug]`, JSON-LD `Article` (datePublished/author) +
+> `FAQPage` + `BreadcrumbList`, `generateStaticParams`, hreflang et le
+> sélecteur de langue se mettent à jour automatiquement à partir du barrel.
 
 ## 4. Tester ET reviewer (obligatoire — CLAUDE.md §0)
 
-1. `npm run verify` (lint + Vitest + build 52→54 pages SSG) — **0 échec**.
-   Le test d'intégrité contenu vérifie parité FR/EN, `relatedGites` valides,
-   `description ≤ 165`.
-2. `npm run test:e2e` (Playwright desktop+mobile) — **0 échec** (les nouvelles
-   routes `/fr|/en/que-visiter/<slug>` sont auto-couvertes : ajouter le slug
-   dans `tests/e2e/site.spec.ts` `ARTICLE`/`COMMON` si on veut le tester
-   explicitement, sinon la liste générique suffit).
+1. `npm run verify` (lint + Vitest + build, ~62 pages SSG et +2 par nouvel
+   article) — **0 échec**. Le garde-fou `tests/unit/content/content.test.ts`
+   vérifie le schéma JSON : `order` unique, parité FR/EN (sections/faq/images),
+   `cover`+images au manifeste, dates ISO, `relatedGites` valides, `≥ 3` FAQ,
+   `alt` géolocalisé, crédit des images libres, `description ≤ 165`.
+2. `npm run test:e2e` (Playwright desktop+mobile) — **0 échec**. Les routes
+   `/fr|/en/que-visiter/<slug>` sont **auto-couvertes** : `tests/helpers/
+   articles.ts` dérive les slugs des JSON (rien à ajouter). Chaque page article
+   est testée : image de corps + bloc FAQ présents.
 3. **Review visuelle MCP chrome-devtools** : `npm run build && npm run start`,
    screenshots **desktop ET mobile** de `/fr/que-visiter` (carte du nouvel
    article) et `/fr/que-visiter/<slug>` (+ version EN) — 0 bug visuel, 0 média

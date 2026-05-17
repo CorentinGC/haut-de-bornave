@@ -32,8 +32,11 @@ Deshaies (référencement local touristique). Idem pour le Google Business Profi
 
 ## Exploitation dans le site
 
-- Articles dédiés : plages, Jardin Botanique, Réserve Cousteau, Pointe-Noire,
-  accès aéroport, quand venir (déjà créés — `src/content/articles.*`).
-- Angle fort sous-exploité par les concurrents : **« Death in Paradise »**
-  (Grande Anse) → mentionné, à approfondir (article dédié possible).
-- Mailler chaque POI vers le(s) gîte(s) pertinent(s) via `relatedGites`.
+- Articles dédiés (10, `src/content/articles/<slug>.json`) : plages, Jardin
+  Botanique, Réserve Cousteau, Pointe-Noire, accès aéroport, quand venir,
+  **Plage de la Perle**, **bourg & port de Deshaies (« Death in Paradise »)**,
+  **randonnées & cascades de Basse-Terre**, **marché créole & gastronomie**.
+- Angle « **Death in Paradise** » désormais traité dans un article dédié
+  (bourg & port de Deshaies) — angle encore sous-exploité par les concurrents.
+- Backlog : snorkeling famille, itinéraire 7 j, Malendure/Bouillante, Zoo des
+  Mamelles dédié. Mailler chaque POI vers le(s) gîte(s) via `relatedGites`.

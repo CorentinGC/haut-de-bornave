@@ -7,51 +7,79 @@ venir », « quand partir »…) — cf. `seo/keywords.md` (P3) et `seo/local-po
 
 > **Raccourci** : invoquer le skill **`/que-visiter-article`**
 > (`.claude/skills/que-visiter-article/`) pour publier un nouvel article en
-> suivant la procédure (FR+EN, SEO, tests+review). À relancer ≈ 1×/mois.
+> suivant la procédure (1 JSON FR+EN, images, FAQ, SEO, tests+review).
+> À relancer ≈ 1×/mois.
 
 ## Où vivent les articles
 
-- `src/content/articles.fr.ts` et `src/content/articles.en.ts` — tableau
-  d'objets typés `Article` (`src/content/types.ts`).
+- **Un fichier JSON bilingue par article** dans `src/content/articles/`
+  (`<slug>.json`, forme `ArticleFile` — `src/content/types.ts`). FR et EN sont
+  dans le même fichier : plus de couplage fragile « même index ».
+- `src/content/articles/index.ts` — **loader typé** (barrel explicite) : importe
+  chaque JSON, trie par `order`, et dérive `articlesFr` / `articlesEn`.
 - Rendus par `app/[locale]/que-visiter/page.tsx` (liste) et
   `que-visiter/[slug]/page.tsx` (article, `generateStaticParams` par locale).
+- Le contenu JSON n'étant pas typé à l'édition, le **garde-fou de schéma** est
+  `tests/unit/content/content.test.ts` (parité FR/EN, médias au manifeste,
+  dates ISO, FAQ, crédits…). Le faire passer après toute modification.
 
 ## Ajouter un article
 
-1. Ajouter un objet `Article` dans **`articles.fr.ts` ET `articles.en.ts`** :
+1. Créer `src/content/articles/<slug>.json` :
 
-```ts
+```jsonc
 {
-  slug: "randonnee-cascade-acomat",          // kebab-case, peut différer FR/EN
-  cover: "/media/lieux/....webp",             // doit exister + dans le manifeste
-  category: "Activités",
-  title: "…",
-  excerpt: "…",                                // 1 phrase (carte + meta)
-  readingTime: "3 min",
-  distance: "≈ 20 min en voiture",             // optionnel (SEO local)
-  sections: [{ heading?: "…", paragraphs: ["…","…"] }],
-  relatedGites: ["gran-kaz","ti-kaz-la"],      // maillage interne
-  seo: { title: "… | Bornave", description: "… (140-160 car.)" },
+  "order": 11,                                  // ordre d'affichage (unique)
+  "cover": "/media/lieux/….webp",               // doit exister + manifeste
+  "datePublished": "2026-05-17",                // ISO (JSON-LD)
+  "dateModified": "2026-06-01",                 // optionnel si révisé
+  "relatedGites": ["gran-kaz", "ti-kaz-la"],    // maillage interne
+  "fr": {
+    "slug": "randonnee-cascade-acomat",          // kebab-case, LOCALISÉ
+    "title": "…",
+    "excerpt": "…",                              // 1 phrase (carte + meta)
+    "category": "Activités",                     // localisé
+    "readingTime": "5 min",
+    "distance": "≈ 20 min en voiture",           // optionnel (SEO local)
+    "sections": [
+      { "heading": "…", "paragraphs": ["…"],
+        "image": { "src": "/media/lieux/….webp", "alt": "… Deshaies, Guadeloupe",
+                   "caption": "…", "credit": "" } }
+    ],
+    "faq": [{ "q": "…", "a": "…" }],             // ≥ 3 Q/R factuelles
+    "seo": { "title": "…", "description": "… (≤ 165 car.)" }
+  },
+  "en": { /* mêmes clés, traduction pro (slug EN différent) */ }
 }
 ```
 
-2. Vérifier que `cover` est présent dans `public/media/` et dans
-   `media-dimensions.json` (sinon : `docs/medias.md`).
-3. `npm run build` — l'article est automatiquement prérendu (FR+EN), ajouté
-   au `sitemap.xml` (les articles FR alimentent la liste sitemap) et reçoit
-   son JSON-LD `Article` + `BreadcrumbList`.
+2. L'enregistrer dans `src/content/articles/index.ts` (import + tableau
+   `FILES`).
+3. **Images** : voir `docs/medias.md`. Priorité aux photos du site source
+   `leshautsdebornave.com` ; à défaut, images **libres de droits** (Wikimedia
+   CC BY/BY-SA, Unsplash) avec `credit` **obligatoire** rempli (affiché en
+   légende). `cover` + chaque `image.src` doivent être dans
+   `src/lib/media-dimensions.json`.
+4. `npm run verify` puis `npm run test:e2e` — l'article est automatiquement
+   prérendu (FR+EN), ajouté au `sitemap.xml`, et reçoit son JSON-LD `Article`
+   (avec `datePublished`/`author`) + `FAQPage` + `BreadcrumbList`.
 
 ## Bonnes pratiques SEO d'un article
 
-- `title` unique géolocalisé, `description` 140–160 car. avec bénéfice.
+- `title` unique géolocalisé, `description` ≤ 165 car. avec bénéfice.
 - 1 idée par section, paragraphes courts, **distances/temps réels** depuis le
-  domaine (Google associe le domaine à l'écosystème touristique).
-- Toujours `relatedGites` pertinents (ancre vers le bon hébergement).
-- FR verbatim/fidèle aux faits ; EN = traduction pro (pas auto).
-- Pas de contenu dupliqué entre articles ; viser l'intention de recherche.
+  domaine, **FAQ** ciblant les questions « People Also Ask ».
+- Toujours `relatedGites` pertinents ; FR fidèle aux faits, EN = traduction pro.
+- **Ne jamais inventer** (horaires, prix) : rester général, distances de
+  `seo/local-poi.md`, incertitudes → `docs/contenu-decisions.md`.
 
-## Idées d'articles à fort potentiel (backlog)
+## Articles publiés (10) & backlog
 
-Plage de la Perle en détail · Bourg & port de Deshaies (« Death in Paradise »)
-· Snorkeling famille · Randonnées Basse-Terre · Marché créole & gastronomie ·
-Itinéraire 7 jours côte sous le vent. (Voir `seo/checklist.md` phase 3.)
+Publiés : plages de Deshaies · Jardin Botanique · Réserve Cousteau ·
+Pointe-Noire/Maison du Cacao · accès aéroport · quand venir · **Plage de la
+Perle** · **bourg & port de Deshaies (Death in Paradise)** · **randonnées &
+cascades de Basse-Terre** · **marché créole & gastronomie**.
+
+Backlog restant : snorkeling en famille · itinéraire 7 jours côte sous le vent
+· Malendure & bains chauds de Bouillante · Zoo des Mamelles (article dédié).
+(Voir `seo/checklist.md` phase 3.)
