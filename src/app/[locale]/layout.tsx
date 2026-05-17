@@ -34,9 +34,8 @@ export async function generateMetadata({
   return {
     ...pageMetadata({ locale, path: "", seo: c.home.seo }),
     title: { default: c.home.seo.title, template: `%s` },
-    icons: {
-      icon: [{ url: "/media/brand/logo-les-hauts-de-bornave.svg" }],
-    },
+    // Favicon « palmier » : pilotée par les conventions de fichiers Next
+    // (app/icon.svg, app/apple-icon.png, app/favicon.ico).
   };
 }
 

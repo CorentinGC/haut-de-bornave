@@ -5,6 +5,10 @@ maillé en interne vers les gîtes. Chaque article cible des requêtes
 informationnelles (« que faire à Deshaies », « plus belles plages », « comment
 venir », « quand partir »…) — cf. `seo/keywords.md` (P3) et `seo/local-poi.md`.
 
+> **Raccourci** : invoquer le skill **`/que-visiter-article`**
+> (`.claude/skills/que-visiter-article/`) pour publier un nouvel article en
+> suivant la procédure (FR+EN, SEO, tests+review). À relancer ≈ 1×/mois.
+
 ## Où vivent les articles
 
 - `src/content/articles.fr.ts` et `src/content/articles.en.ts` — tableau
