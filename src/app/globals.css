@@ -374,15 +374,22 @@
 }
 
 .info-card {
+  display: flex;
+  flex-direction: column;
   background: var(--color-surface);
   border: 1px solid var(--color-line, rgba(20, 52, 43, 0.12));
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 2.5rem;
   box-shadow: 0 2px 10px rgba(20, 52, 43, 0.06);
 }
 .info-card h2,
-.info-card h3 { color: var(--color-emerald); margin-bottom: 0.75rem; }
-.info-card p { color: var(--color-ink-soft); }
+.info-card h3 { color: var(--color-emerald); margin-bottom: 0.9rem; }
+.info-card p { color: var(--color-ink-soft); line-height: 1.7; }
+/* Bouton aéré, calé en bas (cartes de hauteur égale, respiration). */
+.info-card__cta {
+  margin-top: auto;
+  padding-top: 1.75rem;
+}
 .info-card .check-grid { margin-top: 1rem; grid-template-columns: 1fr; }
 
 .mini-card {
@@ -1050,16 +1057,20 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
 }
 
 /* Héros image plein cadre : occupe TOUT le viewport en mobile (effet
-   « wahou » immersif, navbar transparente par-dessus). */
+   « wahou » immersif, navbar transparente par-dessus) ; texte centré
+   verticalement (pas collé en bas) pour rester lisible et en avant. */
 @media (max-width: 899px) {
   .page-hero {
     min-height: 100svh;
+    align-items: center;
+    padding: 6rem 0 4rem;
   }
 }
 
-/* Anti-flash au 1er affichage : fond émeraude sombre derrière l'image du
-   héros (≈ teinte du dégradé) → pas de flash clair pendant le chargement. */
-.page-hero,
+/* Anti-flash au 1er affichage : fond émeraude sombre derrière l'image.
+   ⚠️ UNIQUEMENT sur `.page-hero__bg` (le calque image, z-index:-2) — JAMAIS
+   sur `.page-hero` lui-même : `.page-hero` n'étant pas un contexte
+   d'empilement, un background opaque masquerait l'image en z-index négatif. */
 .page-hero__bg {
   background-color: var(--color-emerald-deep);
 }
@@ -1069,4 +1080,27 @@ body:has(.page-hero) .nav:not(.scrolled) .nav__lang {
 .article-card__media,
 .universe__card {
   background-color: var(--color-emerald-deep);
+}
+
+/* Phrase de conclusion sous la grille des 6 espaces communs (page Domaine)
+   — centrée, éditoriale, filet doré décoratif au-dessus. */
+.spaces-note {
+  max-width: 52ch;
+  margin: 3rem auto 0;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--color-emerald);
+  text-wrap: balance;
+}
+.spaces-note::before {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 0 auto 1.5rem;
+  background: var(--color-gold);
+  border-radius: 2px;
 }

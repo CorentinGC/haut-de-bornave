@@ -20,13 +20,20 @@ Toute modification (code, contenu, style) DOIT être suivie de :
    Un test qui échoue révèle un bug → corriger le **code**, pas le test
    (sauf si le test est faux). Toute nouvelle fonctionnalité = nouveaux tests
    dans **`/tests`** (`tests/unit/**` ou `tests/e2e/**`).
-2. **Review visuelle** via le **MCP chrome-devtools** (`.mcp.json`) :
-   `npm run build && npm run start`, puis pour CHAQUE page modifiée,
-   screenshots **plein écran en desktop ET mobile**, vérifier : aucun bug
-   visuel, aucun média manquant (console + réseau), **tous les états hover**,
-   contrastes, parité vs `leshautsdebornave.fr`. Corriger puis re-screenshoter.
+2. **Review visuelle** via le **MCP chrome-devtools** (`.mcp.json`) : pour
+   CHAQUE page modifiée, screenshots **plein écran en desktop ET mobile**,
+   vérifier : aucun bug visuel, aucun média manquant (console + réseau),
+   **tous les états hover**, contrastes, parité vs `leshautsdebornave.fr`.
+   Corriger puis re-screenshoter.
 3. Raccourci : `npm run verify` (lint + unit + build). e2e + review visuelle
    restent à lancer explicitement.
+
+> **SERVEUR — RÈGLE STRICTE** : le serveur (`npm run dev` / `npm run start`)
+> est lancé et contrôlé **uniquement par l'utilisateur**. L'agent ne démarre
+> jamais le serveur de lui-même et **doit demander la permission avant de
+> redémarrer ou couper** un serveur en cours. Pour build/typecheck, utiliser
+> `npm run build` / `npx tsc --noEmit` (ne nécessitent pas de serveur). Pour
+> la review visuelle, demander à l'utilisateur de (re)lancer le serveur.
 
 > Ne jamais considérer une tâche « terminée » sans tests verts **et** review
 > visuelle desktop+mobile. La review design fine est déléguée à l'agent

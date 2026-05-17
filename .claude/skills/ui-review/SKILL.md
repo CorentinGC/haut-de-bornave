@@ -17,12 +17,12 @@ ni casser SEO/tests.
 1. **MCP chrome-devtools actif** (`.mcp.json`). S'il n'apparaît pas dans les
    outils (`mcp__chrome-devtools__*`), demander à l'utilisateur de **recharger
    Claude Code** (les serveurs MCP se chargent au démarrage de session).
-2. **Serveur de prod lancé** sur http://localhost:3000 (l'agent fait sa revue
-   dessus) :
-   ```
-   pkill -f "next start"; npm run build && (npm run start &) ; sleep 6
-   ```
-   (rebuild d'abord pour refléter le code courant).
+2. **Serveur de prod lancé par l'utilisateur** sur http://localhost:3000
+   (RÈGLE CLAUDE.md : seul l'utilisateur lance/coupe le serveur). Vérifier
+   `curl -s -o /dev/null -w "%{http_code}" http://localhost:3000/fr`. S'il
+   n'est pas up ou pas à jour : faire `npm run build` (sans serveur) puis
+   **demander à l'utilisateur** de (re)lancer `npm run start`. Ne jamais
+   démarrer/couper le serveur soi-même.
 
 ## Procédure
 
