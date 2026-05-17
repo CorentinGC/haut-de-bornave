@@ -85,15 +85,12 @@ export default async function DomainePage({
       </Section>
 
       <Section>
-        <SecHead eyebrow={d.spacesTitle} title={d.spacesTitle} />
-        <ul className="check-grid">
-          {d.spaces.map((s) => (
-            <li key={s} className="reveal">
-              {s}
-            </li>
-          ))}
-        </ul>
-        <p className="lead reveal" style={{ marginTop: "2rem" }}>
+        <SecHead eyebrow={d.eyebrow} title={d.spacesTitle} />
+        <FeatureGrid items={d.spaces} />
+        <p
+          className="lead reveal"
+          style={{ marginTop: "2.5rem", textAlign: "center" }}
+        >
           {d.spacesNote}
         </p>
       </Section>

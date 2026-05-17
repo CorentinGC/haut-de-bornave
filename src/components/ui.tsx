@@ -8,6 +8,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import type { Media } from "@/lib/media";
 import { SITE } from "@/lib/site";
+import { FeatureIcon } from "@/components/icons";
 
 /* ============================================================================
    Bibliothèque de composants UI — markup & classes BEM repris du site .fr
@@ -242,7 +243,7 @@ export function CtaBlock({
 export function FeatureGrid({
   items,
 }: {
-  items: { title: string; text: string }[];
+  items: { icon?: string; title: string; text: string }[];
 }) {
   return (
     <div className="feature-grid">
@@ -252,7 +253,7 @@ export function FeatureGrid({
           className={`feature reveal${i % 3 ? ` reveal--delay-${i % 3}` : ""}`}
         >
           <span className="feature__icon" aria-hidden="true">
-            ✦
+            <FeatureIcon name={f.icon} />
           </span>
           <h3 className="feature__title">{f.title}</h3>
           <p>{f.text}</p>

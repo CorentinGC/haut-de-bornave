@@ -166,18 +166,22 @@ export const fr: SiteContent = {
       "Pensé comme un petit village créole niché dans les hauteurs, le domaine réunit plusieurs hébergements indépendants répartis harmonieusement au cœur d'un vaste jardin tropical. Espaces arborés, points de vue ouverts sur la mer, piscine à débordement et coins ombragés prolongés par des terrasses privatives composent un cadre à la fois naturel et apaisant.",
     pillars: [
       {
+        icon: "garden",
         title: "Jardin luxuriant",
         text: "Un jardin paysager aux essences locales et des espaces ombragés.",
       },
       {
+        icon: "pool",
         title: "3 piscines dont 2 privatives",
         text: "Piscine à débordement avec vue panoramique, accessible à tous les gîtes.",
       },
       {
+        icon: "gites",
         title: "Domaine de 5 gîtes",
         text: "5 gîtes indépendants, pouvant être privatisés.",
       },
       {
+        icon: "seaview",
         title: "Vue mer",
         text: "Vue dégagée sur la mer des Caraïbes depuis les hauteurs de Deshaies.",
       },
@@ -187,12 +191,36 @@ export const fr: SiteContent = {
       "Depuis les terrasses et les espaces communs, le regard plonge vers l'infini bleu. Au lever du jour, la lumière est douce et dorée. Le soir, le soleil embrase l'horizon. Le spectacle est quotidien. Et pourtant, il ne lasse jamais.",
     spacesTitle: "Un lieu idéal pour se retrouver",
     spaces: [
-      "Piscine à débordement",
-      "Jardin tropical",
-      "Bar extérieur",
-      "Salle de jeux",
-      "Carbet de détente",
-      "Barbecue commun pour vos soirées sous les étoiles",
+      {
+        icon: "pool",
+        title: "Piscine à débordement",
+        text: "Piscine à débordement avec vue panoramique, accessible à tous les gîtes.",
+      },
+      {
+        icon: "garden",
+        title: "Jardin tropical",
+        text: "Jardin luxuriant paysager aux essences locales et espaces ombragés.",
+      },
+      {
+        icon: "bar",
+        title: "Bar extérieur",
+        text: "Un bar extérieur convivial pour les apéros et les soirées entre amis.",
+      },
+      {
+        icon: "games",
+        title: "Salle de jeux",
+        text: "Un espace de jeux pour petits et grands, à l'abri du soleil.",
+      },
+      {
+        icon: "carbet",
+        title: "Carbet de détente",
+        text: "Un carbet traditionnel où prendre ses repas, lire ou faire la sieste.",
+      },
+      {
+        icon: "bbq",
+        title: "Barbecue commun",
+        text: "Pour les grillades et soirées sous les étoiles en toute convivialité.",
+      },
     ],
     spacesNote:
       "La configuration des hébergements permet d'allier convivialité et indépendance. Chacun a son espace. Tous partagent l'essentiel.",

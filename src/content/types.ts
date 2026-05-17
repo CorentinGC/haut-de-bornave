@@ -151,11 +151,11 @@ export interface SiteContent {
     intro: string;
     presentationTitle: string;
     presentation: string;
-    pillars: { title: string; text: string }[];
+    pillars: { icon: string; title: string; text: string }[];
     viewTitle: string;
     viewText: string;
     spacesTitle: string;
-    spaces: string[];
+    spaces: { icon: string; title: string; text: string }[];
     spacesNote: string;
     missionTitle: string;
     mission: string;
