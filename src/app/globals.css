@@ -35,9 +35,9 @@
    consomme via var(--c-*). */
 @import "../styles/tokens.css";
 
-/* Système de design complet porté du site .fr (source de vérité visuelle).
-   Découpé en partiels ordonnés sous src/styles/lhdb/ — importer l'index. */
-@import "../styles/lhdb/index.css";
+/* Charte lhdb importée depuis layout.tsx en tant que global SCSS
+   (src/styles/lhdb/index.scss) — hors de globals.css car Lightning CSS
+   (Tailwind v4) ne compile pas le SCSS. */
 
 /* Accessibilité : respect de prefers-reduced-motion (a11y) */
 @media (prefers-reduced-motion: reduce) {

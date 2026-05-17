@@ -28,12 +28,11 @@ Toute modification (code, contenu, style) DOIT être suivie de :
 3. Raccourci : `npm run verify` (lint + unit + build). e2e + review visuelle
    restent à lancer explicitement.
 
-> **SERVEUR — RÈGLE STRICTE** : le serveur (`npm run dev` / `npm run start`)
-> est lancé et contrôlé **uniquement par l'utilisateur**. L'agent ne démarre
-> jamais le serveur de lui-même et **doit demander la permission avant de
-> redémarrer ou couper** un serveur en cours. Pour build/typecheck, utiliser
-> `npm run build` / `npx tsc --noEmit` (ne nécessitent pas de serveur). Pour
-> la review visuelle, demander à l'utilisateur de (re)lancer le serveur.
+> **SERVEUR — RÈGLE** : l'agent peut lancer `npm run build` et
+> `npx tsc --noEmit` librement. En revanche, démarrer, redémarrer ou couper
+> le serveur (`npm run dev` / `npm run start`) nécessite de **demander à
+> l'utilisateur** — il le contrôle. Pour la review visuelle, demander à
+> l'utilisateur de (re)lancer le serveur si nécessaire.
 
 > Ne jamais considérer une tâche « terminée » sans tests verts **et** review
 > visuelle desktop+mobile. La review design fine est déléguée à l'agent
