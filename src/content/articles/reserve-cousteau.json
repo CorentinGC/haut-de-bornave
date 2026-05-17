@@ -14,20 +14,38 @@
       {
         "paragraphs": [
           "À une trentaine de minutes du Domaine de Bornave, en descendant la côte sous le vent vers Bouillante, la Réserve Cousteau est LE spot sous-marin de Guadeloupe. Cette aire marine protégée, autour des îlets Pigeon, doit son nom au commandant Cousteau qui en avait salué la richesse. Eaux calmes et claires, faible profondeur près du rivage : un terrain de jeu parfait, des débutants aux plongeurs confirmés."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/tortue-marine-reserve-cousteau-malendure-guadeloupe-1.webp",
+          "alt": "Tortue marine dans les eaux de la Réserve Cousteau, Malendure, Guadeloupe",
+          "caption": "Une tortue verte dans la Réserve Cousteau, au large de Malendure.",
+          "credit": "Alain NEGRONI / Wikimedia Commons — CC BY-SA 4.0"
+        }
       },
       {
         "heading": "Snorkeling & plongée",
         "paragraphs": [
           "En masque-tuba, depuis la plage de Malendure ou en navette bateau vers les îlets Pigeon, on observe facilement poissons-perroquets, sergents-majors, gorgones et, avec un peu de chance, des tortues vertes qui broutent les herbiers. Le célèbre buste immergé du commandant Cousteau est l'un des points d'intérêt des plongeurs.",
           "De nombreux clubs proposent baptêmes, plongées exploration et sorties palmes-masque-tuba encadrées au départ de Malendure, ainsi que des excursions en bateau à fond de verre — idéales pour les familles et ceux qui ne plongent pas."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/poisson-ange-reserve-cousteau-malendure-guadeloupe-1.webp",
+          "alt": "Poisson-ange tropical dans les fonds de la Réserve Cousteau, Malendure, Guadeloupe",
+          "caption": "La faune tropicale des fonds de la Réserve Cousteau.",
+          "credit": "Alain NEGRONI / Wikimedia Commons — CC BY-SA 4.0"
+        }
       },
       {
         "heading": "Bon à savoir",
         "paragraphs": [
           "Réservez les sorties à l'avance en haute saison. La matinée offre généralement une meilleure visibilité et une mer plus calme. Prévoyez crème solaire minérale (zone protégée), chaussures d'eau et lycra anti-UV. Combinez la journée avec les chutes et bains chauds de Bouillante à proximité."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/pointe-malendure-ilets-pigeon-cousteau-guadeloupe-1.webp",
+          "alt": "Pointe de Malendure face aux îlets Pigeon, Réserve Cousteau, Bouillante, Guadeloupe",
+          "caption": "La pointe de Malendure, départ des sorties vers les îlets Pigeon.",
+          "credit": "Enrevseluj / Wikimedia Commons — CC BY-SA 4.0"
+        }
       }
     ],
     "faq": [
@@ -64,20 +82,38 @@
       {
         "paragraphs": [
           "About thirty minutes from the Domaine de Bornave, down the leeward coast towards Bouillante, the Cousteau Reserve is THE underwater spot of Guadeloupe. This protected marine area around the Pigeon islets is named after Commander Cousteau, who praised its richness. Calm clear water and shallow depths near shore make it a perfect playground, from beginners to experienced divers."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/tortue-marine-reserve-cousteau-malendure-guadeloupe-1.webp",
+          "alt": "Sea turtle in the waters of the Cousteau Reserve, Malendure, Guadeloupe",
+          "caption": "A green turtle in the Cousteau Reserve, off Malendure.",
+          "credit": "Alain NEGRONI / Wikimedia Commons — CC BY-SA 4.0"
+        }
       },
       {
         "heading": "Snorkelling & diving",
         "paragraphs": [
           "Snorkelling from Malendure beach or by boat shuttle to the Pigeon islets, you easily spot parrotfish, sergeant-majors, sea fans and, with some luck, green turtles grazing the seagrass. The famous submerged bust of Commander Cousteau is one of the divers' highlights.",
           "Many clubs offer try-dives, exploration dives and guided snorkelling trips from Malendure, plus glass-bottom boat excursions — ideal for families and non-divers."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/poisson-ange-reserve-cousteau-malendure-guadeloupe-1.webp",
+          "alt": "Tropical angelfish in the Cousteau Reserve seabed, Malendure, Guadeloupe",
+          "caption": "The tropical wildlife of the Cousteau Reserve seabed.",
+          "credit": "Alain NEGRONI / Wikimedia Commons — CC BY-SA 4.0"
+        }
       },
       {
         "heading": "Good to know",
         "paragraphs": [
           "Book trips ahead in high season. Mornings usually offer better visibility and calmer sea. Bring mineral sunscreen (protected area), water shoes and a UV rash guard. Combine the day with the nearby hot springs and falls of Bouillante."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/pointe-malendure-ilets-pigeon-cousteau-guadeloupe-1.webp",
+          "alt": "Pointe de Malendure facing the Pigeon islets, Cousteau Reserve, Bouillante, Guadeloupe",
+          "caption": "Pointe de Malendure, departure point for trips to the Pigeon islets.",
+          "credit": "Enrevseluj / Wikimedia Commons — CC BY-SA 4.0"
+        }
       }
     ],
     "faq": [

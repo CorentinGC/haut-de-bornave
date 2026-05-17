@@ -1,6 +1,6 @@
 {
   "order": 2,
-  "cover": "/media/lieux/le-port-deshaies-en-guadeloupe-3.webp",
+  "cover": "/media/lieux/jardin-botanique-deshaies-guadeloupe-1.webp",
   "datePublished": "2026-05-17",
   "relatedGites": ["kaz-an-nou", "gran-kaz"],
   "fr": {
@@ -21,14 +21,24 @@
         "paragraphs": [
           "Plus de mille espèces de plantes tropicales s'y succèdent : palmeraie, bassins à nénuphars et lotus, jardin de bromélias, mur d'orchidées, cactées, gigantesques arbres du voyageur. Le parcours, ombragé et fléché, ménage des points de vue dégagés sur la baie de Deshaies et la mer des Caraïbes.",
           "Côté faune, le jardin abrite une volière où l'on peut nourrir des aras et des loriquets, un bassin de carpes koï et un groupe de flamants roses très photogénique — un moment fort, surtout avec des enfants."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/jardin-botanique-deshaies-guadeloupe-2.webp",
+          "alt": "Bassins et plantes tropicales du Jardin Botanique de Deshaies, Guadeloupe",
+          "caption": "Plus de mille espèces tropicales sur sept hectares paysagers."
+        }
       },
       {
         "heading": "Conseils de visite",
         "paragraphs": [
           "Comptez environ 1 h 30 à 2 h de promenade à un rythme tranquille. Privilégiez la matinée pour la lumière et la fraîcheur. Chaussures confortables, eau et chapeau recommandés ; un salon de thé avec vue permet de faire une pause. Le site est en pente : prévoir un peu de marche.",
           "À seulement une dizaine de minutes du Domaine de Bornave, le Jardin Botanique se combine idéalement avec une matinée à Grande Anse ou une balade dans le bourg de Deshaies."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/jardin-botanique-deshaies-guadeloupe-3.webp",
+          "alt": "Allée fleurie et point de vue sur la baie depuis le Jardin Botanique de Deshaies, Guadeloupe",
+          "caption": "Le parcours ombragé ouvre sur la baie de Deshaies."
+        }
       }
     ],
     "faq": [
@@ -72,14 +82,24 @@
         "paragraphs": [
           "Over a thousand tropical plant species follow one another: palm grove, water-lily and lotus ponds, bromeliad garden, orchid wall, cacti, giant traveller's trees. The shaded, signposted route opens onto clear views over Deshaies bay and the Caribbean Sea.",
           "For wildlife, the garden has an aviary where you can feed macaws and lorikeets, a koi carp pond and a very photogenic group of pink flamingos — a highlight, especially with children."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/jardin-botanique-deshaies-guadeloupe-2.webp",
+          "alt": "Ponds and tropical plants at the Deshaies Botanical Garden, Guadeloupe",
+          "caption": "Over a thousand tropical species across seven landscaped hectares."
+        }
       },
       {
         "heading": "Visiting tips",
         "paragraphs": [
           "Allow about 1 h 30 to 2 h at a gentle pace. Prefer the morning for light and cool air. Comfortable shoes, water and a hat recommended; a tea room with a view offers a break. The site is sloped: expect some walking.",
           "Just ten minutes from the Domaine de Bornave, the Botanical Garden combines ideally with a morning at Grande Anse or a stroll in Deshaies village."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/jardin-botanique-deshaies-guadeloupe-3.webp",
+          "alt": "Flowered path and bay viewpoint at the Deshaies Botanical Garden, Guadeloupe",
+          "caption": "The shaded route opens onto Deshaies bay."
+        }
       }
     ],
     "faq": [

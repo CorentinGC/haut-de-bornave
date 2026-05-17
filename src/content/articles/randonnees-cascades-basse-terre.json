@@ -1,0 +1,164 @@
+{
+  "order": 9,
+  "cover": "/media/lieux/chutes-du-carbet-basse-terre-guadeloupe-1.webp",
+  "datePublished": "2026-05-17",
+  "relatedGites": ["gran-kaz", "kaz-an-nou", "ti-kaz-la"],
+  "fr": {
+    "slug": "randonnees-cascades-basse-terre",
+    "title": "Randonnées & cascades de Basse-Terre depuis Deshaies",
+    "excerpt": "Chutes du Carbet, Saut d'Acomat, forêt tropicale du Parc national : les plus belles randonnées et cascades de Basse-Terre, en excursion depuis Deshaies.",
+    "category": "Activités",
+    "readingTime": "6 min",
+    "distance": "30 min à 2 h en voiture",
+    "sections": [
+      {
+        "paragraphs": [
+          "Basse-Terre est une île volcanique couverte d'une luxuriante forêt tropicale, protégée par le Parc national de la Guadeloupe. Depuis Deshaies, elle se prête à de superbes excursions à la journée : cascades spectaculaires, bassins d'eau douce et sentiers ombragés, du plus accessible à la randonnée sportive. Les distances varient de 30 minutes à environ 2 heures de route selon les sites."
+        ]
+      },
+      {
+        "heading": "Les Chutes du Carbet",
+        "paragraphs": [
+          "Parmi les sites naturels les plus emblématiques de Guadeloupe, les Chutes du Carbet alignent trois cascades de grande hauteur au cœur du Parc national. La deuxième chute est la plus visitée et la plus accessible depuis l'aire d'accueil, par un sentier aménagé. Comptez une excursion à la journée depuis Deshaies (route et marche) et vérifiez l'ouverture du site, parfois soumise aux conditions météo et à l'activité de la Soufrière."
+        ],
+        "image": {
+          "src": "/media/lieux/chutes-du-carbet-basse-terre-guadeloupe-1.webp",
+          "alt": "Une des Chutes du Carbet dans la forêt tropicale du Parc national, Basse-Terre, Guadeloupe",
+          "caption": "Les Chutes du Carbet, au cœur du Parc national de la Guadeloupe.",
+          "credit": "Kevin Charpentier / Wikimedia Commons — CC BY-SA 4.0"
+        }
+      },
+      {
+        "heading": "Le Saut d'Acomat",
+        "paragraphs": [
+          "Plus proche de Deshaies, sur la commune de Pointe-Noire, le Saut d'Acomat est une jolie cascade débouchant sur un bassin d'eau douce, accessible par une courte descente. C'est une option idéale pour une demi-journée nature et une baignade rafraîchissante après la plage. Le sentier peut être glissant : chaussures adaptées et prudence sur les roches mouillées sont de rigueur."
+        ],
+        "image": {
+          "src": "/media/lieux/saut-de-l-acomat-pointe-noire-basse-terre-guadeloupe-1.webp",
+          "alt": "Cascade et bassin d'eau douce du Saut d'Acomat à Pointe-Noire, Basse-Terre, Guadeloupe",
+          "caption": "Le Saut d'Acomat, près de Pointe-Noire — baignade en eau douce.",
+          "credit": "Zivax / Wikimedia Commons — CC BY-SA 3.0"
+        }
+      },
+      {
+        "heading": "Forêt tropicale & Parc national",
+        "paragraphs": [
+          "Entre les deux côtes, la Route de la Traversée et le Parc national ouvrent sur une forêt dense de fougères arborescentes, gommiers et rivières. De nombreux sentiers balisés, des plus familiaux aux plus engagés, permettent de s'immerger dans cette nature spectaculaire. Pour les marcheurs aguerris, l'ascension de la Soufrière (1 467 m) est l'aventure d'une journée — soumise à la météo et à la vigilance volcanique."
+        ],
+        "image": {
+          "src": "/media/lieux/foret-tropicale-parc-national-basse-terre-guadeloupe-1.webp",
+          "alt": "Rivière et forêt tropicale du Parc national de la Guadeloupe, Basse-Terre",
+          "caption": "La forêt tropicale du Parc national, entre les deux côtes.",
+          "credit": "Filo gèn' / Wikimedia Commons — CC BY-SA 4.0"
+        }
+      },
+      {
+        "heading": "Conseils & sécurité",
+        "paragraphs": [
+          "Partez tôt, emportez eau, en-cas, vêtement de pluie et chaussures de marche ; le terrain est souvent humide et glissant. Vérifiez la météo et l'état des sentiers (le Parc national informe des fermetures). En cas de doute, privilégiez un guide local. Depuis le domaine, Serge vous orientera vers la randonnée la mieux adaptée à votre niveau et à la saison."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle cascade voir près de Deshaies ?",
+        "a": "Le Saut d'Acomat, à Pointe-Noire, est le plus proche et le plus accessible (courte descente, bassin de baignade). Les Chutes du Carbet, plus loin dans le Parc national, sont les plus spectaculaires et se visitent à la journée."
+      },
+      {
+        "q": "Les randonnées de Basse-Terre sont-elles accessibles en famille ?",
+        "a": "Oui pour beaucoup : la 2e Chute du Carbet et le Saut d'Acomat ont des accès relativement courts. D'autres sentiers, comme l'ascension de la Soufrière, sont réservés aux marcheurs aguerris et soumis à la météo."
+      },
+      {
+        "q": "Combien de temps de route depuis le Domaine de Bornave ?",
+        "a": "Comptez environ 30 minutes pour le Saut d'Acomat et jusqu'à 2 heures environ pour les Chutes du Carbet et le secteur de la Soufrière, selon le site et la circulation."
+      },
+      {
+        "q": "Que prévoir pour ces randonnées ?",
+        "a": "De bonnes chaussures de marche, de l'eau, un en-cas, un vêtement de pluie et de la prudence sur les roches mouillées. Vérifiez la météo et les éventuelles fermetures de sentiers du Parc national avant de partir."
+      }
+    ],
+    "seo": {
+      "title": "Randonnées & cascades de Basse-Terre depuis Deshaies",
+      "description": "Chutes du Carbet, Saut d'Acomat, forêt du Parc national : randonnées et cascades de Basse-Terre en excursion depuis Deshaies, Guadeloupe."
+    }
+  },
+  "en": {
+    "slug": "basse-terre-hikes-waterfalls",
+    "title": "Basse-Terre hikes & waterfalls from Deshaies",
+    "excerpt": "Carbet Falls, Saut d'Acomat, the National Park rainforest: the finest hikes and waterfalls of Basse-Terre, on a day trip from Deshaies.",
+    "category": "Activities",
+    "readingTime": "6 min",
+    "distance": "30 min to 2 h by car",
+    "sections": [
+      {
+        "paragraphs": [
+          "Basse-Terre is a volcanic island covered in lush rainforest, protected by the Guadeloupe National Park. From Deshaies, it lends itself to superb day trips: spectacular waterfalls, freshwater pools and shaded trails, from the most accessible to demanding hikes. Distances range from 30 minutes to about 2 hours' drive depending on the site."
+        ]
+      },
+      {
+        "heading": "The Carbet Falls",
+        "paragraphs": [
+          "Among Guadeloupe's most iconic natural sites, the Carbet Falls line up three tall waterfalls in the heart of the National Park. The second fall is the most visited and the most accessible from the welcome area, via a managed trail. Allow a day trip from Deshaies (drive and walk) and check the site's opening, sometimes subject to weather and Soufrière activity."
+        ],
+        "image": {
+          "src": "/media/lieux/chutes-du-carbet-basse-terre-guadeloupe-1.webp",
+          "alt": "One of the Carbet Falls in the rainforest of the National Park, Basse-Terre, Guadeloupe",
+          "caption": "The Carbet Falls, in the heart of the Guadeloupe National Park.",
+          "credit": "Kevin Charpentier / Wikimedia Commons — CC BY-SA 4.0"
+        }
+      },
+      {
+        "heading": "Saut d'Acomat",
+        "paragraphs": [
+          "Closer to Deshaies, in the Pointe-Noire area, Saut d'Acomat is a pretty waterfall opening onto a freshwater pool, reached by a short descent. It is an ideal option for a half-day in nature and a refreshing swim after the beach. The trail can be slippery: suitable shoes and care on wet rocks are essential."
+        ],
+        "image": {
+          "src": "/media/lieux/saut-de-l-acomat-pointe-noire-basse-terre-guadeloupe-1.webp",
+          "alt": "Waterfall and freshwater pool of Saut d'Acomat in Pointe-Noire, Basse-Terre, Guadeloupe",
+          "caption": "Saut d'Acomat, near Pointe-Noire — a freshwater swim.",
+          "credit": "Zivax / Wikimedia Commons — CC BY-SA 3.0"
+        }
+      },
+      {
+        "heading": "Rainforest & National Park",
+        "paragraphs": [
+          "Between the two coasts, the Route de la Traversée and the National Park open onto a dense forest of tree ferns, gum trees and rivers. Many waymarked trails, from family-friendly to demanding, let you immerse yourself in this spectacular nature. For experienced walkers, the ascent of La Soufrière (1,467 m) is a day's adventure — subject to weather and volcanic vigilance."
+        ],
+        "image": {
+          "src": "/media/lieux/foret-tropicale-parc-national-basse-terre-guadeloupe-1.webp",
+          "alt": "River and rainforest of the Guadeloupe National Park, Basse-Terre",
+          "caption": "The National Park rainforest, between the two coasts.",
+          "credit": "Filo gèn' / Wikimedia Commons — CC BY-SA 4.0"
+        }
+      },
+      {
+        "heading": "Tips & safety",
+        "paragraphs": [
+          "Set off early, bring water, snacks, a rain jacket and walking shoes; the terrain is often wet and slippery. Check the weather and trail conditions (the National Park reports closures). When in doubt, prefer a local guide. From the estate, Serge will point you to the hike best suited to your level and the season."
+        ]
+      }
+    ],
+    "faq": [
+      {
+        "q": "Which waterfall to see near Deshaies?",
+        "a": "Saut d'Acomat, in Pointe-Noire, is the closest and most accessible (short descent, swimming pool). The Carbet Falls, further away in the National Park, are the most spectacular and make a day trip."
+      },
+      {
+        "q": "Are Basse-Terre hikes family-friendly?",
+        "a": "Many are: the 2nd Carbet Fall and Saut d'Acomat have relatively short access. Other trails, such as the La Soufrière ascent, are for experienced walkers and subject to weather."
+      },
+      {
+        "q": "How long is the drive from the Domaine de Bornave?",
+        "a": "Allow about 30 minutes for Saut d'Acomat and up to roughly 2 hours for the Carbet Falls and the Soufrière area, depending on the site and traffic."
+      },
+      {
+        "q": "What should you bring for these hikes?",
+        "a": "Good walking shoes, water, a snack, a rain jacket and caution on wet rocks. Check the weather and any National Park trail closures before setting off."
+      }
+    ],
+    "seo": {
+      "title": "Basse-Terre hikes & waterfalls from Deshaies, Guadeloupe",
+      "description": "Carbet Falls, Saut d'Acomat, National Park rainforest: Basse-Terre hikes and waterfalls on a day trip from Deshaies, Guadeloupe."
+    }
+  }
+}

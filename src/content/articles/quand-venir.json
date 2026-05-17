@@ -19,13 +19,24 @@
         "heading": "La saison sèche (« carême »), décembre à avril",
         "paragraphs": [
           "C'est la période la plus ensoleillée et la plus demandée : ciel dégagé, mer souvent calme, chaleur supportable grâce aux alizés. Elle couvre les fêtes de fin d'année, les vacances d'hiver et de printemps. Réservez plusieurs mois à l'avance, surtout pour Noël, le Nouvel An et février."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/coucher-de-soleil-deshaies-guadeloupe-1.webp",
+          "alt": "Coucher de soleil sur la mer des Caraïbes pendant la saison sèche à Deshaies, Guadeloupe",
+          "caption": "La saison sèche : ciel dégagé et couchers de soleil sur les Caraïbes."
+        }
       },
       {
         "heading": "La saison humide (« hivernage »), juillet à novembre",
         "paragraphs": [
           "Plus chaude et humide, elle alterne belles éclaircies et averses tropicales souvent brèves. La nature est alors d'un vert éclatant et les tarifs plus doux. Le pic d'activité cyclonique se situe en août-septembre : une assurance annulation et un suivi météo sont conseillés. Mai-juin et novembre sont d'excellents compromis (climat agréable, fréquentation modérée)."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/foret-tropicale-parc-national-basse-terre-guadeloupe-1.webp",
+          "alt": "Forêt tropicale verdoyante du Parc national pendant l'hivernage, Basse-Terre, Guadeloupe",
+          "caption": "L'hivernage : une nature d'un vert éclatant en Basse-Terre.",
+          "credit": "Filo gèn' / Wikimedia Commons — CC BY-SA 4.0"
+        }
       },
       {
         "heading": "Notre conseil",
@@ -73,13 +84,24 @@
         "heading": "Dry season (“carême”), December to April",
         "paragraphs": [
           "The sunniest and most popular period: clear skies, often calm sea, heat made bearable by the trade winds. It covers the year-end holidays, winter and spring breaks. Book several months ahead, especially for Christmas, New Year and February."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/coucher-de-soleil-deshaies-guadeloupe-1.webp",
+          "alt": "Sunset over the Caribbean Sea during the dry season in Deshaies, Guadeloupe",
+          "caption": "The dry season: clear skies and Caribbean sunsets."
+        }
       },
       {
         "heading": "Wet season (“hivernage”), July to November",
         "paragraphs": [
           "Hotter and more humid, it alternates fine spells and often brief tropical showers. Nature is then a vivid green and rates softer. The peak of cyclonic activity is August-September: cancellation insurance and weather monitoring are advised. May-June and November are excellent compromises (pleasant climate, moderate crowds)."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/foret-tropicale-parc-national-basse-terre-guadeloupe-1.webp",
+          "alt": "Lush rainforest of the National Park during the wet season, Basse-Terre, Guadeloupe",
+          "caption": "The wet season: a vivid green Basse-Terre.",
+          "credit": "Filo gèn' / Wikimedia Commons — CC BY-SA 4.0"
+        }
       },
       {
         "heading": "Our advice",

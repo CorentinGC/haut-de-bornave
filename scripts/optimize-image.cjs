@@ -7,6 +7,7 @@
  * @author Eden Solutions <contact@eden-solutions.pro>
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports -- script Node CommonJS (hors build Next, exécuté par scripts/fetch-media.sh) */
 const sharp = require("sharp");
 
 const MAX_EDGE = 2000;

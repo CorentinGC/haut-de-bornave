@@ -19,7 +19,12 @@
         "heading": "Itinéraire & durée",
         "paragraphs": [
           "Depuis l'aéroport, comptez environ 1 h à 1 h 15 de route jusqu'à Deshaies (selon le trafic autour de Pointe-à-Pitre et Baie-Mahault). L'itinéraire le plus simple longe la côte par Sainte-Rose puis descend sur Deshaies. La route est belle mais sinueuse sur la fin : prévoyez une conduite tranquille, surtout de nuit."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/vue-panoramique-deshaies-guadeloupe-1.webp",
+          "alt": "Vue panoramique sur Deshaies et sa baie depuis les hauteurs, Guadeloupe",
+          "caption": "Deshaies, au bout d'une route côtière belle et sinueuse."
+        }
       },
       {
         "heading": "Location de voiture : vivement conseillée",
@@ -73,7 +78,12 @@
         "heading": "Route & duration",
         "paragraphs": [
           "From the airport, allow about 1 h to 1 h 15 to Deshaies (depending on traffic around Pointe-à-Pitre and Baie-Mahault). The simplest route follows the coast via Sainte-Rose then down to Deshaies. The road is scenic but winding at the end: drive calmly, especially at night."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/vue-panoramique-deshaies-guadeloupe-1.webp",
+          "alt": "Panoramic view over Deshaies and its bay from the heights, Guadeloupe",
+          "caption": "Deshaies, at the end of a scenic, winding coastal road."
+        }
       },
       {
         "heading": "Car rental: strongly advised",

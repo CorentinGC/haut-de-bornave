@@ -22,26 +22,46 @@
           "À quelques minutes du domaine, la majestueuse Plage de Grande Anse déroule un immense ruban de sable doré sur près de deux kilomètres, bordé de raisiniers, de cocotiers et de collines couvertes de forêt. C'est la plage la plus connue de Deshaies, idéale pour la baignade en famille, la promenade et les couchers de soleil spectaculaires sur la mer des Caraïbes.",
           "Grande Anse est aussi l'un des décors récurrents de la série britannique « Meurtres au Paradis » (Death in Paradise), tournée à Deshaies — un attrait supplémentaire pour de nombreux visiteurs. La houle pouvant être présente, surveillez les conditions de baignade et privilégiez la zone centrale, plus abritée.",
           "Sur place : restaurants et snacks de plage, location de transats, stationnement. Venez tôt en haute saison pour profiter du calme et garer facilement."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-de-grande-anse-a-deshaies-guadeloupe-11.webp",
+          "alt": "Sable doré et cocotiers de la plage de Grande Anse à Deshaies, Guadeloupe",
+          "caption": "La plage de Grande Anse, à quelques minutes du Domaine de Bornave."
+        }
       },
       {
         "heading": "Plage de Leroux (Ferry) — la plus proche",
         "paragraphs": [
           "Située dans le quartier de Ferry, juste en contrebas du domaine, la Plage de Leroux est la plus accessible depuis Bornave. Plus intime et confidentielle que Grande Anse, cette plage de sable doré bordée de cocotiers offre une atmosphère paisible et authentique, fréquentée surtout par les habitants.",
           "Ses eaux généralement calmes en font un excellent choix pour la baignade tranquille, le snorkeling près des rochers et les familles avec enfants. Parfaite pour une fin de journée sans voiture."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-de-ferry-leroux-2.webp",
+          "alt": "Plage de Leroux dans le quartier de Ferry, en contrebas du Domaine de Bornave, Deshaies, Guadeloupe",
+          "caption": "La plage de Leroux (Ferry), la plus proche du domaine."
+        }
       },
       {
         "heading": "Plage de la Perle — snorkeling & nature",
         "paragraphs": [
           "Plus sauvage, la Plage de la Perle séduit par ses eaux claires, son sable clair et son cadre préservé entre Deshaies et Pointe-Noire. Très appréciée pour le snorkeling, elle laisse découvrir poissons et fonds rocheux le long de ses extrémités. La houle peut y être marquée : restez prudent et observez les drapeaux."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-de-la-perle-deshaies-guadeloupe-1.webp",
+          "alt": "Eaux claires et cadre préservé de la plage de la Perle entre Deshaies et Pointe-Noire, Guadeloupe",
+          "caption": "La plage de la Perle, prisée pour le snorkeling."
+        }
       },
       {
         "heading": "Petite Anse, Rifflet & Clugny — les confidentielles",
         "paragraphs": [
           "Pour s'éloigner des sentiers battus, la côte autour de Deshaies réserve d'autres criques : Petite Anse et son ambiance de village de pêcheurs, la sauvage Plage de Rifflet, ou encore la longue Plage de Clugny vers Sainte-Rose. Autant de variantes pour alterner baignade, photo et tranquillité au fil du séjour."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-anse-tillet-deshaies-guadeloupe-1.webp",
+          "alt": "Crique confidentielle de l'Anse Tillet sur la côte de Deshaies, Guadeloupe",
+          "caption": "Les criques confidentielles de la côte de Deshaies."
+        }
       },
       {
         "heading": "Conseils pratiques",
@@ -92,26 +112,46 @@
           "A few minutes from the estate, the majestic Grande Anse Beach unfolds a vast ribbon of golden sand for nearly two kilometres, lined with sea grapes, coconut palms and forest-covered hills. It is the best-known beach of Deshaies, perfect for family swimming, strolling and spectacular Caribbean sunsets.",
           "Grande Anse is also a recurring filming location of the British series “Death in Paradise”, shot in Deshaies — an extra draw for many visitors. Swell can occur: check conditions and prefer the more sheltered central area.",
           "On site: beach restaurants and snacks, sun-lounger rental, parking. Come early in high season for calm and easy parking."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-de-grande-anse-a-deshaies-guadeloupe-11.webp",
+          "alt": "Golden sand and coconut palms of Grande Anse Beach in Deshaies, Guadeloupe",
+          "caption": "Grande Anse Beach, minutes from the Domaine de Bornave."
+        }
       },
       {
         "heading": "Leroux Beach (Ferry) — the closest",
         "paragraphs": [
           "In the Ferry district, just below the estate, Leroux Beach is the most accessible from Bornave. More intimate and confidential than Grande Anse, this golden-sand beach lined with coconut palms has a peaceful, authentic feel, mostly enjoyed by locals.",
           "Its generally calm waters make it an excellent choice for quiet swimming, snorkelling near the rocks and families with children. Perfect for an end-of-day dip without the car."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-de-ferry-leroux-2.webp",
+          "alt": "Leroux Beach in the Ferry district, below the Domaine de Bornave, Deshaies, Guadeloupe",
+          "caption": "Leroux Beach (Ferry), the closest to the estate."
+        }
       },
       {
         "heading": "La Perle Beach — snorkelling & nature",
         "paragraphs": [
           "Wilder, La Perle Beach is loved for its clear water, light sand and preserved setting between Deshaies and Pointe-Noire. A favourite for snorkelling along its rocky ends. Swell can be noticeable: stay cautious and watch the flags."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-de-la-perle-deshaies-guadeloupe-1.webp",
+          "alt": "Clear water and preserved setting of La Perle Beach between Deshaies and Pointe-Noire, Guadeloupe",
+          "caption": "La Perle Beach, a snorkelling favourite."
+        }
       },
       {
         "heading": "Petite Anse, Rifflet & Clugny — the hidden ones",
         "paragraphs": [
           "To get off the beaten track, the coast around Deshaies hides more coves: Petite Anse and its fishing-village feel, the wild Rifflet Beach, or the long Clugny Beach towards Sainte-Rose — variations to alternate swimming, photos and quiet throughout your stay."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-anse-tillet-deshaies-guadeloupe-1.webp",
+          "alt": "Hidden Anse Tillet cove on the Deshaies coast, Guadeloupe",
+          "caption": "The hidden coves of the Deshaies coast."
+        }
       },
       {
         "heading": "Practical tips",

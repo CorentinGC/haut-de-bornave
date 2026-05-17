@@ -1,6 +1,6 @@
 {
   "order": 4,
-  "cover": "/media/lieux/coucher-de-soleil-depuis-tainos-cottage-a-deshaies-en-guadeloupe-9-scaled.webp",
+  "cover": "/media/lieux/parc-des-mamelles-zoo-guadeloupe-1.webp",
   "datePublished": "2026-05-17",
   "relatedGites": ["kaz-an-nou", "gran-kaz"],
   "fr": {
@@ -20,7 +20,12 @@
         "heading": "La Maison du Cacao",
         "paragraphs": [
           "Sur la route de Pointe-Noire, la Maison du Cacao retrace l'histoire et le savoir-faire du cacao en Guadeloupe : plantation pédagogique, étapes de transformation de la cabosse à la tablette, et dégustation de chocolat chaud à l'ancienne. Une visite courte, gourmande et idéale en famille."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/maison-du-cacao-pointe-noire-guadeloupe-1.avif",
+          "alt": "La Maison du Cacao sur la route de Pointe-Noire, Guadeloupe",
+          "caption": "La Maison du Cacao : de la cabosse à la tablette."
+        }
       },
       {
         "heading": "Pointe-Noire & l'artisanat du bois",
@@ -32,13 +37,23 @@
         "heading": "Le Parc des Mamelles & son zoo",
         "paragraphs": [
           "En poursuivant vers la Route de la Traversée, le Parc des Mamelles abrite un zoo niché en pleine forêt tropicale. Le parcours, en partie sur des passerelles suspendues dans la canopée, présente des espèces emblématiques de la Caraïbe et d'Amérique (ratons, iguanes, rapaces…) et inclut un parcours accrobranche. Comptez une demi-journée, idéale avec des enfants."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/iguane-vert-parc-des-mamelles-guadeloupe-1.webp",
+          "alt": "Iguane vert au Parc des Mamelles, zoo de Guadeloupe en forêt tropicale",
+          "caption": "Le Parc des Mamelles, un zoo niché dans la forêt tropicale."
+        }
       },
       {
         "heading": "Nature & rivières",
         "paragraphs": [
           "Les environs offrent rivières et bassins (secteur de la Route de la Traversée et du Parc national), parfaits pour une baignade d'eau douce ou une courte randonnée à l'ombre des fougères arborescentes. Un complément rafraîchissant après la visite."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-tit-anse-pointe-noire-guadeloupe-1.webp",
+          "alt": "Crique de Tit Anse sur la côte de Pointe-Noire, Guadeloupe",
+          "caption": "La côte préservée de Pointe-Noire, entre rivières et criques."
+        }
       }
     ],
     "faq": [
@@ -81,7 +96,12 @@
         "heading": "The House of Cocoa",
         "paragraphs": [
           "On the road to Pointe-Noire, the House of Cocoa retraces the history and know-how of cocoa in Guadeloupe: an educational plantation, the steps from pod to bar, and an old-fashioned hot-chocolate tasting. A short, gourmet visit, ideal for families."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/maison-du-cacao-pointe-noire-guadeloupe-1.avif",
+          "alt": "The House of Cocoa on the road to Pointe-Noire, Guadeloupe",
+          "caption": "The House of Cocoa: from pod to bar."
+        }
       },
       {
         "heading": "Pointe-Noire & wood craft",
@@ -93,13 +113,23 @@
         "heading": "The Mamelles Park & its zoo",
         "paragraphs": [
           "Continuing towards the Route de la Traversée, the Mamelles Park houses a zoo set in the heart of the rainforest. The trail, partly on walkways suspended in the canopy, presents iconic Caribbean and American species (raccoons, iguanas, birds of prey…) and includes a treetop adventure course. Allow half a day, ideal with children."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/iguane-vert-parc-des-mamelles-guadeloupe-1.webp",
+          "alt": "Green iguana at the Mamelles Park, Guadeloupe rainforest zoo",
+          "caption": "The Mamelles Park, a zoo set in the rainforest."
+        }
       },
       {
         "heading": "Nature & rivers",
         "paragraphs": [
           "The surroundings offer rivers and natural pools (Route de la Traversée and National Park area), perfect for a freshwater dip or a short shaded hike under tree ferns. A refreshing complement after the visit."
-        ]
+        ],
+        "image": {
+          "src": "/media/lieux/plage-tit-anse-pointe-noire-guadeloupe-1.webp",
+          "alt": "Tit Anse cove on the Pointe-Noire coast, Guadeloupe",
+          "caption": "The preserved Pointe-Noire coast, between rivers and coves."
+        }
       }
     ],
     "faq": [
