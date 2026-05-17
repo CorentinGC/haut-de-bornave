@@ -1,5 +1,10 @@
 "use client";
 
+/**
+ * Composant UI Carousel.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { Media } from "@/lib/media";

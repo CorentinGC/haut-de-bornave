@@ -2,6 +2,7 @@
  * Schéma de contenu du site (FR + EN). Le contenu textuel est repris
  * fidèlement de leshautsdebornave.com (verbatim côté FR). Voir
  * docs/contenu-decisions.md pour les arbitrages d'incohérences source.
+ * @author Eden Solutions <contact@eden-solutions.pro>
  */
 
 export interface SeoMeta {
@@ -268,6 +269,7 @@ export interface SiteContent {
     paymentsCol: string;
     legal: string;
     rights: string;
+    madeBy: string;
   };
   cta: {
     homeTitle: string;

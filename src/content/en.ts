@@ -1,3 +1,8 @@
+/**
+ * Données de contenu (en).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { SiteContent } from "./types";
 
 /**
@@ -479,6 +484,7 @@ export const en: SiteContent = {
     paymentsCol: "Accepted payments",
     legal: "Legal notice",
     rights: "All rights reserved",
+    madeBy: "Website by",
   },
   cta: {
     homeTitle: "Ready to live the Bornave pause?",

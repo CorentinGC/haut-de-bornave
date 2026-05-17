@@ -1,3 +1,8 @@
+/**
+ * Utilitaires fonts.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { Fraunces, Inter } from "next/font/google";
 
 /**

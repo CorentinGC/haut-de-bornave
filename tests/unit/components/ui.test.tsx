@@ -1,3 +1,8 @@
+/**
+ * Composant UI ui.test.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Btn, FaqList, Breadcrumbs, Marquee } from "@/components/ui";

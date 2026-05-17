@@ -1,3 +1,8 @@
+/**
+ * Structure de page (App Router).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { fraunces, inter } from "@/lib/fonts";

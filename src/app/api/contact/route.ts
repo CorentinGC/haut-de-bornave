@@ -1,3 +1,8 @@
+/**
+ * Route Handler API (App Router).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { NextResponse, type NextRequest } from "next/server";
 import { Resend } from "resend";
 import { SITE } from "@/lib/site";

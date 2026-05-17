@@ -1,3 +1,8 @@
+/**
+ * Utilitaires media.test.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect } from "vitest";
 import { media, gitePhotos, galeriePhotos, KEY_MEDIA } from "@/lib/media";
 

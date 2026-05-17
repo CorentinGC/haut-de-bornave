@@ -1,3 +1,8 @@
+/**
+ * Utilitaires jsonld.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { SITE, absoluteUrl, type Locale } from "./site";
 import type { Article, GiteContent, SiteContent } from "@/content/types";
 

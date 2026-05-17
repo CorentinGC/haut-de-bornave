@@ -1,3 +1,8 @@
+/**
+ * Tests — screenshots.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { test } from "@playwright/test";
 
 /**

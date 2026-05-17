@@ -1,3 +1,8 @@
+/**
+ * Métadonnées SEO (App Router).
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import type { MetadataRoute } from "next";
 import { SITE } from "@/lib/site";
 

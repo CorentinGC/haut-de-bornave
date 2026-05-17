@@ -1,3 +1,8 @@
+/**
+ * Utilitaires jsonld.test.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { describe, it, expect } from "vitest";
 import {
   organizationLd,

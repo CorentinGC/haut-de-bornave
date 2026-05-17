@@ -3,6 +3,7 @@
  * proviennent des sites source (voir scripts/fetch-media.sh, docs/medias.md).
  * Les dimensions réelles (media-dimensions.json, généré au build) sont
  * fournies à next/image pour éliminer le CLS (Core Web Vitals → SEO).
+ * @author Eden Solutions <contact@eden-solutions.pro>
  */
 import dims from "./media-dimensions.json";
 

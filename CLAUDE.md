@@ -74,6 +74,15 @@ Toute modification (code, contenu, style) DOIT être suivie de :
   pas de dead code, colocation. Fichiers < ~500 lignes (sauf données de contenu).
 - **Accessibilité** : HTML sémantique, `alt`, focus visible, navigation clavier,
   `prefers-reduced-motion`, contrastes (skill a11y).
+- **JSDoc Eden Solutions** (skill `jsdoc`, OBLIGATOIRE sur tout fichier créé
+  ou modifié) : header fichier en 1ʳᵉ position (après `"use client"` le cas
+  échéant) — description FR concise + `@author Eden Solutions
+  <contact@eden-solutions.pro>` ; fonctions/constantes exportées documentées
+  (`@param nom - …`, `@returns …`, sans type entre accolades) ; composants
+  React = description seule. Minimaliste, en français.
+- **Crédit agence** : pied de page « Site réalisé par **Eden Solutions** » →
+  lien `https://eden-solutions.pro` (composant `Footer`, libellé
+  `content.footer.madeBy`). Ne pas retirer.
 - **Commits** : conventionnels (`feat:`, `fix:`, `docs:`…), atomiques.
 
 ## 3. Ajouter / modifier — réflexes

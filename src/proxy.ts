@@ -1,3 +1,8 @@
+/**
+ * proxy.ts.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALES, DEFAULT_LOCALE, type Locale } from "@/lib/site";
 

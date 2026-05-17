@@ -1,3 +1,8 @@
+/**
+ * Composant UI ui.
+ * @author Eden Solutions <contact@eden-solutions.pro>
+ */
+
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
