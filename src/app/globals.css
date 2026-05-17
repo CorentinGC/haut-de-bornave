@@ -36,8 +36,8 @@
 @import "../styles/tokens.css";
 
 /* Système de design complet porté du site .fr (source de vérité visuelle).
-   Importé après Tailwind pour que ses classes BEM priment sur le preflight. */
-@import "../styles/lhdb.css";
+   Découpé en partiels ordonnés sous src/styles/lhdb/ — importer l'index. */
+@import "../styles/lhdb/index.css";
 
 /* Accessibilité : respect de prefers-reduced-motion (a11y) */
 @media (prefers-reduced-motion: reduce) {
@@ -134,6 +134,7 @@
   flex-direction: column;
   gap: 0.75rem;
   max-width: 820px;
+  margin-inline: auto;
 }
 .faq-item {
   background: var(--color-surface);
