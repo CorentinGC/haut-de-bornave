@@ -16,7 +16,10 @@ export function ContactForm({ form }: { form: SiteContent["contact"]["form"] }) 
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const fd = new FormData(e.currentTarget);
+    // Capturer le formulaire AVANT tout await : React détache
+    // e.currentTarget (=> null) une fois le handler retourné.
+    const formEl = e.currentTarget;
+    const fd = new FormData(formEl);
     const data = Object.fromEntries(fd.entries());
 
     if (!data.name || !data.email || !data.message) {
@@ -40,7 +43,7 @@ export function ContactForm({ form }: { form: SiteContent["contact"]["form"] }) 
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("ok");
-      e.currentTarget.reset();
+      formEl.reset();
     } catch {
       setError(form.error);
       setStatus("error");

@@ -53,7 +53,7 @@ export default async function QueVisiterPage({
         data={[
           itemListLd,
           breadcrumbLd(lc, [
-            { name: c.nav.domaine, path: "" },
+            { name: c.nav.home, path: "" },
             { name: c.nav.queVisiter, path: "que-visiter" },
           ]),
         ]}
@@ -65,7 +65,7 @@ export default async function QueVisiterPage({
         lead={c.queVisiter.intro}
         media={media(KEY_MEDIA.grandeAnse, c.queVisiter.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.queVisiter },
         ]}
       />

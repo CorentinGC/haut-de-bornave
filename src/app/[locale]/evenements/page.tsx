@@ -46,7 +46,7 @@ export default async function EvenementsPage({
     <>
       <JsonLd
         data={breadcrumbLd(lc, [
-          { name: c.nav.domaine, path: "" },
+          { name: c.nav.home, path: "" },
           { name: c.nav.evenements, path: "evenements" },
         ])}
       />
@@ -57,7 +57,7 @@ export default async function EvenementsPage({
         lead={e.intro}
         media={media(KEY_MEDIA.coucherTainos, e.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.evenements },
         ]}
       />

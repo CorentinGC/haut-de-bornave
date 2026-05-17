@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/site";
 import { SITE } from "@/lib/site";
 import type { SiteContent } from "@/content/types";
-import { href } from "@/lib/nav";
+import { href, switchLocaleHref } from "@/lib/nav";
 
 /* Icônes inline (aucune lib) — trait simple, héritent de currentColor. */
 const I = {
@@ -81,7 +81,11 @@ export function MobileBottomNav({
     { path: "faq", label: content.nav.faq },
   ];
   const other: Locale = locale === "fr" ? "en" : "fr";
-  const otherHref = `/${other}${pathNoLocale === "/" ? "" : pathNoLocale}`;
+  const otherHref = switchLocaleHref(
+    other,
+    pathNoLocale === "/" ? "" : pathNoLocale,
+    locale,
+  );
 
   return (
     <>

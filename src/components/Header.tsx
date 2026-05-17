@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import type { Locale } from "@/lib/site";
 import type { SiteContent } from "@/content/types";
-import { href, mainNav } from "@/lib/nav";
+import { href, mainNav, switchLocaleHref } from "@/lib/nav";
 
 const Arrow = () => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -30,7 +30,7 @@ export function Header({
   const pathNoLocale = pathname.replace(/^\/(fr|en)(?=\/|$)/, "") || "";
   const items = mainNav(content);
   const other: Locale = locale === "fr" ? "en" : "fr";
-  const otherHref = `/${other}${pathNoLocale ? pathNoLocale : ""}`;
+  const otherHref = switchLocaleHref(other, pathNoLocale, locale);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);

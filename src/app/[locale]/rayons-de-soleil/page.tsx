@@ -52,7 +52,7 @@ export default async function RayonsPage({
         data={[
           faqPageLd(r.faq),
           breadcrumbLd(lc, [
-            { name: c.nav.domaine, path: "" },
+            { name: c.nav.home, path: "" },
             { name: c.nav.rayons, path: "rayons-de-soleil" },
           ]),
         ]}
@@ -68,7 +68,7 @@ export default async function RayonsPage({
           r.title,
         )}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.rayons },
         ]}
       />

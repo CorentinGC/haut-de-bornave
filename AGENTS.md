@@ -28,8 +28,15 @@ Guide opérationnel pour agents/contributeurs. Règles produit & sitemap : voir
 | Servir le build | `npm run start` |
 | Lint (doit être 0 erreur) | `npm run lint` |
 | Type-check rapide | `npx tsc --noEmit` |
+| Tests unitaires (Vitest) | `npm run test` (watch : `npm run test:watch`) |
+| Tests e2e (Playwright desktop+mobile) | `npm run test:e2e` |
+| Screenshots review (desktop+mobile) | `npm run screenshots` |
+| Tout vérifier (lint+unit+build) | `npm run verify` |
 | (Re)télécharger les médias | `bash scripts/fetch-media.sh` (idempotent) |
 | Régénérer le manifeste dimensions | voir `docs/medias.md` |
+
+> Tests sous **`/tests`** (`tests/unit`, `tests/e2e`). Infos vendeur dans
+> **`/config.json`**. Review visuelle = MCP `chrome-devtools` (`.mcp.json`).
 
 ## Variables d'environnement
 
@@ -54,11 +61,16 @@ Gérer via `vercel env` (preview + production). Le site reste démontrable sans
 
 ## Définition de « terminé »
 
-1. `npm run build` ✅ (toutes pages `●` SSG, `ƒ` uniquement `/api/contact`, 0 warning).
-2. `npm run lint` ✅ 0 erreur.
-3. Nouvelle page → metadata + JSON-LD + i18n FR/EN + entrée sitemap + nav.
-4. Aucune chaîne en dur (contenu via `src/content`), aucun hotlink média.
-5. Vérif mobile (bottom nav) + desktop, parité visuelle vs `.fr`.
+1. `npm run verify` ✅ (lint + unit Vitest + build : 52 pages `●` SSG,
+   `ƒ` uniquement `/api/contact`, 0 warning).
+2. `npm run test:e2e` ✅ (Playwright desktop + mobile, 0 échec).
+3. **Review visuelle MCP chrome-devtools** ✅ : screenshots plein écran
+   desktop + mobile de chaque page touchée, 0 bug visuel, 0 média manquant,
+   hovers OK, parité vs `.fr`.
+4. Nouvelle page → metadata + JSON-LD + i18n FR/EN + entrée sitemap + nav
+   + tests (`/tests`).
+5. Aucune chaîne en dur (contenu via `src/content`, vendeur via
+   `/config.json`), aucun hotlink média.
 
 ## Conventions
 

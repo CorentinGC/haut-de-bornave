@@ -46,7 +46,7 @@ export default async function FaqPage({
         data={[
           faqPageLd(all),
           breadcrumbLd(lc, [
-            { name: c.nav.domaine, path: "" },
+            { name: c.nav.home, path: "" },
             { name: c.nav.faq, path: "faq" },
           ]),
         ]}
@@ -58,7 +58,7 @@ export default async function FaqPage({
         lead={c.faqPage.intro}
         media={media(KEY_MEDIA.domaineWide, c.faqPage.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.faq },
         ]}
       />

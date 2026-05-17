@@ -75,6 +75,7 @@ export interface Article {
 export interface SiteContent {
   /** Libellés de navigation (header / footer). */
   nav: {
+    home: string;
     domaine: string;
     gites: string;
     rayons: string;
@@ -221,7 +222,12 @@ export interface SiteContent {
     eyebrow: string;
     title: string;
     intro: string;
-    waBanner: string;
+    wa: {
+      eyebrow: string;
+      leadPre: string;
+      hint: string;
+      telAlt: string;
+    };
     form: {
       name: string;
       email: string;

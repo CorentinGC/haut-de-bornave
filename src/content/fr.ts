@@ -6,6 +6,7 @@ import type { SiteContent } from "./types";
  */
 export const fr: SiteContent = {
   nav: {
+    home: "Accueil",
     domaine: "Le Domaine",
     gites: "Les Gîtes",
     rayons: "Rayons de Soleil",
@@ -40,7 +41,7 @@ export const fr: SiteContent = {
     seo: {
       title: "Location de gîtes à Deshaies, Guadeloupe | Domaine de Bornave",
       description:
-        "5 gîtes avec piscine et vue mer sur les hauteurs de Deshaies, Guadeloupe. Du couple aux groupes de 12, entre forêt tropicale et mer des Caraïbes. Réservation directe.",
+        "5 gîtes avec piscine et vue mer sur les hauteurs de Deshaies, Guadeloupe. Du couple aux groupes de 12, entre forêt tropicale et mer des Caraïbes.",
     },
     heroEyebrow: "Deshaies · Guadeloupe",
     heroTitle: "Parenthèse entre <em>Mer et Forêt</em>",
@@ -386,7 +387,12 @@ export const fr: SiteContent = {
     title: "Parlons de votre séjour",
     intro:
       "Réservation directe, sans intermédiaire. Serge vous accompagne personnellement dans l'organisation de votre séjour ou de votre événement aux Hauts de Bornave.",
-    waBanner: "Discutez avec Serge sur WhatsApp",
+    wa: {
+      eyebrow: "Réponse la plus rapide",
+      leadPre: "Pour une réponse rapide, privilégiez",
+      hint: "Appuyer pour ouvrir WhatsApp",
+      telAlt: "Ou par téléphone :",
+    },
     form: {
       name: "Nom",
       email: "Email",

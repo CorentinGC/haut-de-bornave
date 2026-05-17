@@ -49,7 +49,7 @@ export default async function GitesPage({
     <>
       <JsonLd
         data={breadcrumbLd(lc, [
-          { name: c.nav.domaine, path: "" },
+          { name: c.nav.home, path: "" },
           { name: c.nav.gites, path: "gites" },
         ])}
       />
@@ -63,7 +63,7 @@ export default async function GitesPage({
           p.title,
         )}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.gites },
         ]}
       />

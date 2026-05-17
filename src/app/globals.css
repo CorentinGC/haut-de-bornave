@@ -515,3 +515,66 @@
   text-align: center;
   padding: 2rem 0;
 }
+
+/* ===========================================================================
+   Corrections review visuelle (hover, médias fill, contraste nav)
+   =========================================================================== */
+
+/* Btn : le contenu est dans .btn__inner pour passer au-dessus du calque
+   ::before des boutons primaires (sinon texte invisible au survol). */
+.btn__inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.btn--primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Conteneur média des blocs "split" : next/image fill nécessite un parent
+   positionné et dimensionné (sinon section blanche / image effondrée). */
+.split__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.split__media img {
+  border-radius: inherit;
+}
+
+/* Flèche des cartes "univers" (et autres .more) : taille bornée
+   (sinon SVG sans dimension → géant plein écran). */
+.more svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+/* Sélecteur de langue : lisible aussi bien sur header transparent
+   (texte clair sur le héros sombre) que sur header opaque au scroll. */
+.nav:not(.scrolled) .nav__lang {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.55);
+  text-shadow: 0 1px 8px rgba(12, 35, 28, 0.45);
+}
+.nav.scrolled .nav__lang {
+  color: var(--color-emerald);
+  border-color: rgba(20, 52, 43, 0.4);
+}
+
+/* Carte Google Maps : fond sable pendant le chargement de l'iframe
+   (jamais de bloc blanc vide). */
+.location-map {
+  background: var(--color-sand-alt);
+}
+
+/* .universe__card : crée un contexte d'empilement pour contenir l'image
+   de fond en z-index:-2 (sinon elle passe derrière le fond de page). */
+.universe__card,
+.beach-card,
+.cta-block {
+  isolation: isolate;
+}

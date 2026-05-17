@@ -40,7 +40,7 @@ export default async function BienEtrePage({
     <>
       <JsonLd
         data={breadcrumbLd(lc, [
-          { name: c.nav.domaine, path: "" },
+          { name: c.nav.home, path: "" },
           { name: c.nav.bienEtre, path: "bien-etre" },
         ])}
       />
@@ -50,7 +50,7 @@ export default async function BienEtrePage({
         title={b.title}
         media={media(KEY_MEDIA.coucherGrandeAnse, b.title)}
         breadcrumb={[
-          { name: c.nav.domaine, href: href(lc) },
+          { name: c.nav.home, href: href(lc) },
           { name: c.nav.bienEtre },
         ]}
       />

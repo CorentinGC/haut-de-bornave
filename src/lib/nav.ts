@@ -1,5 +1,7 @@
 import type { Locale } from "./site";
 import type { SiteContent } from "@/content/types";
+import { articlesFr } from "@/content/articles.fr";
+import { articlesEn } from "@/content/articles.en";
 
 /** Lien interne préfixé par la locale. `path` sans slash initial. */
 export function href(locale: Locale, path = ""): string {
@@ -7,9 +9,31 @@ export function href(locale: Locale, path = ""): string {
   return `/${locale}${clean ? `/${clean}` : ""}`;
 }
 
-/** Bascule de locale en conservant le chemin courant (sans préfixe). */
-export function switchLocaleHref(target: Locale, pathnameNoLocale: string) {
-  return href(target, pathnameNoLocale);
+/** Correspondance des slugs d'articles entre locales (slugs localisés SEO).
+ *  fr[i] ↔ en[i] (même ordre dans articles.fr.ts / articles.en.ts). */
+const ARTICLE_SLUG: Record<Locale, string[]> = {
+  fr: articlesFr.map((a) => a.slug),
+  en: articlesEn.map((a) => a.slug),
+};
+
+/**
+ * Bascule de locale en conservant la PAGE courante. Traduit le slug
+ * d'article `/que-visiter/<slug>` (slugs localisés ≠ entre fr/en) pour
+ * éviter un 404 lors du changement de langue. `from` = locale courante.
+ */
+export function switchLocaleHref(
+  target: Locale,
+  pathNoLocale: string,
+  from: Locale,
+): string {
+  const m = pathNoLocale.match(/^\/que-visiter\/([^/]+)\/?$/);
+  if (m) {
+    const i = ARTICLE_SLUG[from].indexOf(m[1]);
+    if (i !== -1 && ARTICLE_SLUG[target][i]) {
+      return href(target, `que-visiter/${ARTICLE_SLUG[target][i]}`);
+    }
+  }
+  return href(target, pathNoLocale);
 }
 
 export interface NavItem {
