@@ -6,9 +6,10 @@
 import type { Article } from "./types";
 
 /**
- * Guide local « Que visiter » — articles SEO longue traîne (top-of-funnel).
- * Maillés en interne vers les gîtes. Ajouter un article : voir
- * docs/blog-que-visiter.md.
+ * Guide local « Que visiter » — articles SEO longue traîne (top-of-funnel),
+ * détaillés et géolocalisés, maillés en interne vers les gîtes. L'ordre des
+ * articles est couplé à articles.en.ts (même index ↔ même article, cf.
+ * src/lib/nav.ts). Ajouter un article : voir docs/blog-que-visiter.md.
  */
 export const articlesFr: Article[] = [
   {
@@ -17,27 +18,46 @@ export const articlesFr: Article[] = [
     category: "Plages",
     title: "Les plus belles plages autour de Deshaies",
     excerpt:
-      "Grande Anse, La Perle, Leroux, Petite Anse : le guide des plages de sable doré à quelques minutes du domaine.",
-    readingTime: "5 min",
-    distance: "5 à 15 min en voiture",
+      "Grande Anse, La Perle, Leroux, Petite Anse, Rifflet : le guide complet des plages de sable doré à quelques minutes du Domaine de Bornave.",
+    readingTime: "7 min",
+    distance: "5 à 20 min en voiture",
     sections: [
       {
-        heading: "Plage de Grande Anse",
         paragraphs: [
-          "À quelques minutes du domaine, la majestueuse Plage de Grande Anse est l'une des plus belles plages de Basse-Terre. Son immense étendue de sable doré, bordée de collines verdoyantes, offre un décor spectaculaire typique de la côte caraïbe.",
-          "Idéale pour la baignade en famille, les couchers de soleil et la promenade, c'est la plage la plus emblématique de Deshaies — et l'un des décors de la série « Meurtres au Paradis » (Death in Paradise).",
+          "Deshaies, sur la côte sous le vent de la Basse-Terre, concentre quelques-unes des plus belles plages de Guadeloupe : du sable doré, des eaux calmes et abritées, des cocotiers et des collines verdoyantes en toile de fond. Depuis les hauteurs du Domaine de Bornave, la plupart sont accessibles en 5 à 20 minutes de voiture, ce qui permet d'en changer chaque jour selon l'envie : baignade en famille, snorkeling, farniente ou coucher de soleil.",
         ],
       },
       {
-        heading: "Plage de Leroux (Ferry)",
+        heading: "Plage de Grande Anse — l'emblématique",
         paragraphs: [
-          "Située dans le quartier de Ferry à Deshaies, juste en contrebas du domaine, la Plage de Leroux séduit par son atmosphère paisible et authentique. Plus intime que Grande Anse, cette plage de sable doré bordée de cocotiers est idéale pour la baignade, le snorkeling ou un moment de calme face à la mer des Caraïbes.",
+          "À quelques minutes du domaine, la majestueuse Plage de Grande Anse déroule un immense ruban de sable doré sur près de deux kilomètres, bordé de raisiniers, de cocotiers et de collines couvertes de forêt. C'est la plage la plus connue de Deshaies, idéale pour la baignade en famille, la promenade et les couchers de soleil spectaculaires sur la mer des Caraïbes.",
+          "Grande Anse est aussi l'un des décors récurrents de la série britannique « Meurtres au Paradis » (Death in Paradise), tournée à Deshaies — un attrait supplémentaire pour de nombreux visiteurs. La houle pouvant être présente, surveillez les conditions de baignade et privilégiez la zone centrale, plus abritée.",
+          "Sur place : restaurants et snacks de plage, location de transats, stationnement. Venez tôt en haute saison pour profiter du calme et garer facilement.",
         ],
       },
       {
-        heading: "Plage de la Perle",
+        heading: "Plage de Leroux (Ferry) — la plus proche",
         paragraphs: [
-          "Plus sauvage, la Plage de la Perle est appréciée pour ses eaux claires et son cadre préservé, idéale pour la baignade et le snorkeling. Un spot prisé des amoureux de nature.",
+          "Située dans le quartier de Ferry, juste en contrebas du domaine, la Plage de Leroux est la plus accessible depuis Bornave. Plus intime et confidentielle que Grande Anse, cette plage de sable doré bordée de cocotiers offre une atmosphère paisible et authentique, fréquentée surtout par les habitants.",
+          "Ses eaux généralement calmes en font un excellent choix pour la baignade tranquille, le snorkeling près des rochers et les familles avec enfants. Parfaite pour une fin de journée sans voiture.",
+        ],
+      },
+      {
+        heading: "Plage de la Perle — snorkeling & nature",
+        paragraphs: [
+          "Plus sauvage, la Plage de la Perle séduit par ses eaux claires, son sable clair et son cadre préservé entre Deshaies et Pointe-Noire. Très appréciée pour le snorkeling, elle laisse découvrir poissons et fonds rocheux le long de ses extrémités. La houle peut y être marquée : restez prudent et observez les drapeaux.",
+        ],
+      },
+      {
+        heading: "Petite Anse, Rifflet & Clugny — les confidentielles",
+        paragraphs: [
+          "Pour s'éloigner des sentiers battus, la côte autour de Deshaies réserve d'autres criques : Petite Anse et son ambiance de village de pêcheurs, la sauvage Plage de Rifflet, ou encore la longue Plage de Clugny vers Sainte-Rose. Autant de variantes pour alterner baignade, photo et tranquillité au fil du séjour.",
+        ],
+      },
+      {
+        heading: "Conseils pratiques",
+        paragraphs: [
+          "Prévoyez chaussures d'eau pour les plages rocheuses, masque et tuba, crème solaire respectueuse des récifs et de l'eau. Les matinées sont souvent les plus calmes (mer et fréquentation). Depuis le domaine, Serge vous orientera vers la plage la mieux adaptée à la météo et à la houle du jour.",
         ],
       },
     ],
@@ -46,7 +66,7 @@ export const articlesFr: Article[] = [
       title:
         "Les plus belles plages de Deshaies (Grande Anse, La Perle, Leroux)",
       description:
-        "Guide des plages autour de Deshaies en Guadeloupe : Grande Anse, La Perle, Leroux, Petite Anse — à quelques minutes du Domaine de Bornave.",
+        "Guide complet des plages de Deshaies, Guadeloupe : Grande Anse, Leroux, La Perle, Petite Anse, Rifflet — accès, baignade, snorkeling depuis le Domaine de Bornave.",
     },
   },
   {
@@ -55,14 +75,27 @@ export const articlesFr: Article[] = [
     category: "À visiter",
     title: "Le Jardin Botanique de Deshaies",
     excerpt:
-      "Sept hectares de jardins tropicaux, plus de 1 000 espèces, flamants et aras : l'incontournable de Deshaies, ancienne propriété de Coluche.",
-    readingTime: "3 min",
+      "Sept hectares de jardins tropicaux, plus de 1 000 espèces, aras et flamants roses : l'incontournable de Deshaies, ancienne propriété de Coluche.",
+    readingTime: "5 min",
     distance: "≈ 10 min en voiture",
     sections: [
       {
         paragraphs: [
-          "Le Jardin Botanique de Deshaies est l'une des visites incontournables de la côte sous le vent. Aménagé sur l'ancienne propriété de l'humoriste Coluche, il déploie sur sept hectares plus de mille espèces de plantes tropicales, des bassins à nénuphars, une volière d'aras et des flamants roses.",
-          "Une promenade ombragée, ludique et pédagogique, idéale pour les familles comme pour les amoureux de nature, à seulement quelques minutes du Domaine de Bornave.",
+          "Le Jardin Botanique de Deshaies est l'une des visites incontournables de la côte sous le vent et l'une des attractions les plus appréciées de Guadeloupe. Aménagé sur l'ancienne propriété de l'humoriste Coluche, sur les hauteurs au-dessus du bourg, il déploie un parc paysager de sept hectares pensé comme une promenade sensorielle.",
+        ],
+      },
+      {
+        heading: "Ce que l'on découvre",
+        paragraphs: [
+          "Plus de mille espèces de plantes tropicales s'y succèdent : palmeraie, bassins à nénuphars et lotus, jardin de bromélias, mur d'orchidées, cactées, gigantesques arbres du voyageur. Le parcours, ombragé et fléché, ménage des points de vue dégagés sur la baie de Deshaies et la mer des Caraïbes.",
+          "Côté faune, le jardin abrite une volière où l'on peut nourrir des aras et des loriquets, un bassin de carpes koï et un groupe de flamants roses très photogénique — un moment fort, surtout avec des enfants.",
+        ],
+      },
+      {
+        heading: "Conseils de visite",
+        paragraphs: [
+          "Comptez environ 1 h 30 à 2 h de promenade à un rythme tranquille. Privilégiez la matinée pour la lumière et la fraîcheur. Chaussures confortables, eau et chapeau recommandés ; un salon de thé avec vue permet de faire une pause. Le site est en pente : prévoir un peu de marche.",
+          "À seulement une dizaine de minutes du Domaine de Bornave, le Jardin Botanique se combine idéalement avec une matinée à Grande Anse ou une balade dans le bourg de Deshaies.",
         ],
       },
     ],
@@ -70,7 +103,7 @@ export const articlesFr: Article[] = [
     seo: {
       title: "Jardin Botanique de Deshaies – Visite & accès depuis Bornave",
       description:
-        "Visiter le Jardin Botanique de Deshaies (ancienne propriété de Coluche) : 7 ha, 1 000+ espèces, aras et flamants, à quelques minutes du Domaine de Bornave.",
+        "Visiter le Jardin Botanique de Deshaies (ancienne propriété de Coluche) : 7 ha, 1 000+ espèces, aras et flamants — à ≈ 10 min du Domaine de Bornave.",
     },
   },
   {
@@ -80,14 +113,26 @@ export const articlesFr: Article[] = [
     category: "Activités",
     title: "Plongée & snorkeling à la Réserve Cousteau",
     excerpt:
-      "Les fonds marins de la Réserve Cousteau, au large de Pigeon (Bouillante), comptent parmi les plus beaux des Caraïbes.",
-    readingTime: "3 min",
+      "Au large de Pigeon (Bouillante), les fonds de la Réserve Cousteau comptent parmi les plus beaux des Caraïbes : tortues, coraux, faune tropicale.",
+    readingTime: "5 min",
     distance: "≈ 30 min en voiture",
     sections: [
       {
         paragraphs: [
-          "À une trentaine de minutes du domaine, la Réserve Cousteau au large de Pigeon (Bouillante) est le spot incontournable pour la plongée et le snorkeling en Guadeloupe : tortues, poissons tropicaux, jardins de corail et le célèbre buste de Cousteau immergé.",
-          "Des sorties masque-tuba et plongée bouteille partent quotidiennement de la plage de Malendure. Une excursion idéale pour une journée découverte depuis Deshaies.",
+          "À une trentaine de minutes du Domaine de Bornave, en descendant la côte sous le vent vers Bouillante, la Réserve Cousteau est LE spot sous-marin de Guadeloupe. Cette aire marine protégée, autour des îlets Pigeon, doit son nom au commandant Cousteau qui en avait salué la richesse. Eaux calmes et claires, faible profondeur près du rivage : un terrain de jeu parfait, des débutants aux plongeurs confirmés.",
+        ],
+      },
+      {
+        heading: "Snorkeling & plongée",
+        paragraphs: [
+          "En masque-tuba, depuis la plage de Malendure ou en navette bateau vers les îlets Pigeon, on observe facilement poissons-perroquets, sergents-majors, gorgones et, avec un peu de chance, des tortues vertes qui broutent les herbiers. Le célèbre buste immergé du commandant Cousteau est l'un des points d'intérêt des plongeurs.",
+          "De nombreux clubs proposent baptêmes, plongées exploration et sorties palmes-masque-tuba encadrées au départ de Malendure, ainsi que des excursions en bateau à fond de verre — idéales pour les familles et ceux qui ne plongent pas.",
+        ],
+      },
+      {
+        heading: "Bon à savoir",
+        paragraphs: [
+          "Réservez les sorties à l'avance en haute saison. La matinée offre généralement une meilleure visibilité et une mer plus calme. Prévoyez crème solaire minérale (zone protégée), chaussures d'eau et lycra anti-UV. Combinez la journée avec les chutes et bains chauds de Bouillante à proximité.",
         ],
       },
     ],
@@ -95,7 +140,7 @@ export const articlesFr: Article[] = [
     seo: {
       title: "Réserve Cousteau : plongée & snorkeling depuis Deshaies",
       description:
-        "Plongée et snorkeling à la Réserve Cousteau (Pigeon, Bouillante) : tortues, coraux, faune tropicale — à ≈ 30 min du Domaine de Bornave, Deshaies.",
+        "Plongée et snorkeling à la Réserve Cousteau (Pigeon, Bouillante) : tortues, coraux, buste Cousteau — à ≈ 30 min du Domaine de Bornave, Deshaies.",
     },
   },
   {
@@ -103,16 +148,39 @@ export const articlesFr: Article[] = [
     cover:
       "/media/lieux/coucher-de-soleil-depuis-tainos-cottage-a-deshaies-en-guadeloupe-9-scaled.webp",
     category: "À visiter",
-    title: "Pointe-Noire & la Maison du Cacao",
+    title: "Pointe-Noire, la Maison du Cacao & le Zoo des Mamelles",
     excerpt:
-      "Vers le sud, Pointe-Noire offre une Basse-Terre plus sauvage : Maison du Cacao, Maison du Bois, rivières et le Zoo des Mamelles.",
-    readingTime: "4 min",
-    distance: "10 à 25 min en voiture",
+      "Vers le sud, une Basse-Terre plus sauvage : Maison du Cacao, Maison du Bois, rivières, et le Parc des Mamelles avec son zoo en pleine forêt.",
+    readingTime: "6 min",
+    distance: "10 à 30 min en voiture",
     sections: [
       {
         paragraphs: [
-          "Depuis nos gîtes, en direction du sud, la commune de Pointe-Noire dévoile une autre facette de la Basse-Terre, plus sauvage et profondément ancrée dans la nature et les traditions.",
-          "La Maison du Cacao fait découvrir le cacao et le savoir-faire local autour d'une dégustation. Plus loin, le Parc des Mamelles et son zoo, nichés au cœur de la forêt tropicale, proposent un parcours entre passerelles suspendues et espèces emblématiques de la Caraïbe — idéal en famille.",
+          "En quittant Deshaies vers le sud, la commune de Pointe-Noire dévoile une autre Basse-Terre : plus sauvage, montagneuse et profondément ancrée dans les traditions artisanales et la forêt tropicale. C'est la porte d'entrée d'une belle journée de découvertes, à 10 à 30 minutes du Domaine de Bornave.",
+        ],
+      },
+      {
+        heading: "La Maison du Cacao",
+        paragraphs: [
+          "Sur la route de Pointe-Noire, la Maison du Cacao retrace l'histoire et le savoir-faire du cacao en Guadeloupe : plantation pédagogique, étapes de transformation de la cabosse à la tablette, et dégustation de chocolat chaud à l'ancienne. Une visite courte, gourmande et idéale en famille.",
+        ],
+      },
+      {
+        heading: "Pointe-Noire & l'artisanat du bois",
+        paragraphs: [
+          "Pointe-Noire est réputée pour le travail du bois ; la Maison du Bois et les ateliers d'artisans valorisent les essences locales et les métiers traditionnels. Le bourg, authentique, donne un aperçu sincère de la vie créole de la côte sous le vent.",
+        ],
+      },
+      {
+        heading: "Le Parc des Mamelles & son zoo",
+        paragraphs: [
+          "En poursuivant vers la Route de la Traversée, le Parc des Mamelles abrite un zoo niché en pleine forêt tropicale. Le parcours, en partie sur des passerelles suspendues dans la canopée, présente des espèces emblématiques de la Caraïbe et d'Amérique (ratons, iguanes, racoons, rapaces…) et inclut un parcours accrobranche. Comptez une demi-journée, idéale avec des enfants.",
+        ],
+      },
+      {
+        heading: "Nature & rivières",
+        paragraphs: [
+          "Les environs offrent rivières et bassins (secteur de la Route de la Traversée et du Parc national), parfaits pour une baignade d'eau douce ou une courte randonnée à l'ombre des fougères arborescentes. Un complément rafraîchissant après la visite.",
         ],
       },
     ],
@@ -120,7 +188,7 @@ export const articlesFr: Article[] = [
     seo: {
       title: "Pointe-Noire, Maison du Cacao & Zoo des Mamelles | Bornave",
       description:
-        "Que faire à Pointe-Noire depuis Deshaies : Maison du Cacao, Maison du Bois, Zoo des Mamelles, rivières et randonnées — à 10-25 min du Domaine de Bornave.",
+        "Que faire à Pointe-Noire depuis Deshaies : Maison du Cacao, Maison du Bois, Zoo des Mamelles, rivières — à 10-30 min du Domaine de Bornave.",
     },
   },
   {
@@ -129,13 +197,30 @@ export const articlesFr: Article[] = [
     category: "Pratique",
     title: "Comment venir à Deshaies depuis l'aéroport",
     excerpt:
-      "Depuis l'aéroport Pôle Caraïbes (Pointe-à-Pitre), rejoindre Deshaies et le domaine : itinéraire, durée, location de voiture.",
-    readingTime: "3 min",
+      "Depuis l'aéroport Pôle Caraïbes (Pointe-à-Pitre) : itinéraire, durée, location de voiture et conseils d'accès au Domaine de Bornave.",
+    readingTime: "5 min",
     sections: [
       {
         paragraphs: [
-          "Le Domaine de Bornave se situe à Deshaies, sur la côte sous le vent de la Basse-Terre. Depuis l'aéroport international Guadeloupe Pôle Caraïbes (Pointe-à-Pitre), comptez environ 1 h à 1 h 15 de route par la côte.",
-          "La location d'une voiture est vivement recommandée : elle vous permet de profiter librement des plages, du Jardin Botanique et des excursions sur la côte sous le vent. À votre arrivée, Serge vous accueille et vous guide pour la fin du trajet jusqu'au domaine.",
+          "Le Domaine de Bornave se situe sur les hauteurs de Deshaies, quartier Ferry, sur la côte sous le vent de la Basse-Terre. Tous les vols long-courriers arrivent à l'aéroport international Guadeloupe Pôle Caraïbes, à Pointe-à-Pitre (Grande-Terre).",
+        ],
+      },
+      {
+        heading: "Itinéraire & durée",
+        paragraphs: [
+          "Depuis l'aéroport, comptez environ 1 h à 1 h 15 de route jusqu'à Deshaies (selon le trafic autour de Pointe-à-Pitre et Baie-Mahault). L'itinéraire le plus simple longe la côte par Sainte-Rose puis descend sur Deshaies. La route est belle mais sinueuse sur la fin : prévoyez une conduite tranquille, surtout de nuit.",
+        ],
+      },
+      {
+        heading: "Location de voiture : vivement conseillée",
+        paragraphs: [
+          "Une voiture est fortement recommandée pour séjourner à Deshaies : elle vous rend autonome pour les plages, le Jardin Botanique, la Réserve Cousteau et les excursions sur la côte sous le vent, peu desservies par les transports en commun. Réservez votre véhicule à l'avance, surtout en haute saison ; les loueurs sont présents à l'aéroport.",
+        ],
+      },
+      {
+        heading: "Arrivée au domaine",
+        paragraphs: [
+          "À l'approche de Deshaies, l'accès au quartier Ferry se fait par une petite route qui monte vers les hauteurs. Serge vous communique l'itinéraire précis avant l'arrivée et vous accueille sur place pour vous guider — un point d'attention utile pour les arrivées en fin de journée.",
         ],
       },
     ],
@@ -153,13 +238,30 @@ export const articlesFr: Article[] = [
     category: "Pratique",
     title: "Quand venir à Deshaies en Guadeloupe ?",
     excerpt:
-      "Saison sèche, saison humide, périodes idéales : tout pour choisir le meilleur moment de votre séjour.",
-    readingTime: "3 min",
+      "Saison sèche, saison humide, périodes idéales, météo et conseils de réservation pour choisir le meilleur moment de votre séjour.",
+    readingTime: "5 min",
     sections: [
       {
         paragraphs: [
-          "La Guadeloupe se visite toute l'année grâce à son climat tropical. La saison sèche, le « carême », de décembre à avril, offre le plus de soleil et reste la période la plus demandée — pensez à réserver plusieurs mois à l'avance.",
-          "De juillet à novembre, la saison plus humide alterne averses courtes et belles éclaircies, avec une nature luxuriante et des tarifs souvent plus doux. Hors haute saison, le domaine retrouve tout son calme : un moment idéal pour une parenthèse à deux.",
+          "La Guadeloupe se visite toute l'année grâce à son climat tropical doux, tempéré par les alizés. Le choix de la période dépend surtout de votre tolérance aux averses, de votre budget et de l'affluence recherchée. Deshaies, sur la côte sous le vent, bénéficie d'un ensoleillement généreux.",
+        ],
+      },
+      {
+        heading: "La saison sèche (« carême »), décembre à avril",
+        paragraphs: [
+          "C'est la période la plus ensoleillée et la plus demandée : ciel dégagé, mer souvent calme, chaleur supportable grâce aux alizés. Elle couvre les fêtes de fin d'année, les vacances d'hiver et de printemps. Réservez plusieurs mois à l'avance, surtout pour Noël, le Nouvel An et février.",
+        ],
+      },
+      {
+        heading: "La saison humide (« hivernage »), juillet à novembre",
+        paragraphs: [
+          "Plus chaude et humide, elle alterne belles éclaircies et averses tropicales souvent brèves. La nature est alors d'un vert éclatant et les tarifs plus doux. Le pic d'activité cyclonique se situe en août-septembre : une assurance annulation et un suivi météo sont conseillés. Mai-juin et novembre sont d'excellents compromis (climat agréable, fréquentation modérée).",
+        ],
+      },
+      {
+        heading: "Notre conseil",
+        paragraphs: [
+          "Pour un équilibre soleil / tranquillité / budget, visez l'inter-saison (fin avril-juin, novembre). Hors haute saison, le domaine retrouve tout son calme : une parenthèse idéale à deux. Quelle que soit la période, anticipez la réservation des dates clés et de la voiture.",
         ],
       },
     ],
@@ -167,7 +269,7 @@ export const articlesFr: Article[] = [
     seo: {
       title: "Quand venir en Guadeloupe ? Meilleure période pour Deshaies",
       description:
-        "Quand partir à Deshaies, Guadeloupe : saison sèche (déc.-avril), saison humide, conseils de réservation pour votre séjour au Domaine de Bornave.",
+        "Quand partir à Deshaies, Guadeloupe : saison sèche (déc.-avril), hivernage, météo, inter-saisons et conseils de réservation pour le Domaine de Bornave.",
     },
   },
 ];
